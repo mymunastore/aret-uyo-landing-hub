@@ -5,7 +5,7 @@ const reasons = [
   {
     icon: CheckCircle,
     title: "Proven Track Record",
-    description: "Over 5 years of reliable waste management services in Akwa Ibom State with 98% customer satisfaction rate.",
+    description: "Over 1 year of reliable waste management services in Akwa Ibom State with 98% customer satisfaction rate.",
   },
   {
     icon: Clock,
