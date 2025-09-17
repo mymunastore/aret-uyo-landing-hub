@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
-import AdvancedContactForm from "@/components/AdvancedContactForm";
+import GoogleRegistrationForm from "@/components/GoogleRegistrationForm";
 
 const Contact = () => {
   return (
@@ -80,7 +80,7 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div>
-            <AdvancedContactForm />
+            <GoogleRegistrationForm />
           </div>
         </div>
       </div>
