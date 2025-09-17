@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp, Eye, EyeOff, HelpCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface FAQItem {
   question: string;
@@ -9,6 +10,7 @@ interface FAQItem {
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [showFAQ, setShowFAQ] = useState(false); // FAQ is hidden by default
 
   const faqData: FAQItem[] = [
     // General Information
@@ -150,78 +152,130 @@ const FAQ = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
             Find answers to common questions about our waste management services and processes.
           </p>
+          
+          {/* Toggle Button */}
+          <Button
+            onClick={() => setShowFAQ(!showFAQ)}
+            variant={showFAQ ? "default" : "outline"}
+            size="lg"
+            className="group transition-all duration-300 hover:scale-105"
+          >
+            {showFAQ ? (
+              <>
+                <EyeOff className="mr-2 h-5 w-5" />
+                Hide FAQ Section
+              </>
+            ) : (
+              <>
+                <Eye className="mr-2 h-5 w-5" />
+                Show FAQ Section
+              </>
+            )}
+          </Button>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          {categories.map((category, categoryIndex) => (
-            <div key={category} className="mb-8">
-              <h3 className="text-xl font-semibold text-foreground mb-4 pb-2 border-b border-primary/20">
-                {category}
-              </h3>
-              
-              <div className="space-y-4">
-                {faqData
-                  .filter(item => item.category === category)
-                  .map((faq, faqIndex) => {
-                    const globalIndex = categoryIndex * 100 + faqIndex; // Unique index
-                    const isOpen = openIndex === globalIndex;
-                    
-                    return (
-                      <div 
-                        key={globalIndex}
-                        className="bg-card border border-border rounded-lg shadow-sm hover:shadow-md transition-shadow"
-                      >
-                        <button
-                          onClick={() => toggleFAQ(globalIndex)}
-                          className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-muted/50 transition-colors rounded-lg"
+        {/* FAQ Content - Conditionally Rendered */}
+        {showFAQ && (
+          <div className="max-w-4xl mx-auto animate-fade-in">
+            {categories.map((category, categoryIndex) => (
+              <div key={category} className="mb-8">
+                <h3 className="text-xl font-semibold text-foreground mb-4 pb-2 border-b border-primary/20">
+                  {category}
+                </h3>
+                
+                <div className="space-y-4">
+                  {faqData
+                    .filter(item => item.category === category)
+                    .map((faq, faqIndex) => {
+                      const globalIndex = categoryIndex * 100 + faqIndex; // Unique index
+                      const isOpen = openIndex === globalIndex;
+                      
+                      return (
+                        <div 
+                          key={globalIndex}
+                          className="bg-card border border-border rounded-lg shadow-sm hover:shadow-md transition-shadow"
                         >
-                          <span className="font-medium text-foreground pr-4">
-                            {faq.question}
-                          </span>
-                          {isOpen ? (
-                            <ChevronUp className="text-primary flex-shrink-0" size={20} />
-                          ) : (
-                            <ChevronDown className="text-primary flex-shrink-0" size={20} />
+                          <button
+                            onClick={() => toggleFAQ(globalIndex)}
+                            className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-muted/50 transition-colors rounded-lg"
+                          >
+                            <span className="font-medium text-foreground pr-4">
+                              {faq.question}
+                            </span>
+                            {isOpen ? (
+                              <ChevronUp className="text-primary flex-shrink-0" size={20} />
+                            ) : (
+                              <ChevronDown className="text-primary flex-shrink-0" size={20} />
+                            )}
+                          </button>
+                          
+                          {isOpen && (
+                            <div className="px-6 pb-4">
+                              <p className="text-muted-foreground leading-relaxed">
+                                {faq.answer}
+                              </p>
+                            </div>
                           )}
-                        </button>
-                        
-                        {isOpen && (
-                          <div className="px-6 pb-4">
-                            <p className="text-muted-foreground leading-relaxed">
-                              {faq.answer}
-                            </p>
-                          </div>
-                        )}
-                      </div>
-                    );
-                  })}
+                        </div>
+                      );
+                    })}
+                </div>
+              </div>
+            ))}
+
+            <div className="text-center mt-12">
+              <p className="text-muted-foreground mb-4">
+                Still have questions? We're here to help.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a 
+                  href="tel:09152870617" 
+                  className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
+                >
+                  Call Us: 0915 287 0617
+                </a>
+                <a 
+                  href="mailto:info@aret-environmental-ng.com" 
+                  className="inline-flex items-center justify-center px-6 py-3 border border-primary text-primary rounded-lg hover:bg-primary/10 transition-colors"
+                >
+                  Email Us
+                </a>
               </div>
             </div>
-          ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <p className="text-muted-foreground mb-4">
-            Still have questions? We're here to help.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="tel:09152870617" 
-              className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
-            >
-              Call Us: 0915 287 0617
-            </a>
-            <a 
-              href="mailto:info@aret-environmental-ng.com" 
-              className="inline-flex items-center justify-center px-6 py-3 border border-primary text-primary rounded-lg hover:bg-primary/10 transition-colors"
-            >
-              Email Us
-            </a>
           </div>
-        </div>
+        )}
+
+        {/* Alternative message when FAQ is hidden */}
+        {!showFAQ && (
+          <div className="max-w-2xl mx-auto text-center">
+            <div className="bg-card border border-border rounded-xl p-8 shadow-sm">
+              <HelpCircle className="mx-auto h-16 w-16 text-muted-foreground mb-4" />
+              <h3 className="text-xl font-semibold text-foreground mb-3">
+                Have Questions?
+              </h3>
+              <p className="text-muted-foreground mb-6">
+                Click the button above to view our comprehensive FAQ section, or contact us directly for immediate assistance.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a 
+                  href="tel:09152870617" 
+                  className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
+                >
+                  Call Us: 0915 287 0617
+                </a>
+                <a 
+                  href="mailto:info@aret-environmental-ng.com" 
+                  className="inline-flex items-center justify-center px-6 py-3 border border-primary text-primary rounded-lg hover:bg-primary/10 transition-colors"
+                >
+                  Email Us
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
