@@ -44,7 +44,7 @@ const CallToAction = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto animate-fade-in">
             <div className="flex items-center justify-center gap-3 text-primary-foreground/90">
               <MapPin size={20} className="text-accent" />
-              <span>Serving all of Akwa Ibom State</span>
+              <span>Serving all of Uyo City in Akwa Ibom State</span>
             </div>
             <div className="flex items-center justify-center gap-3 text-primary-foreground/90">
               <Shield size={20} className="text-accent" />
