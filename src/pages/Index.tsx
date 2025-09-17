@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
@@ -10,22 +11,85 @@ import Policies from "@/components/Policies";
 import CallToAction from "@/components/CallToAction";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import LoadingScreen from "@/components/LoadingScreen";
+import ScrollProgress from "@/components/ScrollProgress";
+import ScrollToTop from "@/components/ScrollToTop";
+import AnimatedSection from "@/components/AnimatedSection";
 
 const Index = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleLoadingComplete = () => {
+    setIsLoading(false);
+  };
+
+  // Smooth scrolling for anchor links
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.tagName === 'A' && target.getAttribute('href')?.startsWith('#')) {
+        e.preventDefault();
+        const id = target.getAttribute('href')?.slice(1);
+        const element = document.getElementById(id || '');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    };
+
+    document.addEventListener('click', handleClick);
+    return () => document.removeEventListener('click', handleClick);
+  }, []);
+
+  if (isLoading) {
+    return <LoadingScreen onLoadingComplete={handleLoadingComplete} />;
+  }
+
   return (
     <div className="min-h-screen bg-background">
+      <ScrollProgress />
       <Header />
+      
       <Hero />
-      <Services />
-      <Pricing />
-      <About />
-      <WhyChooseUs />
-      <StatsSection />
-      <FAQ />
-      <Policies />
-      <CallToAction />
-      <Contact />
+      
+      <AnimatedSection delay={100}>
+        <Services />
+      </AnimatedSection>
+      
+      <AnimatedSection delay={200}>
+        <Pricing />
+      </AnimatedSection>
+      
+      <AnimatedSection delay={100}>
+        <About />
+      </AnimatedSection>
+      
+      <AnimatedSection delay={200}>
+        <WhyChooseUs />
+      </AnimatedSection>
+      
+      <AnimatedSection delay={100}>
+        <StatsSection />
+      </AnimatedSection>
+      
+      <AnimatedSection delay={200}>
+        <FAQ />
+      </AnimatedSection>
+      
+      <AnimatedSection delay={100}>
+        <Policies />
+      </AnimatedSection>
+      
+      <AnimatedSection delay={200}>
+        <CallToAction />
+      </AnimatedSection>
+      
+      <AnimatedSection delay={100}>
+        <Contact />
+      </AnimatedSection>
+      
       <Footer />
+      <ScrollToTop />
     </div>
   );
 };

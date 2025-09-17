@@ -10,13 +10,13 @@ const Hero = () => {
       </div>
 
       {/* Floating Shapes */}
-      <div className="absolute top-20 left-10 opacity-20">
+      <div className="absolute top-20 left-10 opacity-20 parallax">
         <Recycle size={120} className="text-accent animate-float" />
       </div>
-      <div className="absolute bottom-20 right-20 opacity-20">
+      <div className="absolute bottom-20 right-20 opacity-20 parallax">
         <Leaf size={80} className="text-primary-glow animate-bounce-gentle" />
       </div>
-      <div className="absolute top-1/2 right-10 opacity-10">
+      <div className="absolute top-1/2 right-10 opacity-10 parallax">
         <div className="w-32 h-32 border-2 border-accent rounded-full animate-pulse"></div>
       </div>
 

@@ -1,10 +1,22 @@
+import { useState } from "react";
+import { Menu, X, Phone, Mail, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Phone, Mail, MapPin } from "lucide-react";
+import ThemeToggle from "@/components/ThemeToggle";
 import aretLogo from "@/assets/aret-logo.png";
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const navItems = [
+    { href: "#home", label: "Home" },
+    { href: "#services", label: "Services" },
+    { href: "#pricing", label: "Pricing" },
+    { href: "#about", label: "About" },
+    { href: "#contact", label: "Contact" },
+  ];
+
   return (
-    <header className="w-full">
+    <header className="relative z-40">
       {/* Top Contact Bar */}
       <div className="bg-primary text-primary-foreground py-2 px-4">
         <div className="container mx-auto flex flex-wrap items-center justify-between text-sm">
@@ -17,57 +29,96 @@ const Header = () => {
               <Phone size={14} />
               09152870616
             </a>
-            <a href="mailto:info@aret-environmental-ng.com" className="flex items-center gap-1 hover:text-accent transition-colors">
+            <a href="mailto:info@aret-environmental-ng.com" className="hidden md:flex items-center gap-1 hover:text-accent transition-colors">
               <Mail size={14} />
               info@aret-environmental-ng.com
             </a>
           </div>
           <div className="flex items-center gap-1 text-xs">
             <MapPin size={14} />
-            No. 576 Oron Road, Uyo, Akwa Ibom State, Nigeria
+            <span>Uyo, Akwa Ibom State</span>
           </div>
         </div>
       </div>
 
       {/* Main Navigation */}
-      <nav className="bg-background shadow-elegant border-b border-border">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
+      <nav className="bg-background/95 backdrop-blur-md border-b border-border sticky top-0 z-50 shadow-sm">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <div className="flex items-center">
+            <div className="flex items-center space-x-3">
               <img 
                 src={aretLogo} 
                 alt="ARET Environmental Services Logo" 
-                className="h-12 w-auto mr-3"
+                className="h-10 w-auto hover:scale-105 transition-transform duration-300"
               />
-              <div>
+              <div className="hidden md:block">
+                <span className="text-sm font-medium text-foreground">ARET</span>
                 <p className="text-xs text-muted-foreground">Environmental Services</p>
               </div>
             </div>
 
-            {/* Navigation Links */}
+            {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#home" className="text-foreground hover:text-primary transition-colors font-medium">
-                Home
-              </a>
-              <a href="#about" className="text-foreground hover:text-primary transition-colors font-medium">
-                About Us
-              </a>
-              <a href="#services" className="text-foreground hover:text-primary transition-colors font-medium">
-                Services
-              </a>
-              <a href="#pricing" className="text-foreground hover:text-primary transition-colors font-medium">
-                Pricing
-              </a>
-              <a href="#contact" className="text-foreground hover:text-primary transition-colors font-medium">
-                Contact
-              </a>
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="text-foreground hover:text-primary transition-colors font-medium relative group"
+                >
+                  {item.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+              ))}
             </div>
 
-            {/* CTA Button */}
-            <Button className="hidden md:flex bg-gradient-primary text-primary-foreground hover:shadow-glow transition-all duration-300 hover:scale-105">
-              Get Quote
-            </Button>
+            {/* Action Buttons */}
+            <div className="flex items-center space-x-4">
+              <ThemeToggle />
+              <Button 
+                size="sm" 
+                className="hidden md:flex bg-gradient-primary hover:shadow-glow transition-all duration-300"
+              >
+                Get Quote
+              </Button>
+              
+              {/* Mobile Menu Button */}
+              <Button
+                variant="ghost"
+                size="icon"
+                className="md:hidden"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                aria-label="Toggle menu"
+              >
+                {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+              </Button>
+            </div>
+          </div>
+
+          {/* Mobile Navigation */}
+          <div className={`md:hidden transition-all duration-300 overflow-hidden ${
+            isMenuOpen ? "max-h-64 pb-4" : "max-h-0"
+          }`}>
+            <div className="space-y-2 pt-4 border-t border-border">
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="block py-2 px-4 text-foreground hover:text-primary hover:bg-muted rounded-lg transition-all duration-200"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </a>
+              ))}
+              <div className="pt-2">
+                <Button 
+                  size="sm" 
+                  className="w-full bg-gradient-primary hover:shadow-glow transition-all duration-300"
+                >
+                  Get Quote
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
