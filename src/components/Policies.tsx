@@ -193,7 +193,7 @@ const Policies = () => {
                 <Button 
                   onClick={resetCalculator}
                   variant="outline" 
-                  className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10"
+                  className="border-primary-foreground text-primary-foreground bg-primary-foreground/20 hover:bg-primary-foreground/30 border-2"
                 >
                   Reset
                 </Button>
