@@ -106,7 +106,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-primary-foreground/20 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center text-sm opacity-80">
-          <p>© 2024 ARET Environmental Services. All rights reserved.</p>
+          <p>© 2025 ARET Environmental Services. All rights reserved.</p>
           <div className="flex gap-4 mt-4 md:mt-0">
             <a href="#policies" className="hover:opacity-100 cursor-pointer transition-opacity">Privacy Policy</a>
             <a href="#policies" className="hover:opacity-100 cursor-pointer transition-opacity">Terms of Service</a>
