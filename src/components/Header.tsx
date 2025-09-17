@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin } from "lucide-react";
+import aretLogo from "@/assets/aret-logo.png";
 
 const Header = () => {
   return (
@@ -30,13 +31,12 @@ const Header = () => {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex items-center">
-              <div className="bg-gradient-primary p-3 rounded-xl mr-3 shadow-glow">
-                <div className="w-8 h-8 text-primary-foreground font-bold text-xl flex items-center justify-center">
-                  A
-                </div>
-              </div>
+              <img 
+                src={aretLogo} 
+                alt="ARET Environmental Services Logo" 
+                className="h-12 w-auto mr-3"
+              />
               <div>
-                <h1 className="text-xl font-bold text-foreground">ARET</h1>
                 <p className="text-xs text-muted-foreground">Environmental Services</p>
               </div>
             </div>

@@ -1,4 +1,5 @@
 import { Recycle, Phone, Mail, MapPin, Facebook, Instagram, Twitter } from "lucide-react";
+import aretLogo from "@/assets/aret-logo.png";
 
 const Footer = () => {
   return (
@@ -8,13 +9,12 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <div className="flex items-center mb-4">
-              <div className="bg-accent p-2 rounded-lg mr-3">
-                <div className="w-8 h-8 text-accent-foreground font-bold text-xl flex items-center justify-center">
-                  A
-                </div>
-              </div>
+              <img 
+                src={aretLogo} 
+                alt="ARET Environmental Services Logo" 
+                className="h-10 w-auto mr-3"
+              />
               <div>
-                <h3 className="text-lg font-bold">ARET</h3>
                 <p className="text-xs opacity-80">Environmental Services</p>
               </div>
             </div>
