@@ -24,7 +24,6 @@ const Footer = () => {
             </p>
             <div className="text-xs opacity-70 mb-4 p-3 bg-primary-foreground/5 rounded-lg">
               <p className="font-semibold mb-1">CERTIFICATE OF REGISTRATION</p>
-              <p>Business Name: ARET ENVIRONMENTAL SERVICES</p>
               <p>CAC Registration No.: 8278298</p>
               <p className="text-xs mt-1">Under the General Corporate Affairs Commission</p>
               <p className="text-xs mt-1">Companies and Allied Matters Act 2020</p>
