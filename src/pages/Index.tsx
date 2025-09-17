@@ -8,6 +8,7 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 import StatsSection from "@/components/StatsSection";
 import FAQ from "@/components/FAQ";
 import Policies from "@/components/Policies";
+import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import LoadingScreen from "@/components/LoadingScreen";
@@ -86,8 +87,12 @@ const Index = () => {
         <AnimatedSection delay={200}>
           <Policies />
         </AnimatedSection>
-        
+
         <AnimatedSection delay={100}>
+          <Testimonials />
+        </AnimatedSection>
+        
+        <AnimatedSection delay={200}>
           <FAQ />
         </AnimatedSection>
         
