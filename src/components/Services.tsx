@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Truck, Building, Home, Factory, Recycle, Shield } from "lucide-react";
+import { Truck, Building, Home, Factory, Recycle, Shield, Leaf } from "lucide-react";
 import serviceResidential from "@/assets/service-residential.jpg";
 import serviceCommercial from "@/assets/service-commercial.jpg";
 import serviceIndustrial from "@/assets/service-industrial.jpg";
@@ -9,39 +9,33 @@ import serviceHazardous from "@/assets/service-hazardous.jpg";
 
 const services = [
   {
-    icon: Home,
-    title: "Residential Waste Collection",
-    description: "Regular household waste pickup and disposal services for homes across Uyo and surrounding areas.",
-    image: serviceResidential,
-  },
-  {
     icon: Building,
-    title: "Commercial Waste Management",
-    description: "Comprehensive waste solutions for offices, retail stores, and commercial establishments.",
+    title: "Waste Management",
+    description: "Comprehensive waste management solutions for residential, commercial, and industrial clients with sustainable practices.",
     image: serviceCommercial,
   },
   {
+    icon: Truck,
+    title: "Waste Collection",
+    description: "Regular and reliable waste pickup services across Uyo and surrounding areas with scheduled routes.",
+    image: serviceResidential,
+  },
+  {
     icon: Factory,
-    title: "Industrial Waste Solutions",
-    description: "Specialized handling and disposal of industrial waste with proper safety protocols.",
+    title: "Waste Disposal",
+    description: "Safe and environmentally compliant waste disposal following all regulatory standards and best practices.",
     image: serviceIndustrial,
   },
   {
     icon: Recycle,
-    title: "Recycling Services",
-    description: "Complete recycling programs to transform waste materials into valuable resources.",
+    title: "Waste Recycling",
+    description: "Complete recycling programs to transform waste materials into valuable resources, supporting a circular economy.",
     image: serviceRecycling,
   },
   {
-    icon: Truck,
-    title: "Skip Hire Services",
-    description: "Various skip sizes available for construction projects and large cleanouts.",
-    image: serviceSkipHire,
-  },
-  {
-    icon: Shield,
-    title: "Hazardous Waste Disposal",
-    description: "Safe and compliant disposal of hazardous materials following environmental regulations.",
+    icon: Leaf,
+    title: "General Environmental Services",
+    description: "Comprehensive environmental solutions including consultation, monitoring, and specialized services for various sectors.",
     image: serviceHazardous,
   },
 ];
@@ -52,6 +46,11 @@ const Services = () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
+          <div className="mb-4">
+            <p className="text-primary font-medium tracking-wide text-sm uppercase mb-2">
+              MOTTO: PARTNERING FOR SUSTAINABLE SOLUTIONS
+            </p>
+          </div>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             Our <span className="text-primary">Services</span>
           </h2>
