@@ -4,7 +4,7 @@ import { TrendingUp, Users, Recycle, Shield } from "lucide-react";
 const stats = [
   {
     icon: Users,
-    number: "100+",
+    number: "50+",
     label: "Happy Clients",
     description: "Satisfied customers across Akwa Ibom State",
   },
@@ -19,12 +19,6 @@ const stats = [
     number: "98%",
     label: "Success Rate",
     description: "Efficient waste collection and processing",
-  },
-  {
-    icon: Shield,
-    number: "24/7",
-    label: "Service Available",
-    description: "Round-the-clock emergency support",
   },
 ];
 

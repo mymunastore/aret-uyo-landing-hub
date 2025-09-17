@@ -70,7 +70,7 @@ const Hero = () => {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 animate-fade-in-up" style={{animationDelay: '0.6s'}}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 animate-fade-in-up" style={{animationDelay: '0.6s'}}>
             <div className="text-center group">
               <div className="text-3xl font-bold text-accent mb-2 group-hover:scale-110 transition-transform duration-300">500+</div>
               <div className="text-primary-foreground/80">Clients Served</div>
@@ -78,10 +78,6 @@ const Hero = () => {
             <div className="text-center group">
               <div className="text-3xl font-bold text-accent mb-2 group-hover:scale-110 transition-transform duration-300">1M+</div>
               <div className="text-primary-foreground/80">Tons Recycled</div>
-            </div>
-            <div className="text-center group">
-              <div className="text-3xl font-bold text-accent mb-2 group-hover:scale-110 transition-transform duration-300">24/7</div>
-              <div className="text-primary-foreground/80">Service Available</div>
             </div>
           </div>
         </div>

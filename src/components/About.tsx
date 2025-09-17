@@ -53,11 +53,11 @@ const About = () => {
               
               <div className="flex items-start gap-4">
                 <div className="bg-accent/10 p-2 rounded-lg">
-                  <Clock className="w-5 h-5 text-accent" />
+                  <Recycle className="w-5 h-5 text-accent" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground mb-2">24/7 Service</h4>
-                  <p className="text-muted-foreground">Round-the-clock support for emergency waste management needs.</p>
+                  <h4 className="font-semibold text-foreground mb-2">Sustainable Practices</h4>
+                  <p className="text-muted-foreground">Eco-friendly methods that protect our environment for future generations.</p>
                 </div>
               </div>
             </div>

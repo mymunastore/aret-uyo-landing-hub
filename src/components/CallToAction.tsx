@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Phone, ArrowRight, Clock, MapPin } from "lucide-react";
+import { Phone, ArrowRight, Clock, MapPin, Shield } from "lucide-react";
 
 const CallToAction = () => {
   return (
@@ -43,12 +43,12 @@ const CallToAction = () => {
           {/* Quick Info */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto animate-fade-in">
             <div className="flex items-center justify-center gap-3 text-primary-foreground/90">
-              <Clock size={20} className="text-accent" />
-              <span>Available 24/7 for emergencies</span>
-            </div>
-            <div className="flex items-center justify-center gap-3 text-primary-foreground/90">
               <MapPin size={20} className="text-accent" />
               <span>Serving all of Akwa Ibom State</span>
+            </div>
+            <div className="flex items-center justify-center gap-3 text-primary-foreground/90">
+              <Shield size={20} className="text-accent" />
+              <span>Certified & Compliant</span>
             </div>
           </div>
 
