@@ -28,7 +28,7 @@ const stats = [
   },
   {
     icon: Award,
-    number: "5+",
+    number: "1",
     label: "Years Experience",
     description: "Proven track record in waste management",
     gradient: "from-orange-500 to-red-500",
