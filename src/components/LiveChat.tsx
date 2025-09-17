@@ -54,20 +54,25 @@ export const LiveChat: React.FC = () => {
     }
 
     try {
-      // Create a temporary customer ID (in a real app, this would be from auth)
-      const tempCustomerId = crypto.randomUUID();
+      // Generate a session ID for anonymous users
+      const sessionId = crypto.randomUUID();
+      
+      // Store session ID in localStorage for persistence
+      localStorage.setItem('chat_session_id', sessionId);
       
       const { data, error } = await supabase
         .from('support_conversations')
         .insert({
-          customer_id: tempCustomerId,
+          customer_id: sessionId, // Use session ID as customer ID for anonymous users
           subject: 'Live Chat Support',
           status: 'open',
           priority: 'medium',
           metadata: {
             customer_name: customerName,
             customer_email: customerEmail,
-            channel: 'live_chat'
+            channel: 'live_chat',
+            session_id: sessionId,
+            is_anonymous: true
           }
         })
         .select()
@@ -140,13 +145,13 @@ export const LiveChat: React.FC = () => {
     if (!inputMessage.trim() || !conversation) return;
 
     try {
-      const tempCustomerId = conversation.customer_id || crypto.randomUUID();
+      const sessionId = localStorage.getItem('chat_session_id') || conversation.customer_id;
       
       await supabase
         .from('support_messages')
         .insert({
           conversation_id: conversation.id,
-          sender_id: tempCustomerId,
+          sender_id: sessionId,
           sender_type: 'customer',
           content: inputMessage.trim(),
           message_type: 'text'
