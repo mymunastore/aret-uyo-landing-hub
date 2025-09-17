@@ -1,0 +1,230 @@
+import { useState } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
+
+interface FAQItem {
+  question: string;
+  answer: string;
+  category: string;
+}
+
+const FAQ = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const faqData: FAQItem[] = [
+    // General Information
+    {
+      category: "General Information",
+      question: "What does ARET Environmental Services do?",
+      answer: "ARET Environmental Services provides comprehensive waste collection, disposal, and recycling solutions for households, commercial establishments, and institutions. We also offer specialized services for general waste, construction debris, and event-specific waste management, all while prioritizing sustainability and environmental responsibility."
+    },
+    {
+      category: "General Information", 
+      question: "Where is ARET Environmental Services located?",
+      answer: "Our office is at No. 576 Oron Road, Uyo, Akwa Ibom State, Nigeria."
+    },
+    {
+      category: "General Information",
+      question: "What are ARET's core values?",
+      answer: "We operate on three core values: Integrity (honesty and ethical conduct), Customer Satisfaction (exceeding client expectations), and Cleanliness & Care (environmental stewardship and community well-being)."
+    },
+    
+    // Service Offerings
+    {
+      category: "Service Offerings",
+      question: "What types of waste do you collect?",
+      answer: "We collect general, recyclable, hazardous, and construction waste from residential, commercial, and institutional clients."
+    },
+    {
+      category: "Service Offerings",
+      question: "Do you offer recycling services?",
+      answer: "Yes, we actively promote recycling by efficiently segregating and processing recyclable materials, which supports a circular economy and reduces our reliance on landfills."
+    },
+    {
+      category: "Service Offerings",
+      question: "Can you customize services for large businesses?",
+      answer: "Absolutely. We develop tailored waste management plans for corporate clients, assign dedicated account managers, and conduct regular service reviews to ensure your needs are met."
+    },
+    {
+      category: "Service Offerings",
+      question: "How is the waste collected?",
+      answer: "By the bagged method."
+    },
+    {
+      category: "Service Offerings",
+      question: "What days are scheduled for pickup?",
+      answer: "Clients are mapped out to zones, and each zone has a designated day."
+    },
+
+    // Client Portal & Account Management
+    {
+      category: "Client Portal & Account Management",
+      question: "What is the Zoho Client Profile Portal?",
+      answer: "This secure online portal provides clients with 24/7 access to update their contact information, view contracts and invoices, access reports, and communicate directly with our team in one convenient location."
+    },
+    {
+      category: "Client Portal & Account Management",
+      question: "How do I access the portal?",
+      answer: "Clients receive access after providing a valid email address. If you haven't received your portal instructions, please get in touch with us to set up your profile."
+    },
+    {
+      category: "Client Portal & Account Management",
+      question: "What if my contact details change?",
+      answer: "You can update your information directly through the portal or by contacting our office. Keeping your details current ensures you don't miss critical updates."
+    },
+
+    // Billing & Payments
+    {
+      category: "Billing & Payments",
+      question: "How and when will I receive my invoices?",
+      answer: "Invoices are accessible through the Zoho Client Profile Portal. You can view and download them at any time."
+    },
+    {
+      category: "Billing & Payments",
+      question: "What should I do if there's a billing error?",
+      answer: "Contact our Client Relations Officer (CRO) immediately. Minor billing issues (Level 1 complaints) are typically resolved within one business day."
+    },
+
+    // Complaints & Feedback
+    {
+      category: "Complaints & Feedback",
+      question: "How do I make a complaint?",
+      answer: "You can submit complaints via phone, email, WhatsApp, written letter, or through the client portal. A dedicated complaints resolution line is also available: 08151324463 / 09152870617."
+    },
+    {
+      category: "Complaints & Feedback",
+      question: "How are complaints handled?",
+      answer: "All complaints are logged and categorized (Level 1–4). The CRO acknowledges your complaint within 2 hours, assesses the issue, and assigns it to the appropriate team. Resolution timelines depend on the severity, ranging from one day (for minor issues) to a week (for significant/strategic issues)."
+    },
+    {
+      category: "Complaints & Feedback",
+      question: "Will I be updated on the progress of my complaints?",
+      answer: "Yes, you'll receive an acknowledgment with a unique Complaint ID and regular updates until the issue is resolved."
+    },
+    {
+      category: "Complaints & Feedback",
+      question: "Can I provide general feedback?",
+      answer: "Absolutely. We welcome all feedback, positive or constructive—through the portal, email, phone, or in person. Your input helps us improve our services."
+    },
+
+    // Health, Safety & Compliance
+    {
+      category: "Health, Safety & Compliance",
+      question: "What safety measures do you have in place?",
+      answer: "We enforce strict safety protocols, provide regular training, and maintain emergency response plans. All employees are equipped with safety gear, and incidents are promptly reported and reviewed."
+    },
+    {
+      category: "Health, Safety & Compliance",
+      question: "How do you handle incidents or accidents?",
+      answer: "Any incident (injury, property damage, environmental hazard, equipment failure, etc.) must be reported using our Incident Report Form within 24 hours. Immediate corrective actions are taken, and root causes are analyzed to prevent recurrence."
+    },
+    {
+      category: "Health, Safety & Compliance",
+      question: "Are you compliant with environmental regulations?",
+      answer: "Yes, we adhere to all local, state, and federal regulations. Compliance is monitored monthly, and any concerns are addressed immediately."
+    },
+
+    // Contact & Support
+    {
+      category: "Contact & Support",
+      question: "How can I reach ARET Environmental Services?",
+      answer: "Call us at 0915 287 0617 or 0915 287 0618, email info@aret-environmental-ng.com, use WhatsApp, or visit our office."
+    },
+    {
+      category: "Contact & Support",
+      question: "Who is my main point of contact?",
+      answer: "For most issues, your first point of contact is the Client Relations Officer. For complex or recurring problems, issues are escalated to the General Manager, COO, or CEO as needed."
+    }
+  ];
+
+  // Group FAQs by category
+  const categories = [...new Set(faqData.map(item => item.category))];
+
+  const toggleFAQ = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  return (
+    <section id="faq" className="py-20 bg-muted/30">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Find answers to common questions about our waste management services and processes.
+          </p>
+        </div>
+
+        <div className="max-w-4xl mx-auto">
+          {categories.map((category, categoryIndex) => (
+            <div key={category} className="mb-8">
+              <h3 className="text-xl font-semibold text-foreground mb-4 pb-2 border-b border-primary/20">
+                {category}
+              </h3>
+              
+              <div className="space-y-4">
+                {faqData
+                  .filter(item => item.category === category)
+                  .map((faq, faqIndex) => {
+                    const globalIndex = categoryIndex * 100 + faqIndex; // Unique index
+                    const isOpen = openIndex === globalIndex;
+                    
+                    return (
+                      <div 
+                        key={globalIndex}
+                        className="bg-card border border-border rounded-lg shadow-sm hover:shadow-md transition-shadow"
+                      >
+                        <button
+                          onClick={() => toggleFAQ(globalIndex)}
+                          className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-muted/50 transition-colors rounded-lg"
+                        >
+                          <span className="font-medium text-foreground pr-4">
+                            {faq.question}
+                          </span>
+                          {isOpen ? (
+                            <ChevronUp className="text-primary flex-shrink-0" size={20} />
+                          ) : (
+                            <ChevronDown className="text-primary flex-shrink-0" size={20} />
+                          )}
+                        </button>
+                        
+                        {isOpen && (
+                          <div className="px-6 pb-4">
+                            <p className="text-muted-foreground leading-relaxed">
+                              {faq.answer}
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <p className="text-muted-foreground mb-4">
+            Still have questions? We're here to help.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a 
+              href="tel:09152870617" 
+              className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
+            >
+              Call Us: 0915 287 0617
+            </a>
+            <a 
+              href="mailto:info@aret-environmental-ng.com" 
+              className="inline-flex items-center justify-center px-6 py-3 border border-primary text-primary rounded-lg hover:bg-primary/10 transition-colors"
+            >
+              Email Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default FAQ;

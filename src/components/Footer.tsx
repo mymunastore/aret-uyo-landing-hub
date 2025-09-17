@@ -67,15 +67,19 @@ const Footer = () => {
             <div className="space-y-3 text-sm">
               <div className="flex items-center gap-2 opacity-80">
                 <Phone size={14} />
-                <span>+234 806 615 8613</span>
+                <span>0915 287 0617 / 0915 287 0618</span>
               </div>
               <div className="flex items-center gap-2 opacity-80">
                 <Mail size={14} />
-                <span>info@aretenvironmental.ng</span>
+                <span>info@aret-environmental-ng.com</span>
               </div>
               <div className="flex items-start gap-2 opacity-80">
                 <MapPin size={14} className="mt-0.5" />
-                <span>Uyo, Akwa Ibom State<br />Nigeria</span>
+                <span>No. 576 Oron Road, Uyo<br />Akwa Ibom State, Nigeria</span>
+              </div>
+              <div className="flex items-center gap-2 opacity-80 mt-3">
+                <Phone size={14} />
+                <span className="text-xs">Complaints Line: 08151324463 / 09152870617</span>
               </div>
             </div>
           </div>

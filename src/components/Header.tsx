@@ -9,18 +9,18 @@ const Header = () => {
       <div className="bg-primary text-primary-foreground py-2 px-4">
         <div className="container mx-auto flex flex-wrap items-center justify-between text-sm">
           <div className="flex items-center gap-4">
-            <a href="tel:+2348066158613" className="flex items-center gap-1 hover:text-accent transition-colors">
+            <a href="tel:09152870617" className="flex items-center gap-1 hover:text-accent transition-colors">
               <Phone size={14} />
-              +234 806 615 8613
+              0915 287 0617
             </a>
-            <a href="mailto:info@aretenvironmental.ng" className="flex items-center gap-1 hover:text-accent transition-colors">
+            <a href="mailto:info@aret-environmental-ng.com" className="flex items-center gap-1 hover:text-accent transition-colors">
               <Mail size={14} />
-              info@aretenvironmental.ng
+              info@aret-environmental-ng.com
             </a>
           </div>
           <div className="flex items-center gap-1 text-xs">
             <MapPin size={14} />
-            Uyo, Akwa Ibom State, Nigeria
+            No. 576 Oron Road, Uyo, Akwa Ibom State, Nigeria
           </div>
         </div>
       </div>
