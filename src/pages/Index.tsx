@@ -15,6 +15,9 @@ import LoadingScreen from "@/components/LoadingScreen";
 import ScrollProgress from "@/components/ScrollProgress";
 import ScrollToTop from "@/components/ScrollToTop";
 import AnimatedSection from "@/components/AnimatedSection";
+import PerformanceOptimizer from "@/components/PerformanceOptimizer";
+import AccessibilityEnhancer from "@/components/AccessibilityEnhancer";
+import SEOHead from "@/components/SEOHead";
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -42,51 +45,61 @@ const Index = () => {
   }, []);
 
   if (isLoading) {
-    return <LoadingScreen onLoadingComplete={handleLoadingComplete} />;
+    return (
+      <>
+        <SEOHead />
+        <LoadingScreen onLoadingComplete={handleLoadingComplete} />
+      </>
+    );
   }
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead />
+      <PerformanceOptimizer />
+      <AccessibilityEnhancer />
       <ScrollProgress />
       <Header />
       
-      <Hero />
-      
-      <AnimatedSection delay={100}>
-        <Services />
-      </AnimatedSection>
-      
-      <AnimatedSection delay={200}>
-        <Pricing />
-      </AnimatedSection>
-      
-      <AnimatedSection delay={100}>
-        <About />
-      </AnimatedSection>
-      
-      <AnimatedSection delay={200}>
-        <WhyChooseUs />
-      </AnimatedSection>
-      
-      <AnimatedSection delay={100}>
-        <StatsSection />
-      </AnimatedSection>
-      
-      <AnimatedSection delay={200}>
-        <FAQ />
-      </AnimatedSection>
-      
-      <AnimatedSection delay={100}>
-        <Policies />
-      </AnimatedSection>
-      
-      <AnimatedSection delay={200}>
-        <CallToAction />
-      </AnimatedSection>
-      
-      <AnimatedSection delay={100}>
-        <Contact />
-      </AnimatedSection>
+      <main id="main-content">
+        <Hero />
+        
+        <AnimatedSection delay={100}>
+          <Services />
+        </AnimatedSection>
+        
+        <AnimatedSection delay={200}>
+          <Pricing />
+        </AnimatedSection>
+        
+        <AnimatedSection delay={100}>
+          <About />
+        </AnimatedSection>
+        
+        <AnimatedSection delay={200}>
+          <WhyChooseUs />
+        </AnimatedSection>
+        
+        <AnimatedSection delay={100}>
+          <StatsSection />
+        </AnimatedSection>
+        
+        <AnimatedSection delay={200}>
+          <FAQ />
+        </AnimatedSection>
+        
+        <AnimatedSection delay={100}>
+          <Policies />
+        </AnimatedSection>
+        
+        <AnimatedSection delay={200}>
+          <CallToAction />
+        </AnimatedSection>
+        
+        <AnimatedSection delay={100}>
+          <Contact />
+        </AnimatedSection>
+      </main>
       
       <Footer />
       <ScrollToTop />

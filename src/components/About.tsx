@@ -98,11 +98,13 @@ const About = () => {
           <div className="space-y-6">
             {/* Hero Image */}
             <div className="relative rounded-2xl overflow-hidden mb-8">
-              <img 
-                src={about3Rs} 
-                alt="3Rs Approach - Reduce, Reuse, Recycle"
-                className="w-full h-64 object-cover"
-              />
+                <img 
+                  src={about3Rs} 
+                  alt="3Rs Approach - Reduce, Reuse, Recycle"
+                  className="w-full h-64 object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
               <div className="absolute bottom-4 left-4">
                 <h3 className="text-2xl font-bold text-primary-foreground">
