@@ -3,11 +3,10 @@ import { Play, ArrowRight, Recycle, Trash2, Leaf } from "lucide-react";
 import heroImage from "@/assets/hero-waste-workers.png";
 const Hero = () => {
   return <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background Image with Enhanced Overlay */}
+      {/* Background Image with Minimal Overlay */}
       <div className="absolute inset-0 z-0">
         <img src={heroImage} alt="ARET Environmental Services workers in high-visibility vests loading waste bins into collection truck in Uyo" className="w-full h-full object-cover" loading="eager" fetchPriority="high" decoding="sync" />
-        <div className="absolute inset-0 bg-gradient-hero opacity-70"></div>
-        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="absolute inset-0 bg-gradient-hero opacity-20"></div>
       </div>
 
       {/* Floating Shapes */}
@@ -33,14 +32,15 @@ const Hero = () => {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6 leading-tight animate-fade-in-up">
+          <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6 leading-tight animate-fade-in-up drop-shadow-lg" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
             Your Partner in
-            <span className="block text-accent">Sustainability</span>
+            <span className="block text-accent drop-shadow-lg" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>Sustainability</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 max-w-2xl leading-relaxed animate-fade-in-up" style={{
-          animationDelay: '0.2s'
+          <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 max-w-2xl leading-relaxed animate-fade-in-up drop-shadow-lg" style={{
+          animationDelay: '0.2s',
+          textShadow: '1px 1px 3px rgba(0,0,0,0.7)'
         }}>
             Leading waste management solutions in Uyo, Akwa Ibom State. 
             We are committed to reducing environmental impact and promoting 
