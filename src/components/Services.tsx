@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Truck, Building, Home, Factory, Recycle, Shield, Leaf } from "lucide-react";
+import { Truck, Building, Home, Factory, Recycle, Shield, Leaf, ShoppingCart } from "lucide-react";
 import serviceResidential from "@/assets/service-residential.jpg";
 import serviceCommercial from "@/assets/service-commercial.jpg";
 import serviceIndustrial from "@/assets/service-industrial.jpg";
@@ -37,6 +37,12 @@ const services = [
     title: "General Environmental Services",
     description: "Comprehensive environmental solutions including consultation, monitoring, and specialized services for various sectors.",
     image: serviceHazardous,
+  },
+  {
+    icon: ShoppingCart,
+    title: "Equipment Sales",
+    description: "Quality waste management equipment including bins, containers, and other essential waste handling items for residential and commercial use.",
+    image: serviceCommercial,
   },
 ];
 
