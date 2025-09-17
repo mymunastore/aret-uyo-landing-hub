@@ -1,81 +1,176 @@
 import { Button } from "@/components/ui/button";
-import { Play, ArrowRight, Recycle, Trash2, Leaf } from "lucide-react";
+import { Play, ArrowRight, Recycle, Trash2, Leaf, Phone } from "lucide-react";
+import { useResponsive } from "@/hooks/useResponsive"; 
+import { useRealTimeAnimations } from "@/hooks/useRealTimeAnimations";
 import heroImage from "@/assets/hero-waste-workers.png";
+
 const Hero = () => {
-  return <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background Image with Minimal Overlay */}
+  const { isMobile, isTablet } = useResponsive();
+
+  const heroRef = useRealTimeAnimations((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate-visible');
+    }
+  });
+
+  const scrollToServices = () => {
+    const element = document.querySelector('#services');
+    if (element) {
+      const headerHeight = 120;
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({
+        top: elementPosition - headerHeight,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const scrollToContact = () => {
+    const element = document.querySelector('#contact');
+    if (element) {
+      const headerHeight = 120;
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({
+        top: elementPosition - headerHeight,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  return (
+    <section 
+      ref={heroRef}
+      id="home" 
+      className="relative min-h-screen flex items-center overflow-hidden animate-on-scroll"
+    >
+      {/* Background Image with Responsive Overlay */}
       <div className="absolute inset-0 z-0">
-        <img src={heroImage} alt="ARET Environmental Services workers in high-visibility vests loading waste bins into collection truck in Uyo" className="w-full h-full object-cover" loading="eager" fetchPriority="high" decoding="sync" />
-        <div className="absolute inset-0 bg-gradient-hero opacity-20"></div>
+        <img 
+          src={heroImage} 
+          alt="ARET Environmental Services workers in high-visibility vests loading waste bins into collection truck in Uyo" 
+          className="w-full h-full object-cover parallax" 
+          loading="eager" 
+          fetchPriority="high" 
+          decoding="sync" 
+        />
+        <div className="absolute inset-0 bg-gradient-hero opacity-30 sm:opacity-20"></div>
       </div>
 
-      {/* Floating Shapes */}
-      <div className="absolute top-20 left-10 opacity-20 parallax">
-        <Recycle size={120} className="text-accent animate-float" />
+      {/* Floating Shapes - Responsive sizing */}
+      <div className="absolute top-10 sm:top-20 left-4 sm:left-10 opacity-10 sm:opacity-20 parallax">
+        <Recycle size={isMobile ? 60 : isTablet ? 90 : 120} className="text-accent animate-float" />
       </div>
-      <div className="absolute bottom-20 right-20 opacity-20 parallax">
-        <Leaf size={80} className="text-primary-glow animate-bounce-gentle" />
+      <div className="absolute bottom-10 sm:bottom-20 right-4 sm:right-20 opacity-10 sm:opacity-20 parallax">
+        <Leaf size={isMobile ? 40 : isTablet ? 60 : 80} className="text-primary-glow animate-bounce-gentle" />
       </div>
-      <div className="absolute top-1/2 right-10 opacity-10 parallax">
-        <div className="w-32 h-32 border-2 border-accent rounded-full animate-pulse"></div>
+      <div className="absolute top-1/2 right-4 sm:right-10 opacity-5 sm:opacity-10 parallax">
+        <div className={`border-2 border-accent rounded-full animate-pulse ${
+          isMobile ? 'w-16 h-16' : isTablet ? 'w-24 h-24' : 'w-32 h-32'
+        }`}></div>
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl">
           {/* Welcome Badge */}
-          <div className="inline-flex items-center gap-2 bg-background/80 backdrop-blur-md border-2 border-primary shadow-lg rounded-full px-6 py-3 mb-6 animate-fade-in">
-            <Trash2 size={16} className="text-primary" />
-            <span className="text-foreground text-sm font-semibold">
+          <div className="inline-flex items-center gap-2 bg-background/80 backdrop-blur-md border-2 border-primary shadow-lg rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-4 sm:mb-6 animate-fade-in">
+            <Trash2 size={isMobile ? 14 : 16} className="text-primary" />
+            <span className={`text-foreground font-semibold ${
+              isMobile ? 'text-xs' : 'text-sm'
+            }`}>
               Welcome to ARET Environmental Services
             </span>
           </div>
 
-          {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6 leading-tight animate-fade-in-up drop-shadow-lg" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
+          {/* Main Heading - Responsive */}
+          <h1 className={`font-bold text-primary-foreground mb-4 sm:mb-6 leading-tight animate-fade-in-up drop-shadow-lg ${
+            isMobile ? 'text-3xl' : isTablet ? 'text-4xl' : 'text-5xl md:text-7xl'
+          }`} 
+          style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
             Your Partner in
-            <span className="block text-accent drop-shadow-lg" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>Sustainability</span>
+            <span className="block text-accent drop-shadow-lg" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
+              Sustainability
+            </span>
           </h1>
 
-          {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 max-w-2xl leading-relaxed animate-fade-in-up drop-shadow-lg" style={{
-          animationDelay: '0.2s',
-          textShadow: '1px 1px 3px rgba(0,0,0,0.7)'
-        }}>
+          {/* Subtitle - Responsive */}
+          <p className={`text-primary-foreground/90 mb-6 sm:mb-8 max-w-2xl leading-relaxed animate-fade-in-up drop-shadow-lg ${
+            isMobile ? 'text-base' : isTablet ? 'text-lg' : 'text-xl md:text-2xl'
+          }`} 
+          style={{
+            animationDelay: '0.2s',
+            textShadow: '1px 1px 3px rgba(0,0,0,0.7)'
+          }}>
             Leading waste management solutions in Uyo, Akwa Ibom State. 
             We are committed to reducing environmental impact and promoting 
             sustainability across all sectors.
           </p>
 
-          {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-in-up" style={{
-          animationDelay: '0.4s'
-        }}>
-            <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-4 text-lg font-semibold hover:shadow-glow transition-all duration-300 hover:scale-105">
+          {/* Action Buttons - Responsive Stack */}
+          <div className="responsive-flex mb-8 sm:mb-12 animate-fade-in-up" style={{
+            animationDelay: '0.4s'
+          }}>
+            <Button 
+              size={isMobile ? "default" : "lg"}
+              onClick={scrollToServices}
+              className="interactive-button bg-accent hover:bg-accent/90 text-accent-foreground px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg font-semibold hover:shadow-glow transition-all duration-300"
+            >
               Discover More
-              <ArrowRight className="ml-2" size={20} />
+              <ArrowRight className="ml-2" size={isMobile ? 16 : 20} />
             </Button>
-            <Button size="lg" variant="default" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 px-8 py-4 text-lg font-semibold shadow-elegant hover:shadow-glow transition-all duration-300 hover:scale-105">
-              <Play className="mr-2" size={20} />
-              How It Works
+            <Button 
+              size={isMobile ? "default" : "lg"}
+              variant="default"
+              onClick={scrollToContact}
+              className="interactive-button bg-primary-foreground text-primary hover:bg-primary-foreground/90 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg font-semibold shadow-elegant hover:shadow-glow transition-all duration-300"
+            >
+              <Phone className="mr-2" size={isMobile ? 16 : 20} />
+              Contact Us
             </Button>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 animate-fade-in-up" style={{
-          animationDelay: '0.6s'
-        }}>
+          {/* Stats - Responsive Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-16 animate-fade-in-up" style={{
+            animationDelay: '0.6s'
+          }}>
             <div className="text-center group">
-              <div className="text-3xl font-bold text-primary-foreground mb-2 group-hover:scale-110 transition-transform duration-300">100+</div>
-              <div className="text-primary-foreground/80">Clients Served</div>
+              <div className={`font-bold text-primary-foreground mb-2 group-hover:scale-110 transition-transform duration-300 ${
+                isMobile ? 'text-2xl' : 'text-3xl'
+              }`}>
+                100+
+              </div>
+              <div className={`text-primary-foreground/80 ${
+                isMobile ? 'text-xs' : 'text-sm'
+              }`}>
+                Clients Served
+              </div>
             </div>
             <div className="text-center group">
-              <div className="text-3xl font-bold text-primary-foreground mb-2 group-hover:scale-110 transition-transform duration-300">50+</div>
-              <div className="text-primary-foreground/80">Tons Recycled</div>
+              <div className={`font-bold text-primary-foreground mb-2 group-hover:scale-110 transition-transform duration-300 ${
+                isMobile ? 'text-2xl' : 'text-3xl'
+              }`}>
+                50+
+              </div>
+              <div className={`text-primary-foreground/80 ${
+                isMobile ? 'text-xs' : 'text-sm'
+              }`}>
+                Tons Recycled
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>;
+
+      {/* Scroll Indicator - Hidden on mobile */}
+      {!isMobile && (
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-primary-foreground/50 rounded-full">
+            <div className="w-1 h-3 bg-primary-glow rounded-full mx-auto mt-2 animate-bounce"></div>
+          </div>
+        </div>
+      )}
+    </section>
+  );
 };
+
 export default Hero;
