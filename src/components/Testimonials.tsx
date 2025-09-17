@@ -1,5 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Quote } from "lucide-react";
+import clientEmeka from "@/assets/client-emeka.jpg";
+import clientGrace from "@/assets/client-grace.jpg";
+import clientMichael from "@/assets/client-michael.jpg";
 
 const testimonials = [
   {
@@ -8,7 +11,7 @@ const testimonials = [
     location: "Uyo Central",
     rating: 5,
     text: "ARET Environmental Services has transformed how we handle waste in our commercial complex. Their professionalism and reliability are unmatched in Akwa Ibom State.",
-    image: "EO"
+    image: clientEmeka
   },
   {
     name: "Mrs. Grace Udoh", 
@@ -16,7 +19,7 @@ const testimonials = [
     location: "Ewet Housing Estate",
     rating: 5,
     text: "Finally, a waste management company that keeps their promises! Regular pickups, fair pricing, and excellent customer service. Highly recommend ARET.",
-    image: "GU"
+    image: clientGrace
   },
   {
     name: "Engr. Michael Bassey",
@@ -24,7 +27,7 @@ const testimonials = [
     location: "Uyo Industrial Layout",
     rating: 5,
     text: "ARET handles our industrial waste with such expertise and care for environmental compliance. Their team is knowledgeable and always professional.",
-    image: "MB"
+    image: clientMichael
   }
 ];
 
@@ -71,10 +74,12 @@ const Testimonials = () => {
 
                 {/* Client Info */}
                 <div className="flex items-center gap-4">
-                  <div className="bg-gradient-primary p-3 rounded-full w-12 h-12 flex items-center justify-center">
-                    <span className="text-primary-foreground font-bold text-sm">
-                      {testimonial.image}
-                    </span>
+                  <div className="w-12 h-12 rounded-full overflow-hidden ring-2 ring-primary/20">
+                    <img 
+                      src={testimonial.image} 
+                      alt={testimonial.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">

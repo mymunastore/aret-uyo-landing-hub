@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Recycle, RotateCcw, Minus, ArrowRight, Shield, Clock } from "lucide-react";
+import about3Rs from "@/assets/about-3rs.jpg";
 
 const principles = [
   {
@@ -67,8 +68,27 @@ const About = () => {
             </Button>
           </div>
 
-          {/* 3Rs Cards */}
+          {/* Visual Section with 3Rs Cards */}
           <div className="space-y-6">
+            {/* Hero Image */}
+            <div className="relative rounded-2xl overflow-hidden mb-8">
+              <img 
+                src={about3Rs} 
+                alt="3Rs Approach - Reduce, Reuse, Recycle"
+                className="w-full h-64 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+              <div className="absolute bottom-4 left-4">
+                <h3 className="text-2xl font-bold text-primary-foreground">
+                  Sustainable Solutions
+                </h3>
+                <p className="text-primary-foreground/90 text-sm">
+                  Environmental responsibility at its core
+                </p>
+              </div>
+            </div>
+
+            {/* 3Rs Cards */}
             {principles.map((principle, index) => (
               <Card key={index} className="group hover:shadow-elegant transition-all duration-300 border-0 bg-card">
                 <CardContent className="p-6">
