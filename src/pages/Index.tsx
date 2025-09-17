@@ -64,34 +64,34 @@ const Index = () => {
         <Hero />
         
         <AnimatedSection delay={100}>
-          <Services />
-        </AnimatedSection>
-        
-        <AnimatedSection delay={200}>
-          <Pricing />
-        </AnimatedSection>
-        
-        <AnimatedSection delay={100}>
           <About />
         </AnimatedSection>
         
         <AnimatedSection delay={200}>
+          <Services />
+        </AnimatedSection>
+        
+        <AnimatedSection delay={100}>
           <WhyChooseUs />
         </AnimatedSection>
         
-        <AnimatedSection delay={100}>
+        <AnimatedSection delay={200}>
           <StatsSection />
         </AnimatedSection>
         
-        <AnimatedSection delay={200}>
-          <FAQ />
+        <AnimatedSection delay={100}>
+          <Pricing />
         </AnimatedSection>
         
-        <AnimatedSection delay={100}>
+        <AnimatedSection delay={200}>
           <Policies />
         </AnimatedSection>
         
         <AnimatedSection delay={100}>
+          <FAQ />
+        </AnimatedSection>
+        
+        <AnimatedSection delay={200}>
           <Contact />
         </AnimatedSection>
       </main>
