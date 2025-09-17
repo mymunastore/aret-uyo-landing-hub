@@ -127,7 +127,7 @@ const FAQ = () => {
     {
       category: "Contact & Support",
       question: "How can I reach ARET Environmental Services?",
-      answer: "Call us at 0915 287 0617 or 0915 287 0618, email info@aret-environmental-ng.com, use WhatsApp, or visit our office."
+      answer: "Call us at 0915 287 0617 or 0915 287 0618, 09152870616. email info@aret-environmental-ng.com, use WhatsApp, or visit our office."
     },
     {
       category: "Contact & Support",
