@@ -11,6 +11,9 @@ const Hero = () => {
           src={heroImage} 
           alt="ARET Environmental Services workers in high-visibility vests loading waste bins into collection truck in Uyo"
           className="w-full h-full object-cover"
+          loading="eager"
+          fetchPriority="high"
+          decoding="sync"
         />
         <div className="absolute inset-0 bg-gradient-hero opacity-30"></div>
       </div>
