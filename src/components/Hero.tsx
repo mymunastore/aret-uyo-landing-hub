@@ -1,83 +1,98 @@
 import { Button } from "@/components/ui/button";
-import { Play, ArrowRight, Recycle, Trash2, Leaf } from "lucide-react";
-import heroImage from "@/assets/hero-waste-workers.png";
+import { ArrowRight, Shield, Award, Users, TrendingUp } from "lucide-react";
+import heroImage from "@/assets/hero-professional-facility.jpg";
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background Image with Overlay */}
+    <section id="home" className="relative min-h-screen flex items-center bg-gradient-to-br from-background via-muted/30 to-background">
+      {/* Background Image with Professional Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
           src={heroImage} 
-          alt="ARET Environmental Services workers in high-visibility vests loading waste bins into collection truck in Uyo"
-          className="w-full h-full object-cover"
+          alt="ARET Environmental Services - Professional waste management facility in Uyo showcasing modern operations"
+          className="w-full h-full object-cover opacity-20"
         />
-        <div className="absolute inset-0 bg-gradient-hero opacity-30"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/10"></div>
       </div>
 
-      {/* Floating Shapes */}
-      <div className="absolute top-20 left-10 opacity-20">
-        <Recycle size={120} className="text-accent animate-float" />
-      </div>
-      <div className="absolute bottom-20 right-20 opacity-20">
-        <Leaf size={80} className="text-primary-glow animate-bounce-gentle" />
-      </div>
-      <div className="absolute top-1/2 right-10 opacity-10">
-        <div className="w-32 h-32 border-2 border-accent rounded-full animate-pulse"></div>
+      {/* Professional Grid Background */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="h-full w-full bg-[linear-gradient(to_right,#80808020_1px,transparent_1px),linear-gradient(to_bottom,#80808020_1px,transparent_1px)] bg-[size:24px_24px]"></div>
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl">
-          {/* Welcome Badge */}
-          <div className="inline-flex items-center gap-2 bg-background/20 backdrop-blur-sm border border-primary-glow/30 rounded-full px-4 py-2 mb-6 animate-fade-in">
-            <Trash2 size={16} className="text-accent" />
-            <span className="text-primary-foreground text-sm font-medium">
-              Welcome to ARET Environmental Services
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-5xl">
+          {/* Professional Badge */}
+          <div className="inline-flex items-center gap-3 bg-card/80 backdrop-blur-sm border border-border rounded-full px-6 py-3 mb-8 shadow-sm">
+            <Shield size={20} className="text-primary" />
+            <span className="text-foreground font-medium">
+              Certified Environmental Solutions Provider
             </span>
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6 leading-tight animate-fade-in-up">
-            Your Partner in
-            <span className="block text-accent">Sustainability</span>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
+            Professional Waste
+            <span className="block bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+              Management Solutions
+            </span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 max-w-2xl leading-relaxed animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-            Leading waste management solutions in Uyo, Akwa Ibom State. 
-            We are committed to reducing environmental impact and promoting 
-            sustainability across all sectors.
+          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-3xl leading-relaxed font-medium">
+            ARET Environmental Services delivers comprehensive waste management solutions 
+            across Uyo, Akwa Ibom State. Our certified team ensures compliance, 
+            sustainability, and operational excellence for businesses and communities.
           </p>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+          <div className="flex flex-col sm:flex-row gap-4 mb-16">
             <Button 
               size="lg" 
-              className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-4 text-lg font-semibold hover:shadow-glow transition-all duration-300 hover:scale-105"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              Discover More
+              Get Professional Quote
               <ArrowRight className="ml-2" size={20} />
             </Button>
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary px-8 py-4 text-lg font-semibold transition-all duration-300"
+              className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 text-lg font-semibold transition-all duration-300"
             >
-              <Play className="mr-2" size={20} />
-              How It Works
+              View Our Services
             </Button>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 animate-fade-in-up" style={{animationDelay: '0.6s'}}>
-            <div className="text-center group">
-              <div className="text-3xl font-bold text-accent mb-2 group-hover:scale-110 transition-transform duration-300">500+</div>
-              <div className="text-primary-foreground/80">Clients Served</div>
+          {/* Professional Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full mb-3 mx-auto">
+                <Users className="text-primary" size={24} />
+              </div>
+              <div className="text-2xl font-bold text-foreground mb-1">50+</div>
+              <div className="text-sm text-muted-foreground font-medium">Happy Clients</div>
             </div>
-            <div className="text-center group">
-              <div className="text-3xl font-bold text-accent mb-2 group-hover:scale-110 transition-transform duration-300">1M+</div>
-              <div className="text-primary-foreground/80">Tons Recycled</div>
+            <div className="text-center">
+              <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full mb-3 mx-auto">
+                <TrendingUp className="text-primary" size={24} />
+              </div>
+              <div className="text-2xl font-bold text-foreground mb-1">1M+</div>
+              <div className="text-sm text-muted-foreground font-medium">Tons Processed</div>
+            </div>
+            <div className="text-center">
+              <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full mb-3 mx-auto">
+                <Award className="text-primary" size={24} />
+              </div>
+              <div className="text-2xl font-bold text-foreground mb-1">15+</div>
+              <div className="text-sm text-muted-foreground font-medium">Years Experience</div>
+            </div>
+            <div className="text-center">
+              <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full mb-3 mx-auto">
+                <Shield className="text-primary" size={24} />
+              </div>
+              <div className="text-2xl font-bold text-foreground mb-1">100%</div>
+              <div className="text-sm text-muted-foreground font-medium">Compliance Rate</div>
             </div>
           </div>
         </div>
