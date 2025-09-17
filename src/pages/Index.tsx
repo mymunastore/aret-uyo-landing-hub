@@ -18,6 +18,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 import PerformanceOptimizer from "@/components/PerformanceOptimizer";
 import AccessibilityEnhancer from "@/components/AccessibilityEnhancer";
 import SEOHead from "@/components/SEOHead";
+import { LiveChat } from "@/components/LiveChat";
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -103,6 +104,7 @@ const Index = () => {
       
       <Footer />
       <ScrollToTop />
+      <LiveChat />
     </div>
   );
 };
