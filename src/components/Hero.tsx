@@ -3,10 +3,11 @@ import { Play, ArrowRight, Recycle, Trash2, Leaf } from "lucide-react";
 import heroImage from "@/assets/hero-waste-workers.png";
 const Hero = () => {
   return <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Background Image with Enhanced Overlay */}
       <div className="absolute inset-0 z-0">
         <img src={heroImage} alt="ARET Environmental Services workers in high-visibility vests loading waste bins into collection truck in Uyo" className="w-full h-full object-cover" loading="eager" fetchPriority="high" decoding="sync" />
-        <div className="absolute inset-0 bg-gradient-hero opacity-30"></div>
+        <div className="absolute inset-0 bg-gradient-hero opacity-70"></div>
+        <div className="absolute inset-0 bg-black/30"></div>
       </div>
 
       {/* Floating Shapes */}
