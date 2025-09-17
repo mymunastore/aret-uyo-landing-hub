@@ -12,7 +12,7 @@ const Hero = () => {
           alt="ARET Environmental Services - Professional Waste Management in Uyo"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-hero"></div>
+        <div className="absolute inset-0 bg-gradient-hero opacity-60"></div>
       </div>
 
       {/* Floating Shapes */}
