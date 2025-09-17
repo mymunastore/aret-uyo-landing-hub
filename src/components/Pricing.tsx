@@ -34,7 +34,7 @@ const Pricing = () => {
       icon: <Building className="text-primary" size={32} />,
       description: "Comprehensive solution for large-scale operations", 
       benefits: [
-        "Frequency: Customizable based on client needs",
+        "Frequency: Customizable based on client needs or daily pick up",
         "Services: Comprehensive waste management solutions including composting, recycling and disposal services",
         "Cost: Negotiable based on volume and specific requirements"
       ],
