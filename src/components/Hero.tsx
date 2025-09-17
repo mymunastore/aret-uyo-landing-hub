@@ -54,7 +54,7 @@ const Hero = () => {
               Discover More
               <ArrowRight className="ml-2" size={20} />
             </Button>
-            <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary px-8 py-4 text-lg font-semibold transition-all duration-300">
+            <Button size="lg" variant="default" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 px-8 py-4 text-lg font-semibold shadow-elegant hover:shadow-glow transition-all duration-300 hover:scale-105">
               <Play className="mr-2" size={20} />
               How It Works
             </Button>
