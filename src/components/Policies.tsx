@@ -1,4 +1,4 @@
-import { Shield, Eye, AlertTriangle, Lock, Calculator, Leaf } from "lucide-react";
+import { Shield, Eye, AlertTriangle, Lock, Calculator, Leaf, EyeOff, FileText } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -10,6 +10,7 @@ const Policies = () => {
   const [waterLiters, setWaterLiters] = useState("");
   const [transportKm, setTransportKm] = useState("");
   const [carbonFootprint, setCarbonFootprint] = useState<number | null>(null);
+  const [showPolicies, setShowPolicies] = useState(false); // Policies are hidden by default
 
   const calculateFootprint = () => {
     // Carbon emission factors (kg CO2 equivalent)
@@ -80,35 +81,78 @@ const Policies = () => {
               Our Policies & Standards
             </h2>
           </div>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
             We maintain the highest standards of business ethics, data security, and professional conduct.
           </p>
+          
+          {/* Toggle Button */}
+          <Button
+            onClick={() => setShowPolicies(!showPolicies)}
+            variant={showPolicies ? "default" : "outline"}
+            size="lg"
+            className="group transition-all duration-300 hover:scale-105"
+          >
+            {showPolicies ? (
+              <>
+                <EyeOff className="mr-2 h-5 w-5" />
+                Hide Policies Section
+              </>
+            ) : (
+              <>
+                <Eye className="mr-2 h-5 w-5" />
+                Show Policies Section
+              </>
+            )}
+          </Button>
         </div>
 
-        <div className="max-w-6xl mx-auto">
-          <div className="grid gap-8 md:gap-12">
-            {policies.map((policy, index) => (
-              <div key={index} className="bg-card border border-border rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex items-center mb-6">
-                  <div className="bg-primary/10 p-3 rounded-lg mr-4">
-                    {policy.icon}
+        {/* Policies Content - Conditionally Rendered */}
+        {showPolicies && (
+          <div className="max-w-6xl mx-auto animate-fade-in">
+            <div className="grid gap-8 md:gap-12">
+              {policies.map((policy, index) => (
+                <div key={index} className="bg-card border border-border rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
+                  <div className="flex items-center mb-6">
+                    <div className="bg-primary/10 p-3 rounded-lg mr-4">
+                      {policy.icon}
+                    </div>
+                    <h3 className="text-2xl font-bold text-foreground">
+                      {policy.title}
+                    </h3>
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground">
-                    {policy.title}
-                  </h3>
+                  
+                  <div className="space-y-4">
+                    {policy.content.map((paragraph, pIndex) => (
+                      <p key={pIndex} className="text-muted-foreground leading-relaxed">
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
                 </div>
-                
-                <div className="space-y-4">
-                  {policy.content.map((paragraph, pIndex) => (
-                    <p key={pIndex} className="text-muted-foreground leading-relaxed">
-                      {paragraph}
-                    </p>
-                  ))}
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        )}
+
+        {/* Alternative message when Policies are hidden */}
+        {!showPolicies && (
+          <div className="max-w-2xl mx-auto text-center">
+            <div className="bg-card border border-border rounded-xl p-8 shadow-sm">
+              <FileText className="mx-auto h-16 w-16 text-muted-foreground mb-4" />
+              <h3 className="text-xl font-semibold text-foreground mb-3">
+                Professional Standards & Policies
+              </h3>
+              <p className="text-muted-foreground mb-6">
+                Click the button above to view our comprehensive policies on privacy, data security, conflict of interest, and professional conduct standards.
+              </p>
+              <div className="bg-primary/5 border border-primary/20 rounded-lg p-4">
+                <p className="text-sm text-primary font-medium">
+                  ✓ Privacy Protection ✓ Data Security ✓ Ethical Standards ✓ Professional Conduct
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Carbon Footprint Calculator Section */}
         <div className="max-w-4xl mx-auto mt-16">
