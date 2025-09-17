@@ -69,7 +69,7 @@ const Hero = () => {
               <div className="text-primary-foreground/80">Clients Served</div>
             </div>
             <div className="text-center group">
-              <div className="text-3xl font-bold text-accent mb-2 group-hover:scale-110 transition-transform duration-300">50+</div>
+              <div className="text-3xl font-bold text-primary-foreground mb-2 group-hover:scale-110 transition-transform duration-300">50+</div>
               <div className="text-primary-foreground/80">Tons Recycled</div>
             </div>
           </div>
