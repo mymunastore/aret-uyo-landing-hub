@@ -6,11 +6,11 @@ const Pricing = () => {
     {
       name: "Basic Plan",
       icon: <Home className="text-primary" size={32} />,
-      description: "Perfect for households and small properties",
+      description: "Perfect for regular residential and small commercial needs",
       benefits: [
-        "Company house sticker",
-        "Domestic waste poster", 
-        "A roll of waste bags quarterly"
+        "Frequency: Weekly or bi-weekly collection",
+        "Services: General waste collection", 
+        "Cost: Competitive pricing based on market rates"
       ],
       popular: false,
       buttonText: "Choose Basic",
@@ -21,10 +21,9 @@ const Pricing = () => {
       icon: <Star className="text-primary" size={32} />,
       description: "Enhanced service for environmentally conscious clients",
       benefits: [
-        "All Basic Plan benefits",
-        "Recyclable waste poster",
-        "An additional roll of waste bags",
-        "Total of two rolls quarterly"
+        "Frequency: Daily or twice-a-week",
+        "Services: Segregated waste collection, recyclable materials",
+        "Cost: Higher than the basic plan due to increased frequency and specialized services"
       ],
       popular: true,
       buttonText: "Choose Premium",
@@ -33,12 +32,11 @@ const Pricing = () => {
     {
       name: "Enterprise Plan",
       icon: <Building className="text-primary" size={32} />,
-      description: "Comprehensive solution for businesses and large properties", 
+      description: "Comprehensive solution for large-scale operations", 
       benefits: [
-        "All Premium Plan benefits",
-        "Two rolls of waste bags monthly",
-        "Priority customer support",
-        "Dedicated account management"
+        "Frequency: Customizable based on client needs",
+        "Services: Comprehensive waste management solutions including composting, recycling and disposal services",
+        "Cost: Negotiable based on volume and specific requirements"
       ],
       popular: false,
       buttonText: "Choose Enterprise", 
@@ -46,16 +44,16 @@ const Pricing = () => {
     }
   ];
 
-  const additionalServices = [
+  const whoWeServe = [
     {
-      title: "Waste Bins",
-      description: "Available at an affordable fee",
-      icon: "🗑️"
+      title: "Residential & Commercial Clients",
+      description: "We offer separate plans for residential and commercial clients, considering their different waste generation patterns and needs.",
+      icon: "🏠"
     },
     {
-      title: "Customized Plans",
-      description: "If you are not comfortable with our standard fees, we are open to developing a specific plan tailored to meet your needs at a budget-friendly fee. Please contact us to discuss further.",
-      icon: "⚙️"
+      title: "Industrial Clients", 
+      description: "We cater to developing tailored plans to suit clients requirements e.g construction sites etc.",
+      icon: "🏭"
     }
   ];
 
@@ -119,14 +117,14 @@ const Pricing = () => {
         {/* Additional Services */}
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-foreground mb-4">Additional Services</h3>
+            <h3 className="text-2xl font-bold text-foreground mb-4">Who We Serve</h3>
             <p className="text-muted-foreground">
-              Enhance your waste management experience with our additional offerings
+              Our services are designed to meet the diverse needs of different client segments
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {additionalServices.map((service, index) => (
+            {whoWeServe.map((service, index) => (
               <div key={index} className="bg-card border border-border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex items-start gap-4">
                   <div className="text-2xl flex-shrink-0">{service.icon}</div>
