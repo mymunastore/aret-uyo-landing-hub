@@ -21,7 +21,7 @@ const Pricing = () => {
       icon: <Star className="text-primary" size={32} />,
       description: "Enhanced service for environmentally conscious clients",
       benefits: [
-        "Frequency: Daily or twice-a-week",
+        "Frequency: Daily or Six times a week",
         "Services: Segregated waste collection, recyclable materials",
         "Cost: Higher than the basic plan due to increased frequency and specialized services"
       ],
