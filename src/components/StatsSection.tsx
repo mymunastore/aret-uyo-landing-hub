@@ -4,7 +4,7 @@ import { TrendingUp, Users, Recycle, Shield } from "lucide-react";
 const stats = [
   {
     icon: Users,
-    number: "50+",
+    number: "100+",
     label: "Happy Clients",
     description: "Satisfied customers across Akwa Ibom State",
   },
