@@ -13,11 +13,6 @@ const reasons = [
     description: "Punctual waste collection with flexible scheduling to meet your specific needs and requirements.",
   },
   {
-    icon: Shield,
-    title: "Licensed & Insured", 
-    description: "Fully licensed waste management company with comprehensive insurance coverage for peace of mind.",
-  },
-  {
     icon: Users,
     title: "Expert Team",
     description: "Trained professionals who understand waste management best practices and environmental regulations.",
