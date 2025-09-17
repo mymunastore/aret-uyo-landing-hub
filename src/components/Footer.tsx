@@ -22,6 +22,14 @@ const Footer = () => {
               Leading the way in sustainable waste management solutions for Uyo and 
               Akwa Ibom State communities.
             </p>
+            <div className="text-xs opacity-70 mb-4 p-3 bg-primary-foreground/5 rounded-lg">
+              <p className="font-semibold mb-1">CERTIFICATE OF REGISTRATION</p>
+              <p>Business Name: ARET ENVIRONMENTAL SERVICES</p>
+              <p>Registration No.: 8278298</p>
+              <p className="text-xs mt-1">Under the General Corporate Affairs Commission</p>
+              <p className="text-xs mt-1">Companies and Allied Matters Act 2020</p>
+              <p className="text-xs mt-1 italic">Business Nature: Waste Disposal, Management, and Recycling</p>
+            </div>
             <div className="flex gap-3">
               <div className="bg-primary-foreground/10 p-2 rounded-lg hover:bg-primary-foreground/20 transition-colors cursor-pointer">
                 <Facebook size={16} />
@@ -89,8 +97,8 @@ const Footer = () => {
         <div className="border-t border-primary-foreground/20 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center text-sm opacity-80">
           <p>© 2024 ARET Environmental Services. All rights reserved.</p>
           <div className="flex gap-4 mt-4 md:mt-0">
-            <span className="hover:opacity-100 cursor-pointer">Privacy Policy</span>
-            <span className="hover:opacity-100 cursor-pointer">Terms of Service</span>
+            <a href="#policies" className="hover:opacity-100 cursor-pointer transition-opacity">Privacy Policy</a>
+            <a href="#policies" className="hover:opacity-100 cursor-pointer transition-opacity">Terms of Service</a>
           </div>
         </div>
       </div>
