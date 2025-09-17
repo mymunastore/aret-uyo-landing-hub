@@ -6,13 +6,14 @@ import serviceIndustrial from "@/assets/service-industrial.jpg";
 import serviceRecycling from "@/assets/service-recycling.jpg";
 import serviceSkipHire from "@/assets/service-skip-hire.jpg";
 import serviceHazardous from "@/assets/service-hazardous.jpg";
+import serviceWasteManagement from "@/assets/service-waste-management.jpg";
 
 const services = [
   {
     icon: Building,
     title: "Waste Management",
     description: "Comprehensive waste management solutions for residential, commercial, and industrial clients with sustainable practices.",
-    image: serviceCommercial,
+    image: serviceWasteManagement,
   },
   {
     icon: Truck,
