@@ -19,8 +19,8 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-sm opacity-80 mb-4">
-              Leading the way in sustainable waste management solutions for Uyo and 
-              Akwa Ibom State communities.
+              Leading provider of waste collection, management and disposal services for Uyo and 
+              Akwa Ibom State communities. Partnering for sustainable solutions.
             </p>
             <div className="text-xs opacity-70 mb-4 p-3 bg-primary-foreground/5 rounded-lg">
               <p className="font-semibold mb-1">CERTIFICATE OF REGISTRATION</p>
@@ -47,12 +47,11 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-lg mb-4">Our Services</h4>
             <ul className="space-y-2 text-sm opacity-80">
-              <li className="hover:opacity-100 cursor-pointer transition-opacity">Residential Collection</li>
-              <li className="hover:opacity-100 cursor-pointer transition-opacity">Commercial Waste</li>
-              <li className="hover:opacity-100 cursor-pointer transition-opacity">Industrial Solutions</li>
+              <li className="hover:opacity-100 cursor-pointer transition-opacity">Waste Collection</li>
+              <li className="hover:opacity-100 cursor-pointer transition-opacity">Waste Management</li>
+              <li className="hover:opacity-100 cursor-pointer transition-opacity">Waste Disposal</li>
               <li className="hover:opacity-100 cursor-pointer transition-opacity">Recycling Programs</li>
-              <li className="hover:opacity-100 cursor-pointer transition-opacity">Skip Hire</li>
-              <li className="hover:opacity-100 cursor-pointer transition-opacity">Hazardous Disposal</li>
+              <li className="hover:opacity-100 cursor-pointer transition-opacity">General Environmental Services</li>
             </ul>
           </div>
 
@@ -75,7 +74,7 @@ const Footer = () => {
             <div className="space-y-3 text-sm">
               <div className="flex items-center gap-2 opacity-80">
                 <Phone size={14} />
-                <span>0915 287 0617 / 0915 287 0618</span>
+                <span>09152870618 / 09152870617</span>
               </div>
               <div className="flex items-center gap-2 opacity-80">
                 <Mail size={14} />
