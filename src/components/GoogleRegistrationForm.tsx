@@ -18,33 +18,37 @@ const GoogleRegistrationForm = () => {
       </CardHeader>
       
       <CardContent>
-        <div className="w-full h-[600px] rounded-lg overflow-hidden border border-border/50">
-          <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSeKz1yKjhzOplbz2CQl0czWAJjNJ8-uuhjUV-IEQpWowkfWaQ/viewform?embedded=true"
-            width="100%"
-            height="600"
-            frameBorder="0"
-            marginHeight={0}
-            marginWidth={0}
-            title="Customer Information Form"
-            className="w-full h-full"
-          >
-            Loading customer information form...
-          </iframe>
-        </div>
-        
-        <div className="mt-4 p-4 bg-muted/50 rounded-lg">
-          <p className="text-sm text-muted-foreground text-center">
-            Having trouble with the form? You can also access it directly at: 
+        <div className="w-full min-h-[600px] rounded-lg overflow-hidden border border-border/50">
+          <div className="p-8 text-center bg-muted/20">
+            <UserPlus size={48} className="text-primary mx-auto mb-4" />
+            <h3 className="text-xl font-semibold text-foreground mb-4">
+              Customer Information Form
+            </h3>
+            <p className="text-muted-foreground mb-6">
+              Please click the button below to access our customer information form.
+            </p>
             <a 
               href="https://forms.gle/m3yL5f68ksnn7h6Z6" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-primary hover:underline ml-1"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors duration-200 font-medium"
             >
-              https://forms.gle/m3yL5f68ksnn7h6Z6
+              <UserPlus size={20} />
+              Open Form
             </a>
-          </p>
+          </div>
+        </div>
+        
+        <div className="mt-4 p-4 bg-blue-50 dark:bg-blue-950/30 rounded-lg border border-blue-200 dark:border-blue-800">
+          <h4 className="font-semibold text-blue-900 dark:text-blue-100 mb-2">
+            💡 To embed the form directly (optional):
+          </h4>
+          <ol className="text-sm text-blue-800 dark:text-blue-200 space-y-1 list-decimal list-inside">
+            <li>Open your Google Form</li>
+            <li>Click the "Send" button</li>
+            <li>Click the embed tab (&lt; &gt;)</li>
+            <li>Copy the embed code and share it with me</li>
+          </ol>
         </div>
       </CardContent>
     </Card>
