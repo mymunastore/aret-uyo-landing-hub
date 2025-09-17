@@ -1,6 +1,39 @@
-import { Shield, Eye, AlertTriangle, Lock } from "lucide-react";
+import { Shield, Eye, AlertTriangle, Lock, Calculator, Leaf } from "lucide-react";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 const Policies = () => {
+  const [wasteKg, setWasteKg] = useState("");
+  const [energyKwh, setEnergyKwh] = useState("");
+  const [waterLiters, setWaterLiters] = useState("");
+  const [transportKm, setTransportKm] = useState("");
+  const [carbonFootprint, setCarbonFootprint] = useState<number | null>(null);
+
+  const calculateFootprint = () => {
+    // Carbon emission factors (kg CO2 equivalent)
+    const wasteEmissionFactor = 0.5; // kg CO2 per kg waste
+    const energyEmissionFactor = 0.4; // kg CO2 per kWh
+    const waterEmissionFactor = 0.001; // kg CO2 per liter
+    const transportEmissionFactor = 0.2; // kg CO2 per km
+
+    const wasteEmissions = (parseFloat(wasteKg) || 0) * wasteEmissionFactor;
+    const energyEmissions = (parseFloat(energyKwh) || 0) * energyEmissionFactor;
+    const waterEmissions = (parseFloat(waterLiters) || 0) * waterEmissionFactor;
+    const transportEmissions = (parseFloat(transportKm) || 0) * transportEmissionFactor;
+
+    const totalFootprint = wasteEmissions + energyEmissions + waterEmissions + transportEmissions;
+    setCarbonFootprint(totalFootprint);
+  };
+
+  const resetCalculator = () => {
+    setWasteKg("");
+    setEnergyKwh("");
+    setWaterLiters("");
+    setTransportKm("");
+    setCarbonFootprint(null);
+  };
   const policies = [
     {
       icon: <Eye className="text-primary" size={24} />,
@@ -77,27 +110,115 @@ const Policies = () => {
           </div>
         </div>
 
-        {/* Registration Certificate Section */}
+        {/* Carbon Footprint Calculator Section */}
         <div className="max-w-4xl mx-auto mt-16">
           <div className="bg-gradient-primary text-primary-foreground rounded-xl p-8 text-center shadow-glow">
             <div className="border-2 border-primary-foreground/20 rounded-lg p-6 bg-primary-foreground/5">
-              <h3 className="text-2xl font-bold mb-4">CERTIFICATE OF REGISTRATION</h3>
-              <div className="space-y-2 text-lg">
-                <p><strong>BUSINESS NAME:</strong> ARET ENVIRONMENTAL SERVICES</p>
-                <p><strong>REGISTRATION NO.:</strong> 8278298</p>
-                <p className="text-sm opacity-90 mt-4">
-                  <strong>UNDER THE GENERAL CORPORATE AFFAIRS COMMISSION</strong>
-                </p>
-                <p className="text-sm opacity-90">
-                  This certifies that ARET ENVIRONMENTAL SERVICES is officially registered as a business name under the <strong>COMPANIES AND ALLIED MATTERS ACT 2020.</strong>
-                </p>
-                <div className="mt-6 pt-4 border-t border-primary-foreground/20">
-                  <p className="text-sm">
-                    <strong>The general nature of the business is:</strong><br />
-                    WASTE DISPOSAL, MANAGEMENT, AND RECYCLING.
-                  </p>
+              <div className="flex items-center justify-center mb-6">
+                <Calculator className="mr-3" size={32} />
+                <h3 className="text-2xl font-bold">Carbon Footprint Calculator</h3>
+              </div>
+              
+              <p className="text-sm opacity-90 mb-6">
+                Calculate your environmental impact and discover how ARET can help reduce your carbon footprint
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-left">
+                <div>
+                  <Label htmlFor="waste" className="text-primary-foreground text-sm font-medium">
+                    Monthly Waste (kg)
+                  </Label>
+                  <Input
+                    id="waste"
+                    type="number"
+                    placeholder="e.g., 150"
+                    value={wasteKg}
+                    onChange={(e) => setWasteKg(e.target.value)}
+                    className="mt-1 bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60"
+                  />
+                </div>
+                
+                <div>
+                  <Label htmlFor="energy" className="text-primary-foreground text-sm font-medium">
+                    Monthly Energy (kWh)
+                  </Label>
+                  <Input
+                    id="energy"
+                    type="number"
+                    placeholder="e.g., 300"
+                    value={energyKwh}
+                    onChange={(e) => setEnergyKwh(e.target.value)}
+                    className="mt-1 bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60"
+                  />
+                </div>
+                
+                <div>
+                  <Label htmlFor="water" className="text-primary-foreground text-sm font-medium">
+                    Monthly Water (liters)
+                  </Label>
+                  <Input
+                    id="water"
+                    type="number"
+                    placeholder="e.g., 5000"
+                    value={waterLiters}
+                    onChange={(e) => setWaterLiters(e.target.value)}
+                    className="mt-1 bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60"
+                  />
+                </div>
+                
+                <div>
+                  <Label htmlFor="transport" className="text-primary-foreground text-sm font-medium">
+                    Monthly Transport (km)
+                  </Label>
+                  <Input
+                    id="transport"
+                    type="number"
+                    placeholder="e.g., 500"
+                    value={transportKm}
+                    onChange={(e) => setTransportKm(e.target.value)}
+                    className="mt-1 bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60"
+                  />
                 </div>
               </div>
+
+              <div className="flex gap-4 justify-center mb-6">
+                <Button 
+                  onClick={calculateFootprint}
+                  variant="secondary" 
+                  className="bg-primary-foreground text-primary hover:bg-primary-foreground/90"
+                >
+                  <Calculator className="mr-2" size={16} />
+                  Calculate Impact
+                </Button>
+                <Button 
+                  onClick={resetCalculator}
+                  variant="outline" 
+                  className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10"
+                >
+                  Reset
+                </Button>
+              </div>
+
+              {carbonFootprint !== null && (
+                <div className="border-t border-primary-foreground/20 pt-6">
+                  <div className="flex items-center justify-center mb-4">
+                    <Leaf className="mr-2" size={24} />
+                    <h4 className="text-xl font-bold">Your Carbon Footprint</h4>
+                  </div>
+                  <div className="text-3xl font-bold mb-2">
+                    {carbonFootprint.toFixed(2)} kg CO₂
+                  </div>
+                  <p className="text-sm opacity-90">
+                    per month equivalent emissions
+                  </p>
+                  <div className="mt-4 p-4 bg-primary-foreground/10 rounded-lg">
+                    <p className="text-sm">
+                      <strong>Reduce your impact:</strong> Partner with ARET for sustainable waste management, 
+                      recycling programs, and environmental consulting to lower your carbon footprint.
+                    </p>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
