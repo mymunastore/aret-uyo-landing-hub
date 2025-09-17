@@ -74,7 +74,11 @@ const Footer = () => {
             <div className="space-y-3 text-sm">
               <div className="flex items-center gap-2 opacity-80">
                 <Phone size={14} />
-                <span>09152870618 / 09152870617</span>
+                <span>Front Desk/General Enquiry: 09152870616</span>
+              </div>
+              <div className="flex items-center gap-2 opacity-80">
+                <Phone size={14} />
+                <span>Operations: 09152870617</span>
               </div>
               <div className="flex items-center gap-2 opacity-80">
                 <Mail size={14} />
@@ -86,7 +90,11 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2 opacity-80 mt-3">
                 <Phone size={14} />
-                <span className="text-xs">Complaints Line: 08151324463 / 09152870617</span>
+                <span className="text-xs">Complaints & Incidents: 09152870618</span>
+              </div>
+              <div className="flex items-center gap-2 opacity-80">
+                <Mail size={14} />
+                <span className="text-xs">support@aret-environmental-ng.com</span>
               </div>
             </div>
           </div>

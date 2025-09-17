@@ -34,8 +34,22 @@ const Contact = () => {
                       <Phone className="w-5 h-5 text-primary-foreground" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-foreground mb-1">Phone</h4>
-                      <p className="text-muted-foreground">+234 806 615 8613</p>
+                      <h4 className="font-semibold text-foreground mb-1">Front Desk/General Enquiry</h4>
+                      <p className="text-muted-foreground">09152870616</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-0 bg-card hover:shadow-elegant transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="bg-gradient-primary p-3 rounded-xl">
+                      <Phone className="w-5 h-5 text-primary-foreground" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground mb-1">Operations</h4>
+                      <p className="text-muted-foreground">09152870617</p>
                     </div>
                   </div>
                 </CardContent>
@@ -49,8 +63,23 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-foreground mb-1">Email</h4>
-                      <p className="text-muted-foreground">info@aretenvironmental.ng</p>
+                      <p className="text-muted-foreground">info@aret-environmental-ng.com</p>
                       <p className="text-xs text-muted-foreground mt-1">We respond within 2 hours</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-0 bg-card hover:shadow-elegant transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="bg-gradient-primary p-3 rounded-xl">
+                      <Phone className="w-5 h-5 text-primary-foreground" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground mb-1">Complaints & Incidents</h4>
+                      <p className="text-muted-foreground">09152870618</p>
+                      <p className="text-xs text-muted-foreground mt-1">support@aret-environmental-ng.com</p>
                     </div>
                   </div>
                 </CardContent>
@@ -64,8 +93,8 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-foreground mb-1">Location</h4>
-                      <p className="text-muted-foreground">Uyo, Akwa Ibom State</p>
-                      <p className="text-muted-foreground">Nigeria</p>
+                      <p className="text-muted-foreground">No. 576 Oron Road, Uyo</p>
+                      <p className="text-muted-foreground">Akwa Ibom State, Nigeria</p>
                     </div>
                   </div>
                 </CardContent>
@@ -81,6 +110,7 @@ const Contact = () => {
                       <h4 className="font-semibold text-foreground mb-1">Working Hours</h4>
                       <p className="text-muted-foreground">Mon - Fri: 7:00 AM - 6:00 PM</p>
                       <p className="text-muted-foreground">Sat: 8:00 AM - 4:00 PM</p>
+                      <p className="text-xs text-muted-foreground mt-2 italic">"Call us to fix a date with your waste"</p>
                     </div>
                   </div>
                 </CardContent>
