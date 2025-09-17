@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Play, ArrowRight, Recycle, Trash2, Leaf } from "lucide-react";
-import heroImage from "@/assets/hero-waste-management.jpg";
+import heroImage from "@/assets/hero-waste-workers.png";
 
 const Hero = () => {
   return (
@@ -9,7 +9,7 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         <img 
           src={heroImage} 
-          alt="ARET Environmental Services - Professional Waste Management in Uyo"
+          alt="ARET Environmental Services workers in high-visibility vests loading waste bins into collection truck in Uyo"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-hero opacity-60"></div>
