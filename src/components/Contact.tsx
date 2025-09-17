@@ -35,6 +35,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-foreground mb-1">Front Desk/General Enquiry</h4>
+                      <p className="text-muted-foreground">07032224738</p>
                       <p className="text-muted-foreground">09152870616</p>
                     </div>
                   </div>

@@ -74,6 +74,10 @@ const Footer = () => {
             <div className="space-y-3 text-sm">
               <div className="flex items-center gap-2 opacity-80">
                 <Phone size={14} />
+                <span>Primary: 07032224738</span>
+              </div>
+              <div className="flex items-center gap-2 opacity-80">
+                <Phone size={14} />
                 <span>Front Desk/General Enquiry: 09152870616</span>
               </div>
               <div className="flex items-center gap-2 opacity-80">
