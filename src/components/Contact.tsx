@@ -72,7 +72,6 @@ const Contact = () => {
                     <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
                     <p>Saturday: 9:00 AM - 4:00 PM</p>
                     <p>Sunday: Emergency Service Only</p>
-                    <p className="text-sm text-primary mt-2">24/7 Emergency Support Available</p>
                   </div>
                 </div>
               </div>
