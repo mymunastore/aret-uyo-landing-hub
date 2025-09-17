@@ -10,7 +10,7 @@ const stats = [
   },
   {
     icon: Recycle,
-    number: "5M+",
+    number: "50+",
     label: "Tons Recycled",
     description: "Environmental impact through proper recycling",
   },
