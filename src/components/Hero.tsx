@@ -12,7 +12,7 @@ const Hero = () => {
           alt="ARET Environmental Services workers in high-visibility vests loading waste bins into collection truck in Uyo"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-hero opacity-60"></div>
+        <div className="absolute inset-0 bg-gradient-hero opacity-30"></div>
       </div>
 
       {/* Floating Shapes */}
