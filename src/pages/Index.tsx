@@ -22,6 +22,7 @@ import { LiveChat } from "@/components/LiveChat";
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [showTestimonials, setShowTestimonials] = useState(false);
 
   const handleLoadingComplete = () => {
     setIsLoading(false);
@@ -60,7 +61,10 @@ const Index = () => {
       <PerformanceOptimizer />
       <AccessibilityEnhancer />
       <ScrollProgress />
-      <Header />
+      <Header 
+        showTestimonials={showTestimonials}
+        onToggleTestimonials={setShowTestimonials}
+      />
       
       <main id="main-content">
         <Hero />
@@ -89,9 +93,11 @@ const Index = () => {
           <Policies />
         </AnimatedSection>
 
-        <AnimatedSection delay={100}>
-          <Testimonials />
-        </AnimatedSection>
+        {showTestimonials && (
+          <AnimatedSection delay={100}>
+            <Testimonials />
+          </AnimatedSection>
+        )}
         
         <AnimatedSection delay={200}>
           <FAQ />
