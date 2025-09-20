@@ -10,6 +10,9 @@ const GoogleRegistrationForm = () => {
           <UserPlus size={24} />
           Customer Information Form
         </CardTitle>
+        <p className="text-muted-foreground text-center mt-2">
+          Please fill out our form with your email address and contact details
+        </p>
       </CardHeader>
       
       <CardContent className="p-0">
