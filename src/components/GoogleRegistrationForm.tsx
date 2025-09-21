@@ -3,14 +3,15 @@ import { Button } from "@/components/ui/button";
 import { UserPlus, ExternalLink, RefreshCw } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import googleFormPreview from "@/assets/google-form-preview.png";
 
 const GoogleRegistrationForm = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
   const { toast } = useToast();
 
-  // Replace this URL with your actual Google Form embed URL
-  const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true";
+  // Google Form URL
+  const GOOGLE_FORM_URL = "https://forms.gle/m3yL5f68ksnn7h6Z6";
 
   const handleIframeLoad = () => {
     setIsLoading(false);
@@ -38,7 +39,11 @@ const GoogleRegistrationForm = () => {
   };
 
   const openInNewTab = () => {
-    window.open(GOOGLE_FORM_URL.replace('?embedded=true', ''), '_blank');
+    window.open(GOOGLE_FORM_URL, '_blank');
+  };
+
+  const handleImageClick = () => {
+    window.open(GOOGLE_FORM_URL, '_blank');
   };
 
   return (
@@ -80,56 +85,26 @@ const GoogleRegistrationForm = () => {
             </div>
           </div>
 
-          <div className="relative">
-            {isLoading && (
-              <div className="absolute inset-0 bg-background/80 backdrop-blur-sm flex items-center justify-center z-10 rounded-lg">
-                <div className="flex flex-col items-center gap-2">
-                  <RefreshCw className="animate-spin text-primary" size={24} />
-                  <p className="text-sm text-muted-foreground">Loading form...</p>
+          <div className="relative group">
+            <div 
+              onClick={handleImageClick}
+              className="cursor-pointer rounded-lg overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-elegant"
+            >
+              <img 
+                src={googleFormPreview} 
+                alt="ARET Environmental Services Client Information Form Preview"
+                className="w-full h-auto group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div className="bg-primary text-primary-foreground px-6 py-3 rounded-lg flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                  <ExternalLink size={20} />
+                  <span className="font-medium">Click to Fill Form</span>
                 </div>
               </div>
-            )}
-
-            {hasError ? (
-              <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-8 text-center">
-                <div className="flex flex-col items-center gap-4">
-                  <div className="text-destructive">
-                    <UserPlus size={48} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2">Form Unavailable</h3>
-                    <p className="text-muted-foreground mb-4">
-                      The form couldn't load. Please try refreshing or contact us directly.
-                    </p>
-                    <div className="flex gap-2 justify-center">
-                      <Button onClick={refreshForm} variant="outline">
-                        Try Again
-                      </Button>
-                      <Button onClick={openInNewTab}>
-                        Open in New Tab
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ) : (
-              <iframe
-                id="google-form"
-                src={GOOGLE_FORM_URL}
-                width="100%"
-                height="600"
-                frameBorder="0"
-                marginHeight={0}
-                marginWidth={0}
-                onLoad={handleIframeLoad}
-                onError={handleIframeError}
-                className="rounded-lg border border-border"
-                title="ARET Environmental Services Client Information Form"
-                sandbox="allow-scripts allow-forms allow-same-origin"
-              >
-                Loading form...
-              </iframe>
-            )}
+            </div>
+            <p className="text-center text-sm text-muted-foreground mt-3">
+              Click the form above to access and complete your client registration
+            </p>
           </div>
 
           <div className="text-center space-y-2">
