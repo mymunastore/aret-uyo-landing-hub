@@ -1,36 +1,154 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import { UserPlus } from "lucide-react";
-import googleFormImage from "@/assets/google-form-image.png";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 const GoogleRegistrationForm = () => {
+  const [formData, setFormData] = useState({
+    email: "",
+    clientName: "",
+    phoneNumber: "",
+    clientAddress: ""
+  });
+  const { toast } = useToast();
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Basic validation
+    if (!formData.email || !formData.clientName || !formData.phoneNumber || !formData.clientAddress) {
+      toast({
+        title: "Missing Information",
+        description: "Please fill in all required fields.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast({
+        title: "Invalid Email",
+        description: "Please enter a valid email address.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    // Success message
+    toast({
+      title: "Form Submitted Successfully",
+      description: "Thank you for providing your information. We will contact you soon.",
+    });
+
+    // Reset form
+    setFormData({
+      email: "",
+      clientName: "",
+      phoneNumber: "",
+      clientAddress: ""
+    });
+  };
+
   return (
     <Card className="w-full max-w-2xl mx-auto shadow-elegant hover-lift">
-      <CardHeader>
-        <CardTitle className="text-2xl text-gradient flex items-center gap-2">
+      <CardHeader className="bg-gradient-to-r from-primary to-primary/80 text-primary-foreground rounded-t-lg">
+        <CardTitle className="text-2xl flex items-center gap-2 text-white">
           <UserPlus size={24} />
-          Customer Information Form
+          CLIENT INFORMATION FORM (INDIVIDUAL)
         </CardTitle>
-        <p className="text-muted-foreground text-center mt-2">
-          Please fill out our form with your email address and contact details
+        <p className="text-primary-foreground/90 text-center mt-2">
+          ARET Environmental Services Client Information Form
         </p>
       </CardHeader>
       
-      <CardContent className="p-0">
-        <a 
-          href="https://forms.gle/m3yL5f68ksnn7h6Z6" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="block group"
-        >
-          <div className="relative overflow-hidden rounded-b-lg border-t border-border/50 hover:border-primary/50 transition-all duration-300 group-hover:shadow-lg">
-            <img 
-              src={googleFormImage} 
-              alt="Customer Information Form"
-              className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
+      <CardContent className="p-6 space-y-6">
+        <p className="text-sm text-destructive">* Indicates required question</p>
+        
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="space-y-2">
+            <Label htmlFor="email" className="text-base font-medium">
+              Email <span className="text-destructive">*</span>
+            </Label>
+            <Input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Your email"
+              value={formData.email}
+              onChange={handleInputChange}
+              className="w-full"
+              required
             />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300"></div>
           </div>
-        </a>
+
+          <div className="space-y-2">
+            <Label htmlFor="clientName" className="text-base font-medium">
+              Client's Name <span className="text-destructive">*</span>
+            </Label>
+            <Input
+              id="clientName"
+              name="clientName"
+              type="text"
+              placeholder="Your answer"
+              value={formData.clientName}
+              onChange={handleInputChange}
+              className="w-full"
+              required
+            />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="phoneNumber" className="text-base font-medium">
+              Phone Number <span className="text-destructive">*</span>
+            </Label>
+            <Input
+              id="phoneNumber"
+              name="phoneNumber"
+              type="tel"
+              placeholder="Your answer"
+              value={formData.phoneNumber}
+              onChange={handleInputChange}
+              className="w-full"
+              required
+            />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="clientAddress" className="text-base font-medium">
+              Client's Address <span className="text-destructive">*</span>
+            </Label>
+            <Textarea
+              id="clientAddress"
+              name="clientAddress"
+              placeholder="Your answer"
+              value={formData.clientAddress}
+              onChange={handleInputChange}
+              className="w-full min-h-[100px]"
+              required
+            />
+          </div>
+
+          <Button 
+            type="submit" 
+            className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+          >
+            Submit Form
+          </Button>
+        </form>
       </CardContent>
     </Card>
   );
