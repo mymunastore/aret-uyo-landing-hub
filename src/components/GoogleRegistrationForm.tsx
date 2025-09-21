@@ -1,66 +1,44 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { UserPlus } from "lucide-react";
+import { UserPlus, ExternalLink, RefreshCw } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 const GoogleRegistrationForm = () => {
-  const [formData, setFormData] = useState({
-    email: "",
-    clientName: "",
-    phoneNumber: "",
-    clientAddress: ""
-  });
+  const [isLoading, setIsLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
   const { toast } = useToast();
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+  // Replace this URL with your actual Google Form embed URL
+  const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true";
+
+  const handleIframeLoad = () => {
+    setIsLoading(false);
+    setHasError(false);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Basic validation
-    if (!formData.email || !formData.clientName || !formData.phoneNumber || !formData.clientAddress) {
-      toast({
-        title: "Missing Information",
-        description: "Please fill in all required fields.",
-        variant: "destructive"
-      });
-      return;
-    }
-
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      toast({
-        title: "Invalid Email",
-        description: "Please enter a valid email address.",
-        variant: "destructive"
-      });
-      return;
-    }
-
-    // Success message
+  const handleIframeError = () => {
+    setIsLoading(false);
+    setHasError(true);
     toast({
-      title: "Form Submitted Successfully",
-      description: "Thank you for providing your information. We will contact you soon.",
+      title: "Form Loading Error",
+      description: "Please try refreshing or contact us directly.",
+      variant: "destructive"
     });
+  };
 
-    // Reset form
-    setFormData({
-      email: "",
-      clientName: "",
-      phoneNumber: "",
-      clientAddress: ""
-    });
+  const refreshForm = () => {
+    setIsLoading(true);
+    setHasError(false);
+    // Force iframe reload by changing the src
+    const iframe = document.getElementById('google-form') as HTMLIFrameElement;
+    if (iframe) {
+      iframe.src = iframe.src;
+    }
+  };
+
+  const openInNewTab = () => {
+    window.open(GOOGLE_FORM_URL.replace('?embedded=true', ''), '_blank');
   };
 
   return (
@@ -75,80 +53,94 @@ const GoogleRegistrationForm = () => {
         </p>
       </CardHeader>
       
-      <CardContent className="p-6 space-y-6">
-        <p className="text-sm text-destructive">* Indicates required question</p>
-        
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="space-y-2">
-            <Label htmlFor="email" className="text-base font-medium">
-              Email <span className="text-destructive">*</span>
-            </Label>
-            <Input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="Your email"
-              value={formData.email}
-              onChange={handleInputChange}
-              className="w-full"
-              required
-            />
+      <CardContent className="p-6">
+        <div className="space-y-4">
+          <div className="flex items-center justify-between">
+            <p className="text-sm text-destructive">* Indicates required question</p>
+            <div className="flex gap-2">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={refreshForm}
+                disabled={isLoading}
+                className="flex items-center gap-1"
+              >
+                <RefreshCw size={14} className={isLoading ? "animate-spin" : ""} />
+                Refresh
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={openInNewTab}
+                className="flex items-center gap-1"
+              >
+                <ExternalLink size={14} />
+                Open in New Tab
+              </Button>
+            </div>
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="clientName" className="text-base font-medium">
-              Client's Name <span className="text-destructive">*</span>
-            </Label>
-            <Input
-              id="clientName"
-              name="clientName"
-              type="text"
-              placeholder="Your answer"
-              value={formData.clientName}
-              onChange={handleInputChange}
-              className="w-full"
-              required
-            />
+          <div className="relative">
+            {isLoading && (
+              <div className="absolute inset-0 bg-background/80 backdrop-blur-sm flex items-center justify-center z-10 rounded-lg">
+                <div className="flex flex-col items-center gap-2">
+                  <RefreshCw className="animate-spin text-primary" size={24} />
+                  <p className="text-sm text-muted-foreground">Loading form...</p>
+                </div>
+              </div>
+            )}
+
+            {hasError ? (
+              <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-8 text-center">
+                <div className="flex flex-col items-center gap-4">
+                  <div className="text-destructive">
+                    <UserPlus size={48} />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg mb-2">Form Unavailable</h3>
+                    <p className="text-muted-foreground mb-4">
+                      The form couldn't load. Please try refreshing or contact us directly.
+                    </p>
+                    <div className="flex gap-2 justify-center">
+                      <Button onClick={refreshForm} variant="outline">
+                        Try Again
+                      </Button>
+                      <Button onClick={openInNewTab}>
+                        Open in New Tab
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <iframe
+                id="google-form"
+                src={GOOGLE_FORM_URL}
+                width="100%"
+                height="600"
+                frameBorder="0"
+                marginHeight={0}
+                marginWidth={0}
+                onLoad={handleIframeLoad}
+                onError={handleIframeError}
+                className="rounded-lg border border-border"
+                title="ARET Environmental Services Client Information Form"
+                sandbox="allow-scripts allow-forms allow-same-origin"
+              >
+                Loading form...
+              </iframe>
+            )}
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="phoneNumber" className="text-base font-medium">
-              Phone Number <span className="text-destructive">*</span>
-            </Label>
-            <Input
-              id="phoneNumber"
-              name="phoneNumber"
-              type="tel"
-              placeholder="Your answer"
-              value={formData.phoneNumber}
-              onChange={handleInputChange}
-              className="w-full"
-              required
-            />
+          <div className="text-center space-y-2">
+            <p className="text-xs text-muted-foreground">
+              Form not loading? <Button variant="link" onClick={openInNewTab} className="h-auto p-0 text-xs">Click here to open in a new tab</Button>
+            </p>
+            <p className="text-xs text-muted-foreground">
+              Or contact us directly: <a href="tel:+234-XXX-XXX-XXXX" className="text-primary hover:underline">+234-XXX-XXX-XXXX</a> | <a href="mailto:info@aretenvironmental.com" className="text-primary hover:underline">info@aretenvironmental.com</a>
+            </p>
           </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="clientAddress" className="text-base font-medium">
-              Client's Address <span className="text-destructive">*</span>
-            </Label>
-            <Textarea
-              id="clientAddress"
-              name="clientAddress"
-              placeholder="Your answer"
-              value={formData.clientAddress}
-              onChange={handleInputChange}
-              className="w-full min-h-[100px]"
-              required
-            />
-          </div>
-
-          <Button 
-            type="submit" 
-            className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-          >
-            Submit Form
-          </Button>
-        </form>
+        </div>
       </CardContent>
     </Card>
   );
