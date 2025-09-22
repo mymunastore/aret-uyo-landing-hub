@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Truck, Building, Home, Factory, Recycle, Shield, Leaf, ShoppingCart, ArrowRight } from "lucide-react";
+import { Truck, Building, Home, Factory, Recycle, Shield, ShoppingCart, ArrowRight } from "lucide-react";
 import { useResponsive } from "@/hooks/useResponsive";
 import { useRealTimeAnimations } from "@/hooks/useRealTimeAnimations";
 import serviceResidential from "@/assets/service-residential.jpg";
@@ -13,39 +13,39 @@ import serviceWasteManagement from "@/assets/service-waste-management.jpg";
 const services = [
   {
     icon: Building,
-    title: "Waste Management",
-    description: "Comprehensive waste management solutions for residential, commercial, and industrial clients with sustainable practices.",
-    image: serviceWasteManagement,
-  },
-  {
-    icon: Truck,
-    title: "Waste Collection",
-    description: "Regular and reliable waste pickup services across Uyo and surrounding areas with scheduled routes.",
-    image: serviceResidential,
+    title: "Commercial Waste Management",
+    description: "Comprehensive waste solutions for offices, retail stores, restaurants, and other businesses with customized collection schedules.",
+    image: serviceCommercial,
   },
   {
     icon: Factory,
-    title: "Waste Disposal",
-    description: "Safe and environmentally compliant waste disposal following all regulatory standards and best practices.",
+    title: "Industrial Waste Services",
+    description: "Specialized waste handling for manufacturing, construction, and industrial facilities with regulatory compliance focus.",
     image: serviceIndustrial,
   },
   {
     icon: Recycle,
-    title: "Waste Recycling",
+    title: "Recycling & Processing",
     description: "Complete recycling programs to transform waste materials into valuable resources, supporting a circular economy.",
     image: serviceRecycling,
   },
   {
-    icon: Leaf,
-    title: "General Environmental Services",
-    description: "Comprehensive environmental solutions including consultation, monitoring, and specialized services for various sectors.",
+    icon: Truck,
+    title: "Skip Hire & Collection",
+    description: "Reliable skip hire services and scheduled waste collection across Uyo and surrounding areas with flexible pickup times.",
+    image: serviceSkipHire,
+  },
+  {
+    icon: Shield,
+    title: "Hazardous Waste Disposal",
+    description: "Safe handling and disposal of hazardous materials following strict environmental regulations and safety protocols.",
     image: serviceHazardous,
   },
   {
     icon: ShoppingCart,
-    title: "Equipment Sales",
-    description: "Quality waste management equipment including bins, containers, and other essential waste handling items for residential and commercial use.",
-    image: serviceCommercial,
+    title: "Equipment & Supplies",
+    description: "Quality waste management equipment including bins, containers, and essential waste handling items for all sectors.",
+    image: serviceWasteManagement,
   },
 ];
 

@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Recycle, RotateCcw, Minus, ArrowRight, Shield, Clock } from "lucide-react";
+import { Recycle, RotateCcw, Minus, ArrowRight, Users, Award, Building } from "lucide-react";
 import about3Rs from "@/assets/about-3rs.jpg";
 
 const principles = [
@@ -24,72 +24,80 @@ const principles = [
   },
 ];
 
+const coreValues = [
+  {
+    icon: Building,
+    title: "Integrity",
+    description: "Honesty and ethical conduct in all our business practices and client relationships."
+  },
+  {
+    icon: Users,
+    title: "Customer Satisfaction", 
+    description: "Exceeding client expectations through reliable service and personalized solutions."
+  },
+  {
+    icon: Award,
+    title: "Environmental Stewardship",
+    description: "Committed to cleanliness, care, and community well-being through sustainable practices."
+  }
+];
+
 const About = () => {
   return (
     <section id="about" className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Content Side - CEO Welcome Message */}
+          {/* Content Side - Company Overview */}
           <div>
             <div className="mb-6">
               <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Welcome Message <span className="text-primary">From The CEO</span>
+                About <span className="text-primary">ARET Environmental Services</span>
               </h2>
             </div>
             
             <div className="space-y-6 text-muted-foreground leading-relaxed">
               <p className="text-lg">
-                Dear valued customers and community members, As the CEO of our waste collection and disposal company, I am 
-                honoured to extend a warm welcome to you. Our organization is deeply committed to providing exceptional service 
-                while prioritizing the well-being of our community and the environment. We understand that effective waste 
-                management is crucial not only for maintaining cleanliness but also for fostering a sustainable future.
+                Welcome to ARET Environmental Services, your trusted partner in sustainable waste management 
+                solutions. We are deeply committed to providing exceptional service while prioritizing community 
+                well-being and environmental responsibility.
               </p>
 
               <div className="space-y-4">
-                <h3 className="text-xl font-bold text-foreground">Our Commitment to You:</h3>
-                <div className="space-y-3">
-                  <p>
-                    <strong className="text-foreground">Customer Satisfaction:</strong> We strive to deliver reliable, efficient, and 
-                    personalized waste management solutions tailored to your needs. Whether you are a residential, commercial, or 
-                    industrial client, we are dedicated to ensuring your satisfaction and peace of mind.
-                  </p>
-                  <p>
-                    <strong className="text-foreground">Community Engagement:</strong> We believe in being an active and responsible 
-                    member of our community. Through partnerships with local organizations and initiatives, we aim to contribute 
-                    positively to environmental conservation and social welfare.
-                  </p>
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <h3 className="text-xl font-bold text-foreground">Sustainability:</h3>
+                <h3 className="text-xl font-bold text-foreground">Our Mission:</h3>
                 <p>
-                  Our operations are guided by a strong sustainability framework. We aim to invest in innovative technologies and 
-                  practices that minimize waste, promote recycling, and reduce our environmental footprint. Our goal is to support 
-                  a circular economy where resources are valued and utilized responsibly.
+                  To deliver reliable, efficient, and personalized waste management solutions tailored to 
+                  residential, commercial, and industrial clients. We believe in being active and responsible 
+                  members of our community through partnerships and environmental conservation initiatives.
                 </p>
               </div>
 
               <div className="space-y-4">
-                <h3 className="text-xl font-bold text-foreground">Looking Forward:</h3>
+                <h3 className="text-xl font-bold text-foreground">Our Commitment:</h3>
                 <p>
-                  As we continue to grow and evolve, we remain steadfast in our commitment to you and our community. We are excited 
-                  about the opportunities ahead to enhance our services, expand our sustainability initiatives, and make a lasting impact.
-                </p>
-                <p>
-                  Thank you for choosing us as your waste management partner. We look forward to working together to create a cleaner, 
-                  greener future for everyone.
+                  Guided by a strong sustainability framework, we invest in innovative technologies and 
+                  practices that minimize waste, promote recycling, and reduce environmental footprint. 
+                  Our goal is to support a circular economy where resources are valued and utilized responsibly.
                 </p>
               </div>
 
               <div className="mt-8 p-4 bg-primary/5 rounded-lg border border-primary/20">
-                <p className="text-foreground font-medium">Warm regards,</p>
-                <p className="text-primary font-bold">CEO, ARET Environmental Services</p>
+                <p className="text-primary font-bold text-lg mb-2">Our Core Values:</p>
+                <div className="grid grid-cols-1 gap-4">
+                  {coreValues.map((value, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <value.icon className="text-primary mt-1 flex-shrink-0" size={20} />
+                      <div>
+                        <h4 className="font-semibold text-foreground">{value.title}:</h4>
+                        <p className="text-sm text-muted-foreground">{value.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
             <Button className="mt-8 bg-gradient-primary text-primary-foreground hover:shadow-glow transition-all duration-300 hover:scale-105">
-              Learn More About Our Mission
+              Learn More About Our Services
               <ArrowRight className="ml-2" size={16} />
             </Button>
           </div>

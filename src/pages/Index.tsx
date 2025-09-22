@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
+import CallToAction from "@/components/CallToAction";
 import Pricing from "@/components/Pricing";
 import About from "@/components/About";
 import WhyChooseUs from "@/components/WhyChooseUs";
@@ -79,6 +80,10 @@ const Index = () => {
         
         <AnimatedSection delay={100}>
           <WhyChooseUs />
+        </AnimatedSection>
+        
+        <AnimatedSection delay={200}>
+          <CallToAction />
         </AnimatedSection>
         
         <AnimatedSection delay={200}>
