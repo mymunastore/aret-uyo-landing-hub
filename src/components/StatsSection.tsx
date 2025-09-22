@@ -58,14 +58,56 @@ const StatsSection = () => {
         <div className="text-center mb-20">
           <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-6 py-3 mb-6">
             <TrendingUp className="text-primary" size={20} />
-            <span className="text-primary font-semibold text-sm">ENVIRONMENTAL IMPACT</span>
+            <span className="text-primary font-semibold text-sm">OUR ACHIEVEMENTS</span>
           </div>
           <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
-            Sustainable <span className="text-gradient">Leadership</span>
+            Measurable <span className="text-gradient">Impact</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Committed to environmental excellence and community sustainability through innovative waste management solutions
+            Leading the way in sustainable waste management with proven results that speak for themselves
           </p>
+        </div>
+
+        {/* Stats Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          {stats.map((stat, index) => (
+            <Card 
+              key={index} 
+              className="group relative bg-card border-0 shadow-elegant hover:shadow-glow transition-all duration-700 hover:scale-105 overflow-hidden"
+              style={{ animationDelay: stat.delay }}
+            >
+              {/* Gradient Background */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
+              
+              <CardContent className="p-8 text-center relative z-10">
+                {/* Icon with Animated Background */}
+                <div className="relative mb-6">
+                  <div className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} rounded-2xl blur-lg opacity-20 group-hover:opacity-40 transition-opacity duration-500`}></div>
+                  <div className={`relative bg-gradient-to-br ${stat.gradient} p-4 rounded-2xl w-20 h-20 mx-auto flex items-center justify-center shadow-lg`}>
+                    <stat.icon className="w-10 h-10 text-white" />
+                  </div>
+                </div>
+
+                {/* Number with Counter Effect */}
+                <div className="text-5xl font-black text-foreground mb-3 group-hover:scale-110 transition-transform duration-500">
+                  {stat.number}
+                </div>
+
+                {/* Label */}
+                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
+                  {stat.label}
+                </h3>
+
+                {/* Description */}
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {stat.description}
+                </p>
+
+                {/* Animated Border */}
+                <div className="absolute inset-0 rounded-xl border-2 border-transparent group-hover:border-primary/20 transition-colors duration-500"></div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
 
         {/* Achievement Badges */}

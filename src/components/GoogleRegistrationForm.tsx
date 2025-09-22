@@ -112,7 +112,7 @@ const GoogleRegistrationForm = () => {
               Form not loading? <Button variant="link" onClick={openInNewTab} className="h-auto p-0 text-xs">Click here to open in a new tab</Button>
             </p>
             <p className="text-xs text-muted-foreground">
-              Or contact us directly: <a href="tel:09152870617" className="text-primary hover:underline">0915 287 0617</a> | <a href="mailto:info@aret-environmental-ng.com" className="text-primary hover:underline">info@aret-environmental-ng.com</a>
+              Or contact us directly: <a href="tel:+234-XXX-XXX-XXXX" className="text-primary hover:underline">+234-XXX-XXX-XXXX</a> | <a href="mailto:info@aretenvironmental.com" className="text-primary hover:underline">info@aretenvironmental.com</a>
             </p>
           </div>
         </div>

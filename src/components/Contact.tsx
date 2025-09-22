@@ -30,8 +30,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground mb-2 text-lg">Phone</h4>
-                  <p className="text-foreground font-medium">0915 287 0617</p>
-                  <p className="text-foreground font-medium">0915 287 0616</p>
+                  <p className="text-foreground font-medium">07032224738</p>
+                  <p className="text-foreground font-medium">09152870616</p>
                 </div>
               </div>
 

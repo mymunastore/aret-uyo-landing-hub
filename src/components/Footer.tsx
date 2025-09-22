@@ -38,15 +38,15 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Services - Consolidated */}
+          {/* Services */}
           <div>
             <h4 className="font-semibold text-lg mb-4">Our Services</h4>
             <ul className="space-y-2 text-sm opacity-80">
-              <li className="hover:opacity-100 cursor-pointer transition-opacity">Commercial Waste Management</li>
-              <li className="hover:opacity-100 cursor-pointer transition-opacity">Industrial Waste Services</li>
-              <li className="hover:opacity-100 cursor-pointer transition-opacity">Recycling & Processing</li>
-              <li className="hover:opacity-100 cursor-pointer transition-opacity">Skip Hire & Collection</li>
-              <li className="hover:opacity-100 cursor-pointer transition-opacity">Equipment & Supplies</li>
+              <li className="hover:opacity-100 cursor-pointer transition-opacity">Waste Collection</li>
+              <li className="hover:opacity-100 cursor-pointer transition-opacity">Waste Management</li>
+              <li className="hover:opacity-100 cursor-pointer transition-opacity">Waste Disposal</li>
+              <li className="hover:opacity-100 cursor-pointer transition-opacity">Recycling Programs</li>
+              <li className="hover:opacity-100 cursor-pointer transition-opacity">General Environmental Services</li>
             </ul>
           </div>
 
@@ -63,17 +63,21 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info - Standardized */}
+          {/* Contact Info */}
           <div>
             <h4 className="font-semibold text-lg mb-4">Contact Info</h4>
             <div className="space-y-3 text-sm">
               <div className="flex items-center gap-2 opacity-80">
                 <Phone size={14} />
-                <span>Primary: 0915 287 0617</span>
+                <span>Primary: 07032224738</span>
               </div>
               <div className="flex items-center gap-2 opacity-80">
                 <Phone size={14} />
-                <span>Secondary: 0915 287 0616</span>
+                <span>Front Desk/General Enquiry: 09152870616</span>
+              </div>
+              <div className="flex items-center gap-2 opacity-80">
+                <Phone size={14} />
+                <span>Operations: 09152870617</span>
               </div>
               <div className="flex items-center gap-2 opacity-80">
                 <Mail size={14} />
@@ -83,9 +87,13 @@ const Footer = () => {
                 <MapPin size={14} className="mt-0.5" />
                 <span>No. 576 Oron Road, Uyo<br />Akwa Ibom State, Nigeria</span>
               </div>
-              <div className="flex items-center gap-2 opacity-80 mt-3 pt-2 border-t border-primary-foreground/10">
+              <div className="flex items-center gap-2 opacity-80 mt-3">
+                <Phone size={14} />
+                <span className="text-xs">Complaints & Incidents: 09152870618</span>
+              </div>
+              <div className="flex items-center gap-2 opacity-80">
                 <Mail size={14} />
-                <span className="text-xs">Support: support@aret-environmental-ng.com</span>
+                <span className="text-xs">support@aret-environmental-ng.com</span>
               </div>
             </div>
           </div>
