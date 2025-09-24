@@ -14,15 +14,8 @@ const Hero = () => {
   });
 
   const scrollToServices = () => {
-    const element = document.querySelector('#services');
-    if (element) {
-      const headerHeight = 120;
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-      window.scrollTo({
-        top: elementPosition - headerHeight,
-        behavior: 'smooth'
-      });
-    }
+    // Navigate to services page
+    window.location.href = '/services';
   };
 
   const scrollToContact = () => {

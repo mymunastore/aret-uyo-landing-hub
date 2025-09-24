@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Services from "@/components/Services";
 import Pricing from "@/components/Pricing";
 import About from "@/components/About";
 import WhyChooseUs from "@/components/WhyChooseUs";
@@ -11,6 +10,7 @@ import Policies from "@/components/Policies";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import MottoSection from "@/components/MottoSection";
 import LoadingScreen from "@/components/LoadingScreen";
 import ScrollProgress from "@/components/ScrollProgress";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -22,7 +22,6 @@ import { LiveChat } from "@/components/LiveChat";
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [showTestimonials, setShowTestimonials] = useState(false);
 
   const handleLoadingComplete = () => {
     setIsLoading(false);
@@ -61,20 +60,17 @@ const Index = () => {
       <PerformanceOptimizer />
       <AccessibilityEnhancer />
       <ScrollProgress />
-      <Header 
-        showTestimonials={showTestimonials}
-        onToggleTestimonials={setShowTestimonials}
-      />
+      <Header />
       
       <main id="main-content">
         <Hero />
         
         <AnimatedSection delay={100}>
-          <About />
+          <MottoSection />
         </AnimatedSection>
         
-        <AnimatedSection delay={200}>
-          <Services />
+        <AnimatedSection delay={100}>
+          <About />
         </AnimatedSection>
         
         <AnimatedSection delay={100}>
@@ -84,20 +80,10 @@ const Index = () => {
         <AnimatedSection delay={200}>
           <StatsSection />
         </AnimatedSection>
-        
-        <AnimatedSection delay={100}>
-          <Pricing />
-        </AnimatedSection>
-        
-        <AnimatedSection delay={200}>
-          <Policies />
-        </AnimatedSection>
 
-        {showTestimonials && (
-          <AnimatedSection delay={100}>
-            <Testimonials />
-          </AnimatedSection>
-        )}
+        <AnimatedSection delay={100}>
+          <Testimonials />
+        </AnimatedSection>
         
         <AnimatedSection delay={200}>
           <FAQ />

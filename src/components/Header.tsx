@@ -1,18 +1,11 @@
 import { useState, useRef, useEffect } from "react";
-import { Menu, X, Phone, Mail, MapPin, MessageCircle } from "lucide-react";
+import { Menu, X, Phone, Mail, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Switch } from "@/components/ui/switch";
-import { Label } from "@/components/ui/label";
 import ThemeToggle from "@/components/ThemeToggle";
 import { useResponsive } from "@/hooks/useResponsive";
 import aretLogo from "@/assets/aret-logo.png";
 
-interface HeaderProps {
-  showTestimonials: boolean;
-  onToggleTestimonials: (show: boolean) => void;
-}
-
-const Header = ({ showTestimonials, onToggleTestimonials }: HeaderProps) => {
+const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { isMobile, isTablet } = useResponsive();
@@ -20,8 +13,7 @@ const Header = ({ showTestimonials, onToggleTestimonials }: HeaderProps) => {
 
   const navItems = [
     { href: "#home", label: "Home" },
-    { href: "#services", label: "Services" },
-    { href: "#pricing", label: "Pricing" },
+    { href: "/services", label: "Services" },
     { href: "#about", label: "About" },
     { href: "#contact", label: "Contact" }
   ];
@@ -75,11 +67,11 @@ const Header = ({ showTestimonials, onToggleTestimonials }: HeaderProps) => {
         <div className="container mx-auto flex flex-wrap items-center justify-between text-xs sm:text-sm">
           <div className="flex items-center gap-2 sm:gap-4">
             <a 
-              href="tel:09152870616" 
+              href="tel:07032224738" 
               className="flex items-center gap-1 hover:text-accent transition-colors real-time-hover"
             >
               <Phone size={isMobile ? 12 : 14} />
-              <span className="hidden xs:inline">09152870616</span>
+              <span className="hidden xs:inline">07032224738</span>
             </a>
             <a 
               href="mailto:info@aret-environmental-ng.com" 
@@ -149,20 +141,6 @@ const Header = ({ showTestimonials, onToggleTestimonials }: HeaderProps) => {
 
             {/* Action Buttons */}
             <div className="flex items-center space-x-2 sm:space-x-4">
-              {/* Testimonials Toggle - Desktop Only */}
-              {!isMobile && (
-                <div className="hidden lg:flex items-center space-x-2 px-3 py-2 rounded-lg bg-muted/20">
-                  <MessageCircle size={16} className="text-muted-foreground" />
-                  <Label htmlFor="testimonials-toggle" className="text-sm font-medium cursor-pointer">
-                    Reviews
-                  </Label>
-                  <Switch
-                    id="testimonials-toggle"
-                    checked={showTestimonials}
-                    onCheckedChange={onToggleTestimonials}
-                  />
-                </div>
-              )}
               <ThemeToggle />
               {!isMobile && (
                 <Button 
@@ -219,20 +197,6 @@ const Header = ({ showTestimonials, onToggleTestimonials }: HeaderProps) => {
                   </button>
                 ))}
                 <div className="pt-4 border-t border-border/20 space-y-3">
-                  {/* Mobile Testimonials Toggle */}
-                  <div className="flex items-center justify-between px-2">
-                    <div className="flex items-center space-x-2">
-                      <MessageCircle size={16} className="text-muted-foreground" />
-                      <Label htmlFor="mobile-testimonials-toggle" className="text-sm font-medium">
-                        Show Customer Reviews
-                      </Label>
-                    </div>
-                    <Switch
-                      id="mobile-testimonials-toggle"
-                      checked={showTestimonials}
-                      onCheckedChange={onToggleTestimonials}
-                    />
-                  </div>
                   <Button 
                     size="sm" 
                     onClick={() => handleNavClick('#contact')}
