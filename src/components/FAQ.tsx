@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronDown, ChevronUp, Eye, EyeOff, HelpCircle } from "lucide-react";
+import { ChevronDown, ChevronUp, Eye, EyeOff, CircleHelp as HelpCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface FAQItem {

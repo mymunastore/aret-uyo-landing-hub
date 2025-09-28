@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Truck, Building, Home, Factory, Recycle, Shield, Leaf, ShoppingCart, ArrowRight, ArrowLeft } from "lucide-react";
+import { Truck, Building, Chrome as Home, Factory, Recycle, Shield, Leaf, ShoppingCart, ArrowRight, ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useResponsive } from "@/hooks/useResponsive";
 import { useRealTimeAnimations } from "@/hooks/useRealTimeAnimations";
