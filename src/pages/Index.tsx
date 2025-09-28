@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import Pricing from "@/components/Pricing";
 import About from "@/components/About";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import StatsSection from "@/components/StatsSection";
@@ -18,6 +16,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 import PerformanceOptimizer from "@/components/PerformanceOptimizer";
 import AccessibilityEnhancer from "@/components/AccessibilityEnhancer";
 import SEOHead from "@/components/SEOHead";
+import MottoSection from "@/components/MottoSection";
 import { LiveChat } from "@/components/LiveChat";
 
 const Index = () => {
@@ -70,11 +69,11 @@ const Index = () => {
         <Hero />
         
         <AnimatedSection delay={100}>
-          <About />
+          <MottoSection />
         </AnimatedSection>
         
         <AnimatedSection delay={200}>
-          <Services />
+          <About />
         </AnimatedSection>
         
         <AnimatedSection delay={100}>
@@ -86,20 +85,16 @@ const Index = () => {
         </AnimatedSection>
         
         <AnimatedSection delay={100}>
-          <Pricing />
-        </AnimatedSection>
-        
-        <AnimatedSection delay={200}>
           <Policies />
         </AnimatedSection>
 
         {showTestimonials && (
-          <AnimatedSection delay={100}>
+          <AnimatedSection delay={200}>
             <Testimonials />
           </AnimatedSection>
         )}
         
-        <AnimatedSection delay={200}>
+        <AnimatedSection delay={100}>
           <FAQ />
         </AnimatedSection>
         

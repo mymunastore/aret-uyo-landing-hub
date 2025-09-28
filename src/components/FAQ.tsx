@@ -10,131 +10,60 @@ interface FAQItem {
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const [showFAQ, setShowFAQ] = useState(false); // FAQ is hidden by default
+  const [showFAQ, setShowFAQ] = useState(true); // FAQ is shown by default for streamlined experience
 
   const faqData: FAQItem[] = [
-    // General Information
+    // Service Information
     {
-      category: "General Information",
-      question: "What does ARET Environmental Services do?",
-      answer: "ARET Environmental Services provides comprehensive waste collection, disposal, and recycling solutions for households, commercial establishments, and institutions. We also offer specialized services for general waste, construction debris, and event-specific waste management, all while prioritizing sustainability and environmental responsibility."
+      category: "Service Information",
+      question: "What services does ARET Environmental Services provide?",
+      answer: "We provide comprehensive waste collection, disposal, and recycling solutions for residential, commercial, and industrial clients. Our services include weekly waste collection, recyclable materials processing, and environmental consulting - all focused on sustainability and community care."
     },
     {
-      category: "General Information", 
-      question: "Where is ARET Environmental Services located?",
-      answer: "Our office is at No. 576 Oron Road, Uyo, Akwa Ibom State, Nigeria."
+      category: "Service Information",
+      question: "What are your pickup schedules?",
+      answer: "Our main pickup schedule is Saturdays from 10:00 AM to 2:30 PM. We offer Subscription Plans (weekly collection), Premium Plans (weekly and biweekly options), and Enterprise Plans (daily pickup services). Clients are mapped to zones with designated pickup days."
     },
     {
-      category: "General Information",
-      question: "What are ARET's core values?",
-      answer: "We operate on three core values: Integrity (honesty and ethical conduct), Customer Satisfaction (exceeding client expectations), and Cleanliness & Care (environmental stewardship and community well-being)."
+      category: "Service Information",
+      question: "How do you collect waste?",
+      answer: "We use the bagged method for waste collection. We also provide garbage bags to our clients to help them manage their waste more effectively, demonstrating our commitment to comprehensive service."
     },
     
-    // Service Offerings
+    // Pricing & Plans
     {
-      category: "Service Offerings",
-      question: "What types of waste do you collect?",
-      answer: "We collect general, recyclable, hazardous, and construction waste from residential, commercial, and institutional clients."
+      category: "Pricing & Plans",
+      question: "What subscription plans do you offer?",
+      answer: "We offer three main plans: Subscription Plan (weekly general waste collection), Premium Plan (weekly and biweekly options with segregated collection), and Enterprise Plan (daily pickup services with comprehensive waste management solutions). All plans include Saturday service from 10 AM to 2:30 PM."
     },
     {
-      category: "Service Offerings",
-      question: "Do you offer recycling services?",
-      answer: "Yes, we actively promote recycling by efficiently segregating and processing recyclable materials, which supports a circular economy and reduces our reliance on landfills."
-    },
-    {
-      category: "Service Offerings",
-      question: "Can you customize services for large businesses?",
-      answer: "Absolutely. We develop tailored waste management plans for corporate clients, assign dedicated account managers, and conduct regular service reviews to ensure your needs are met."
-    },
-    {
-      category: "Service Offerings",
-      question: "How is the waste collected?",
-      answer: "By the bagged method."
-    },
-    {
-      category: "Service Offerings",
-      question: "What days are scheduled for pickup?",
-      answer: "Clients are mapped out to zones, and each zone has a designated day."
-    },
-
-    // Client Portal & Account Management
-    {
-      category: "Client Portal & Account Management",
-      question: "What is the Zoho Client Profile Portal?",
-      answer: "This secure online portal provides clients with 24/7 access to update their contact information, view contracts and invoices, access reports, and communicate directly with our team in one convenient location."
-    },
-    {
-      category: "Client Portal & Account Management",
-      question: "How do I access the portal?",
-      answer: "Clients receive access after providing a valid email address. If you haven't received your portal instructions, please get in touch with us to set up your profile."
-    },
-    {
-      category: "Client Portal & Account Management",
-      question: "What if my contact details change?",
-      answer: "You can update your information directly through the portal or by contacting our office. Keeping your details current ensures you don't miss critical updates."
-    },
-
-    // Billing & Payments
-    {
-      category: "Billing & Payments",
-      question: "How and when will I receive my invoices?",
-      answer: "Invoices are accessible through the Zoho Client Profile Portal. You can view and download them at any time."
-    },
-    {
-      category: "Billing & Payments",
-      question: "What should I do if there's a billing error?",
-      answer: "Contact our Client Relations Officer (CRO) immediately. Minor billing issues (Level 1 complaints) are typically resolved within one business day."
-    },
-
-    // Complaints & Feedback
-    {
-      category: "Complaints & Feedback",
-      question: "How do I make a complaint?",
-      answer: "You can submit complaints via phone, email, WhatsApp, written letter, or through the client portal. A dedicated complaints resolution line is also available: 08151324463 / 09152870617."
-    },
-    {
-      category: "Complaints & Feedback",
-      question: "How are complaints handled?",
-      answer: "All complaints are logged and categorized (Level 1–4). The CRO acknowledges your complaint within 2 hours, assesses the issue, and assigns it to the appropriate team. Resolution timelines depend on the severity, ranging from one day (for minor issues) to a week (for significant/strategic issues)."
-    },
-    {
-      category: "Complaints & Feedback",
-      question: "Will I be updated on the progress of my complaints?",
-      answer: "Yes, you'll receive an acknowledgment with a unique Complaint ID and regular updates until the issue is resolved."
-    },
-    {
-      category: "Complaints & Feedback",
-      question: "Can I provide general feedback?",
-      answer: "Absolutely. We welcome all feedback, positive or constructive—through the portal, email, phone, or in person. Your input helps us improve our services."
-    },
-
-    // Health, Safety & Compliance
-    {
-      category: "Health, Safety & Compliance",
-      question: "What safety measures do you have in place?",
-      answer: "We enforce strict safety protocols, provide regular training, and maintain emergency response plans. All employees are equipped with safety gear, and incidents are promptly reported and reviewed."
-    },
-    {
-      category: "Health, Safety & Compliance",
-      question: "How do you handle incidents or accidents?",
-      answer: "Any incident (injury, property damage, environmental hazard, equipment failure, etc.) must be reported using our Incident Report Form within 24 hours. Immediate corrective actions are taken, and root causes are analyzed to prevent recurrence."
-    },
-    {
-      category: "Health, Safety & Compliance",
-      question: "Are you compliant with environmental regulations?",
-      answer: "Yes, we adhere to all local, state, and federal regulations. Compliance is monitored monthly, and any concerns are addressed immediately."
+      category: "Pricing & Plans",
+      question: "How do I choose the right plan for my needs?",
+      answer: "Contact our team at 070-3222-4738 for a free consultation. We'll assess your waste generation patterns and recommend the most suitable plan - whether you're residential, commercial, or industrial."
     },
 
     // Contact & Support
     {
       category: "Contact & Support",
       question: "How can I reach ARET Environmental Services?",
-      answer: "Call us at 0915 287 0617 or 0915 287 0618, 09152870616. email info@aret-environmental-ng.com, use WhatsApp, or visit our office."
+      answer: "Primary contact: 070-3222-4738. General enquiry: 0915-287-0616. Operations: 0915-287-0617. Email: info@aret-environmental-ng.com. Visit us at No. 576 Oron Road, Uyo, Akwa Ibom State, Nigeria."
     },
     {
       category: "Contact & Support",
-      question: "Who is my main point of contact?",
-      answer: "For most issues, your first point of contact is the Client Relations Officer. For complex or recurring problems, issues are escalated to the General Manager, COO, or CEO as needed."
+      question: "What are your business hours?",
+      answer: "Monday - Friday: 8:00 AM - 6:00 PM. Pickup Schedule: Saturdays 10:00 AM - 2:30 PM. Sunday: Emergency Service Only. We're committed to being available when you need us most."
+    },
+
+    // Environmental Commitment
+    {
+      category: "Environmental Commitment",
+      question: "How does ARET support environmental sustainability?",
+      answer: "We practice the 3Rs: Reduce, Reuse, Recycle. We segregate waste, process recyclable materials, support a circular economy, and provide community education on sustainable practices. Our motto is 'Partnering for Sustainable Solutions.'"
+    },
+    {
+      category: "Environmental Commitment",
+      question: "What makes ARET different from other waste management companies?",
+      answer: "Like a nurturing mother cares for her family, ARET cares for the community. We combine reliable service with environmental stewardship, provide garbage bags to clients, maintain 98% customer satisfaction, and focus on measurable community impact."
     }
   ];
 
@@ -152,32 +81,12 @@ const FAQ = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-            Find answers to common questions about our waste management services and processes.
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Find answers to common questions about our waste management services and community commitment.
           </p>
-          
-          {/* Toggle Button */}
-          <Button
-            onClick={() => setShowFAQ(!showFAQ)}
-            variant={showFAQ ? "default" : "outline"}
-            size="lg"
-            className="group transition-all duration-300 hover:scale-105"
-          >
-            {showFAQ ? (
-              <>
-                <EyeOff className="mr-2 h-5 w-5" />
-                Hide FAQ Section
-              </>
-            ) : (
-              <>
-                <Eye className="mr-2 h-5 w-5" />
-                Show FAQ Section
-              </>
-            )}
-          </Button>
         </div>
 
-        {/* FAQ Content - Conditionally Rendered */}
+        {/* FAQ Content */}
         {showFAQ && (
           <div className="max-w-4xl mx-auto animate-fade-in">
             {categories.map((category, categoryIndex) => (
@@ -232,10 +141,10 @@ const FAQ = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
-                  href="tel:09152870617" 
+                  href="tel:07032224738" 
                   className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
                 >
-                  Call Us: 0915 287 0617
+                  Call Us: 070-3222-4738
                 </a>
                 <a 
                   href="mailto:info@aret-environmental-ng.com" 
@@ -261,10 +170,10 @@ const FAQ = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
-                  href="tel:09152870617" 
+                  href="tel:07032224738" 
                   className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
                 >
-                  Call Us: 0915 287 0617
+                  Call Us: 070-3222-4738
                 </a>
                 <a 
                   href="mailto:info@aret-environmental-ng.com" 
