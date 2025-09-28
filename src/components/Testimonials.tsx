@@ -1,32 +1,32 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Quote } from "lucide-react";
-import clientEmeka from "@/assets/client-emeka.jpg";
-import clientGrace from "@/assets/client-grace.jpg";
-import clientMichael from "@/assets/client-michael.jpg";
+import clientEmeka from "@/assets/client-emeka.jpg"; // Will represent Mr. George Abiam
+import clientGrace from "@/assets/client-grace.jpg"; // Will represent Mr. Enyeokpon Inyang
+import clientMichael from "@/assets/client-michael.jpg"; // Will represent Bassey Emenyi
 
 const testimonials = [
   {
-    name: "Chief Emeka Okafor",
-    role: "Business Owner",
-    location: "Uyo Central",
+    name: "Mr. George Abiam",
+    role: "Residential Client",
+    location: "Uyo",
     rating: 5,
-    text: "ARET Environmental Services has transformed how we handle waste in our commercial complex. Their professionalism and reliability are unmatched in Akwa Ibom State.",
+    text: "I commend ARET Environmental Services for their excellent waste collection services and the quality garbage bags they provide. Their commitment to keeping our community clean is truly appreciated.",
     image: clientEmeka
   },
   {
-    name: "Mrs. Grace Udoh", 
+    name: "Mr. Enyeokpon Inyang", 
     role: "Residential Client",
-    location: "Ewet Housing Estate",
+    location: "Uyo",
     rating: 5,
-    text: "Finally, a waste management company that keeps their promises! Regular pickups, fair pricing, and excellent customer service. Highly recommend ARET.",
+    text: "I am very satisfied with ARET's timely and professional service. They consistently deliver on their promises and maintain the highest standards of professionalism in waste management.",
     image: clientGrace
   },
   {
-    name: "Engr. Michael Bassey",
-    role: "Factory Manager", 
-    location: "Uyo Industrial Layout",
+    name: "Bassey Emenyi",
+    role: "Commercial Client", 
+    location: "Uyo",
     rating: 5,
-    text: "ARET handles our industrial waste with such expertise and care for environmental compliance. Their team is knowledgeable and always professional.",
+    text: "ARET Environmental Services provides swift and efficient waste collection services. Their team is reliable, and I appreciate their quick response to our waste management needs.",
     image: clientMichael
   }
 ];

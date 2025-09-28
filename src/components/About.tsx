@@ -1,25 +1,25 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Recycle, RotateCcw, Minus, ArrowRight, Shield, Clock } from "lucide-react";
+import { Recycle, RotateCcw, Minus, ArrowRight, Shield, Clock, Heart, Users, Leaf } from "lucide-react";
 import about3Rs from "@/assets/about-3rs.jpg";
 
 const principles = [
   {
-    icon: Recycle,
-    title: "Recycle",
-    description: "Converting waste materials into reusable products to prevent environmental harm.",
+    icon: Heart,
+    title: "ARET Cares",
+    description: "Like a nurturing mother, ARET Environmental Services cares for our community and environment with dedication and love.",
     color: "text-primary",
   },
   {
-    icon: Minus,
-    title: "Reduce",
-    description: "Minimizing waste generation through efficient practices and conscious consumption.",
+    icon: Users,
+    title: "Community Education",
+    description: "We educate and empower our community to make environmentally conscious decisions for a sustainable future.",
     color: "text-accent",
   },
   {
-    icon: RotateCcw,
-    title: "Reuse",
-    description: "Finding new purposes for materials before considering disposal options.",
+    icon: Leaf,
+    title: "Environmental Stewardship",
+    description: "Our commitment to protecting and preserving the environment guides every aspect of our operations.",
     color: "text-primary-glow",
   },
 ];
@@ -94,29 +94,29 @@ const About = () => {
             </Button>
           </div>
 
-          {/* Visual Section with 3Rs Cards */}
+          {/* Visual Section with ARET Cares Cards */}
           <div className="space-y-6">
             {/* Hero Image */}
             <div className="relative rounded-2xl overflow-hidden mb-8">
-                <img 
-                  src={about3Rs} 
-                  alt="3Rs Approach - Reduce, Reuse, Recycle"
-                  className="w-full h-64 object-cover"
-                  loading="lazy"
-                  decoding="async"
-                />
+              <img 
+                src={about3Rs} 
+                alt="ARET Environmental Services - Caring for Community and Environment"
+                className="w-full h-64 object-cover"
+                loading="lazy"
+                decoding="async"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
               <div className="absolute bottom-4 left-4">
                 <h3 className="text-2xl font-bold text-primary-foreground">
-                  Sustainable Solutions
+                  ARET Cares
                 </h3>
                 <p className="text-primary-foreground/90 text-sm">
-                  Environmental responsibility at its core
+                  Nurturing our community like a caring mother
                 </p>
               </div>
             </div>
 
-            {/* 3Rs Cards */}
+            {/* ARET Cares Cards */}
             {principles.map((principle, index) => (
               <Card key={index} className="group hover:shadow-elegant transition-all duration-300 border-0 bg-card">
                 <CardContent className="p-6">

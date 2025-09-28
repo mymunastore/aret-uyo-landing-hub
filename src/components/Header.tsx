@@ -20,8 +20,8 @@ const Header = ({ showTestimonials, onToggleTestimonials }: HeaderProps) => {
 
   const navItems = [
     { href: "#home", label: "Home" },
-    { href: "#services", label: "Services" },
-    { href: "#pricing", label: "Pricing" },
+    { href: "/services", label: "Services" },
+    { href: "/pricing", label: "Pricing" },
     { href: "#about", label: "About" },
     { href: "#contact", label: "Contact" }
   ];
@@ -54,15 +54,21 @@ const Header = ({ showTestimonials, onToggleTestimonials }: HeaderProps) => {
 
   const handleNavClick = (href: string) => {
     setIsMenuOpen(false);
-    // Smooth scroll with offset for fixed header
-    const element = document.querySelector(href);
-    if (element) {
-      const headerHeight = 120; // Account for both bars
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-      window.scrollTo({
-        top: elementPosition - headerHeight,
-        behavior: 'smooth'
-      });
+    
+    if (href.startsWith('/')) {
+      // Navigate to different page
+      window.location.href = href;
+    } else {
+      // Smooth scroll with offset for fixed header
+      const element = document.querySelector(href);
+      if (element) {
+        const headerHeight = 120; // Account for both bars
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({
+          top: elementPosition - headerHeight,
+          behavior: 'smooth'
+        });
+      }
     }
   };
 
@@ -75,11 +81,11 @@ const Header = ({ showTestimonials, onToggleTestimonials }: HeaderProps) => {
         <div className="container mx-auto flex flex-wrap items-center justify-between text-xs sm:text-sm">
           <div className="flex items-center gap-2 sm:gap-4">
             <a 
-              href="tel:09152870616" 
+              href="tel:07032224738" 
               className="flex items-center gap-1 hover:text-accent transition-colors real-time-hover"
             >
               <Phone size={isMobile ? 12 : 14} />
-              <span className="hidden xs:inline">09152870616</span>
+              <span className="hidden xs:inline">07032224738</span>
             </a>
             <a 
               href="mailto:info@aret-environmental-ng.com" 
