@@ -28,7 +28,7 @@ const CallToAction = () => {
               className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-4 text-lg font-semibold hover:shadow-glow transition-all duration-300 hover:scale-105"
             >
               <Phone className="mr-2" size={20} />
-              Call Now: 0915 287 0617
+              Call Now: +234 806 615 8613
             </Button>
             <Button 
               size="lg" 
