@@ -67,10 +67,10 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-lg mb-4">Contact Info</h4>
             <div className="space-y-3 text-sm">
-               <div className="flex items-center gap-2 opacity-80">
-                 <Phone size={14} />
-                 <span>Primary: 07032224738</span>
-               </div>
+              <div className="flex items-center gap-2 opacity-80">
+                <Phone size={14} />
+                <span>Primary: 07032224738</span>
+              </div>
               <div className="flex items-center gap-2 opacity-80">
                 <Phone size={14} />
                 <span>Front Desk/General Enquiry: 09152870616</span>
@@ -100,13 +100,13 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-         <div className="border-t border-primary-foreground/20 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center text-sm opacity-80">
-           <p>© 2025 ARET Environmental Services. All rights reserved.</p>
-           <div className="flex gap-4 mt-4 md:mt-0">
-             <a href="#policies" className="hover:opacity-100 cursor-pointer transition-opacity font-semibold text-accent">Privacy Policy</a>
-             <a href="#policies" className="hover:opacity-100 cursor-pointer transition-opacity">Terms of Service</a>
-           </div>
-         </div>
+        <div className="border-t border-primary-foreground/20 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center text-sm opacity-80">
+          <p>© 2025 ARET Environmental Services. All rights reserved.</p>
+          <div className="flex gap-4 mt-4 md:mt-0">
+            <a href="#policies" className="hover:opacity-100 cursor-pointer transition-opacity">Privacy Policy</a>
+            <a href="#policies" className="hover:opacity-100 cursor-pointer transition-opacity">Terms of Service</a>
+          </div>
+        </div>
       </div>
     </footer>
   );

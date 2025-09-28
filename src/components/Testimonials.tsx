@@ -6,27 +6,27 @@ import clientMichael from "@/assets/client-michael.jpg";
 
 const testimonials = [
   {
-    name: "Mr. George Abiam",
-    role: "Residential Client",
+    name: "Chief Emeka Okafor",
+    role: "Business Owner",
     location: "Uyo Central",
     rating: 5,
-    text: "ARET's service is exceptional! They not only collect our waste regularly but also provide garbage bags to help us manage our waste better. Their team is always professional and courteous.",
+    text: "ARET Environmental Services has transformed how we handle waste in our commercial complex. Their professionalism and reliability are unmatched in Akwa Ibom State.",
     image: clientEmeka
   },
   {
-    name: "Mr. Enyeokpon Inyang", 
-    role: "Commercial Client",
+    name: "Mrs. Grace Udoh", 
+    role: "Residential Client",
     location: "Ewet Housing Estate",
     rating: 5,
-    text: "I am completely satisfied with ARET's timely and professional service. They arrive exactly when scheduled and handle everything efficiently. Highly recommended!",
+    text: "Finally, a waste management company that keeps their promises! Regular pickups, fair pricing, and excellent customer service. Highly recommend ARET.",
     image: clientGrace
   },
   {
-    name: "Bassey Emenyi",
-    role: "Business Owner", 
+    name: "Engr. Michael Bassey",
+    role: "Factory Manager", 
     location: "Uyo Industrial Layout",
     rating: 5,
-    text: "ARET provides swift and efficient service that exceeds expectations. Their commitment to customer satisfaction and environmental responsibility is truly commendable.",
+    text: "ARET handles our industrial waste with such expertise and care for environmental compliance. Their team is knowledgeable and always professional.",
     image: clientMichael
   }
 ];

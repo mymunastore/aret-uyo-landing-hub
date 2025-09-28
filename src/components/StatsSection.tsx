@@ -138,10 +138,10 @@ const StatsSection = () => {
             <div className="text-3xl">🌱</div>
             <div>
               <h4 className="text-lg font-bold text-foreground mb-1">
-                Join Our Community
+                Ready to make an impact?
               </h4>
               <p className="text-muted-foreground text-sm">
-                Partner with us for sustainable waste management solutions
+                Join our growing community of environmentally conscious clients
               </p>
             </div>
           </div>
