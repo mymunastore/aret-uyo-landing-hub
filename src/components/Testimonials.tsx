@@ -1,8 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Quote } from "lucide-react";
-import clientEmeka from "@/assets/client-emeka.jpg"; // Will represent Mr. George Abiam
-import clientGrace from "@/assets/client-grace.jpg"; // Will represent Mr. Enyeokpon Inyang
-import clientMichael from "@/assets/client-michael.jpg"; // Will represent Bassey Emenyi
 
 const testimonials = [
   {
@@ -10,32 +7,28 @@ const testimonials = [
     role: "Commercial Client", 
     location: "Uyo",
     rating: 5,
-    text: "There have been no concerns regarding the pick-up schedule on our end. I must say your services are excellent. It is also worth noting that we received our monthly allocated garbage bags today (July/August). Great job, everyone, on the value-added service.",
-    image: clientMichael
+    text: "There have been no concerns regarding the pick-up schedule on our end. I must say your services are excellent. It is also worth noting that we received our monthly allocated garbage bags today (July/August). Great job, everyone, on the value-added service."
   },
   {
     name: "Mr. George Abiam",
     role: "Residential Client",
     location: "Uyo",
     rating: 5,
-    text: "I'm delighted with the service provided by ARET Environmental Services. They picked up and disposed of refuse from my house last week in a timely and professional manner. Everything was done neatly and without any inconvenience. Great team, reliable service—highly recommended!",
-    image: clientEmeka
+    text: "I'm delighted with the service provided by ARET Environmental Services. They picked up and disposed of refuse from my house last week in a timely and professional manner. Everything was done neatly and without any inconvenience. Great team, reliable service—highly recommended!"
   },
   {
     name: "Mrs. Dorathy Clement Praise",
     role: "Residential Client",
     location: "Uyo",
     rating: 5,
-    text: "Thanks for your swift and efficient services.",
-    image: clientGrace
+    text: "Thanks for your swift and efficient services."
   },
   {
     name: "Mr. Enyeokpon Inyang", 
     role: "Residential Client",
     location: "Uyo",
     rating: 5,
-    text: "Your service is excellent.",
-    image: clientGrace
+    text: "Your service is excellent."
   }
 ];
 
@@ -81,25 +74,16 @@ const Testimonials = () => {
                 </p>
 
                 {/* Client Info */}
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full overflow-hidden ring-2 ring-primary/20">
-                    <img 
-                      src={testimonial.image} 
-                      alt={testimonial.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground">
-                      {testimonial.name}
-                    </h4>
-                    <p className="text-sm text-muted-foreground">
-                      {testimonial.role}
-                    </p>
-                    <p className="text-xs text-primary">
-                      {testimonial.location}
-                    </p>
-                  </div>
+                <div className="text-left">
+                  <h4 className="font-semibold text-foreground">
+                    {testimonial.name}
+                  </h4>
+                  <p className="text-sm text-muted-foreground">
+                    {testimonial.role}
+                  </p>
+                  <p className="text-xs text-primary">
+                    {testimonial.location}
+                  </p>
                 </div>
               </CardContent>
             </Card>
