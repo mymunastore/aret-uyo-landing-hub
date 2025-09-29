@@ -48,10 +48,10 @@ const Hero = () => {
         <img 
           src={heroImage} 
           alt="ARET Environmental Services - Professional waste management team in Uyo, Akwa Ibom State" 
-          className="w-full h-full object-cover parallax" 
+          className="w-full h-full object-cover" 
           loading="eager" 
           fetchPriority="high" 
-          decoding="sync" 
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-hero opacity-30 sm:opacity-20"></div>
       </div>

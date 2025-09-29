@@ -99,9 +99,11 @@ const Contact = () => {
                   className="block group relative"
                 >
                   <img 
-                    src="/src/assets/image copy.png" 
+                    src="https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=800" 
                     alt="ARET Environmental Services Client Information Form - Click to fill out"
                     className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
                   />
                   
                   {/* Hover overlay */}

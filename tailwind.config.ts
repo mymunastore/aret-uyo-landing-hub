@@ -3,16 +3,10 @@ import type { Config } from "tailwindcss";
 export default {
   darkMode: ["class"],
   content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}", 
-    "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
     "./index.html"
   ],
   prefix: "",
-  future: {
-    hoverOnlyWhenSupported: true,
-  },
   theme: {
     container: {
       center: true,
@@ -31,7 +25,6 @@ export default {
       screens: {
         "xs": "475px",
         "3xl": "1600px",
-        "4xl": "1920px",
       },
       colors: {
         border: "hsl(var(--border))",
@@ -115,10 +108,8 @@ export default {
         ],
         mono: [
           "JetBrains Mono",
-          "Monaco",
-          "Consolas",
-          "Liberation Mono",
-          "Courier New",
+          "ui-monospace",
+          "SFMono-Regular",
           "monospace"
         ],
       },

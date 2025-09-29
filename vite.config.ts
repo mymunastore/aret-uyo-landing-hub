@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
+import { visualizer } from "rollup-plugin-visualizer";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -12,7 +13,16 @@ export default defineConfig(({ mode }) => ({
       overlay: false,
     },
   },
-  plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+  plugins: [
+    react(),
+    mode === "development" && componentTagger(),
+    mode === "production" && visualizer({
+      filename: "dist/stats.html",
+      open: false,
+      gzipSize: true,
+      brotliSize: true,
+    })
+  ].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
@@ -20,49 +30,72 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     // Performance optimizations
-    target: "esnext",
+    target: "es2020",
     minify: "esbuild",
     cssMinify: true,
+    cssCodeSplit: true,
+    sourcemap: false,
+    reportCompressedSize: false,
     rollupOptions: {
       output: {
+        // Optimize chunk naming
+        chunkFileNames: "assets/[name]-[hash].js",
+        entryFileNames: "assets/[name]-[hash].js",
+        assetFileNames: "assets/[name]-[hash].[ext]",
         manualChunks: {
-          // Vendor chunk for better caching
-          vendor: ["react", "react-dom"],
-          ui: ["@radix-ui/react-accordion", "@radix-ui/react-dialog", "@radix-ui/react-dropdown-menu"],
-          icons: ["lucide-react"],
-          supabase: ["@supabase/supabase-js"],
+          // Core React libraries
+          "react-vendor": ["react", "react-dom"],
+          // Router and query
+          "router": ["react-router-dom", "@tanstack/react-query"],
+          // UI components
+          "ui-core": [
+            "@radix-ui/react-dialog",
+            "@radix-ui/react-dropdown-menu",
+            "@radix-ui/react-accordion",
+            "@radix-ui/react-toast"
+          ],
+          "ui-form": [
+            "@radix-ui/react-label",
+            "@radix-ui/react-select",
+            "@radix-ui/react-switch",
+            "react-hook-form",
+            "@hookform/resolvers"
+          ],
+          // Icons and utilities
+          "utils": ["lucide-react", "clsx", "tailwind-merge", "class-variance-authority"],
+          // Backend
+          "backend": ["@supabase/supabase-js"],
         },
       },
+      // Tree shaking optimizations
+      treeshake: {
+        moduleSideEffects: false,
+        propertyReadSideEffects: false,
+        unknownGlobalSideEffects: false,
+      },
     },
-    // Optimize chunk size
-    chunkSizeWarningLimit: 1000,
-    // Enable source maps for production debugging
-    sourcemap: mode === "production" ? false : true,
+    chunkSizeWarningLimit: 500,
   },
   // CSS optimization
   css: {
     devSourcemap: mode === "development",
-    preprocessorOptions: {
-      scss: {
-        additionalData: `@import "@/styles/variables.scss";`,
-      },
-    },
   },
   // Performance optimizations
   optimizeDeps: {
+    force: true,
     include: [
       "react",
       "react-dom",
       "react-router-dom",
       "@supabase/supabase-js",
       "lucide-react",
+      "@tanstack/react-query",
     ],
-    exclude: ["@vite/client", "@vite/env"],
+    exclude: ["@vite/client", "@vite/env", "lovable-tagger"],
   },
-  // Enable experimental features for better performance
   esbuild: {
-    target: "esnext",
-    platform: "browser",
-    format: "esm",
+    target: "es2020",
+    drop: mode === "production" ? ["console", "debugger"] : [],
+    legalComments: "none",
   },
 }));
