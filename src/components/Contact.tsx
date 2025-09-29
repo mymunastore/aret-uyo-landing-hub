@@ -94,17 +94,11 @@ const Contact = () => {
               <div className="bg-gradient-to-r from-primary to-primary/80 text-primary-foreground rounded-t-lg p-6">
                 <div className="flex items-center justify-center mb-4">
                   <img 
-                    src="/src/assets/aret-logo.png" 
+                    src="/src/assets/image.png" 
                     alt="ARET Environmental Services Logo" 
-                    className="h-16 w-auto"
+                    className="h-20 w-auto"
                   />
                 </div>
-                <h3 className="text-2xl font-bold text-center text-white mb-2">
-                  CLIENT INFORMATION FORM (INDIVIDUAL)
-                </h3>
-                <p className="text-center text-primary-foreground/90">
-                  ARET Environmental Services Client Information Form
-                </p>
               </div>
               
               <div className="bg-white rounded-b-lg overflow-hidden">
