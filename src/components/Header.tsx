@@ -157,15 +157,16 @@ const Header = ({ showTestimonials, onToggleTestimonials }: HeaderProps) => {
             <div className="flex items-center space-x-2 sm:space-x-4">
               {/* Testimonials Toggle - Desktop Only */}
               {!isMobile && (
-                <div className="hidden lg:flex items-center space-x-2 px-4 py-3 rounded-xl bg-primary/10 border border-primary/20">
+                <div className="hidden md:flex items-center space-x-2 px-3 py-2 rounded-xl bg-primary/10 border border-primary/20 transition-all duration-300 hover:bg-primary/15">
                   <MessageCircle size={16} className="text-muted-foreground" />
-                  <Label htmlFor="testimonials-toggle" className="text-sm font-semibold cursor-pointer">
-                    Reviews
+                  <Label htmlFor="testimonials-toggle" className="text-sm font-semibold cursor-pointer whitespace-nowrap">
+                    {showTestimonials ? 'Hide Reviews' : 'Show Reviews'}
                   </Label>
                   <Switch
                     id="testimonials-toggle"
                     checked={showTestimonials}
                     onCheckedChange={onToggleTestimonials}
+                    className="data-[state=checked]:bg-primary"
                   />
                 </div>
               )}
@@ -226,17 +227,18 @@ const Header = ({ showTestimonials, onToggleTestimonials }: HeaderProps) => {
                 ))}
                 <div className="pt-6 border-t border-border/30 space-y-4">
                   {/* Mobile Testimonials Toggle */}
-                  <div className="flex items-center justify-between px-4 py-3 bg-primary/5 rounded-xl">
+                  <div className="flex items-center justify-between px-4 py-4 bg-primary/5 rounded-xl border border-primary/20 transition-all duration-300">
                     <div className="flex items-center space-x-3">
                       <MessageCircle size={16} className="text-muted-foreground" />
                       <Label htmlFor="mobile-testimonials-toggle" className="text-base font-semibold">
-                        Show Customer Reviews
+                        {showTestimonials ? 'Hide Customer Reviews' : 'Show Customer Reviews'}
                       </Label>
                     </div>
                     <Switch
                       id="mobile-testimonials-toggle"
                       checked={showTestimonials}
                       onCheckedChange={onToggleTestimonials}
+                      className="data-[state=checked]:bg-primary"
                     />
                   </div>
                   <Button 

@@ -8,9 +8,12 @@ interface FAQItem {
   category: string;
 }
 
-const FAQ = () => {
+interface FAQProps {
+  showFAQ?: boolean;
+}
+
+const FAQ = ({ showFAQ = true }: FAQProps) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const [showFAQ, setShowFAQ] = useState(true); // FAQ is visible by default
 
   const faqData: FAQItem[] = [
     // General Information
