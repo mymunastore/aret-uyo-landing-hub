@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Truck, Building, Factory, Recycle, Shield, Leaf, Users, Clock, CheckCircle, ArrowRight } from "lucide-react";
+import { Truck, Building, Factory, Recycle, Shield, Leaf, Users, Clock, CircleCheck as CheckCircle, ArrowRight } from "lucide-react";
 
 const services = [
   {

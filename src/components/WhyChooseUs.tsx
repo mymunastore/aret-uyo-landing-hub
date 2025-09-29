@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Shield, Clock, Users, Award, Leaf, Phone, CheckCircle, Star, Zap } from "lucide-react";
+import { Shield, Clock, Users, Award, Leaf, Phone, CircleCheck as CheckCircle, Star, Zap } from "lucide-react";
 
 const reasons = [
   {

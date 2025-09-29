@@ -1,4 +1,4 @@
-import { Check, Star, Building, Home, Users, Clock, Phone, Mail, ArrowRight } from "lucide-react";
+import { Check, Star, Building, Chrome as Home, Users, Clock, Phone, Mail, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
