@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Shield, Users, Leaf, Clock, Award, CheckCircle } from "lucide-react";
+import { Shield, Users, Leaf, Clock, Award, CircleCheck as CheckCircle } from "lucide-react";
 
 const features = [
   {
