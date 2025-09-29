@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronDown, ChevronUp, Eye, EyeOff, CircleHelp as HelpCircle } from "lucide-react";
+import { ChevronDown, ChevronUp, Eye, EyeOff, CircleHelp as HelpCircle, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface FAQItem {
@@ -240,29 +240,6 @@ const FAQ = () => {
                     Email Us
                   </a>
                 </div>
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
-    </section>
-  );
-};
-                Still have questions? We're here to help.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a 
-                  href="tel:09152870617" 
-                  className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
-                >
-                  Call Us: 0915 287 0617
-                </a>
-                <a 
-                  href="mailto:info@aret-environmental-ng.com" 
-                  className="inline-flex items-center justify-center px-6 py-3 border border-primary text-primary rounded-lg hover:bg-primary/10 transition-colors"
-                >
-                  Email Us
-                </a>
               </div>
             </div>
           </div>
