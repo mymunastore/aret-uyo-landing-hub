@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { MapPin, Phone, Mail, ExternalLink, AlertCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, ExternalLink, CircleAlert as AlertCircle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
