@@ -14,7 +14,7 @@ import AccessibilityEnhancer from "@/components/AccessibilityEnhancer";
 import SEOHead from "@/components/SEOHead";
 import { LiveChat } from "@/components/LiveChat";
 import Services from "@/pages/Services";
-import Pricing from "@/components/Pricing";
+import Pricing from "@/pages/Pricing";
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
