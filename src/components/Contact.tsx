@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
-import GoogleRegistrationForm from "@/components/GoogleRegistrationForm";
+import ClientInformationForm from "@/components/ClientInformationForm";
 
 const Contact = () => {
   return (
@@ -90,7 +90,7 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="animate-fade-in-scale" style={{ animationDelay: '0.2s' }}>
-            <GoogleRegistrationForm />
+            <ClientInformationForm />
           </div>
         </div>
       </div>

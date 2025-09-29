@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import WhyChooseUs from "@/components/WhyChooseUs";
 import FAQ from "@/components/FAQ";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
@@ -75,18 +74,14 @@ const Index = () => {
         </AnimatedSection>
         
         <AnimatedSection delay={150}>
-          <WhyChooseUs />
-        </AnimatedSection>
-        
-        <AnimatedSection delay={200}>
           <Testimonials showTestimonials={showTestimonials} />
         </AnimatedSection>
         
-        <AnimatedSection delay={250}>
+        <AnimatedSection delay={200}>
           <FAQ showFAQ={!showTestimonials} />
         </AnimatedSection>
         
-        <AnimatedSection delay={300}>
+        <AnimatedSection delay={250}>
           <Contact />
         </AnimatedSection>
       </main>
