@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import WhyChooseUs from "@/components/WhyChooseUs";
-import StatsSection from "@/components/StatsSection";
 import FAQ from "@/components/FAQ";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
@@ -16,6 +15,7 @@ import AccessibilityEnhancer from "@/components/AccessibilityEnhancer";
 import SEOHead from "@/components/SEOHead";
 import { LiveChat } from "@/components/LiveChat";
 import MottoSection from "@/components/MottoSection";
+import AretCaresSection from "@/components/AretCaresSection";
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -71,24 +71,22 @@ const Index = () => {
         </AnimatedSection>
         
         <AnimatedSection delay={100}>
+          <AretCaresSection />
+        </AnimatedSection>
+        
+        <AnimatedSection delay={150}>
           <WhyChooseUs />
         </AnimatedSection>
         
         <AnimatedSection delay={200}>
-          <StatsSection />
+          <Testimonials />
         </AnimatedSection>
         
-        {showTestimonials && (
-          <AnimatedSection delay={100}>
-            <Testimonials />
-          </AnimatedSection>
-        )}
-        
-        <AnimatedSection delay={200}>
+        <AnimatedSection delay={250}>
           <FAQ />
         </AnimatedSection>
         
-        <AnimatedSection delay={200}>
+        <AnimatedSection delay={300}>
           <Contact />
         </AnimatedSection>
       </main>
