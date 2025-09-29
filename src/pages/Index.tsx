@@ -20,7 +20,7 @@ import CarbonFootprintCalculator from "@/components/CarbonFootprintCalculator";
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [showTestimonials, setShowTestimonials] = useState(false);
+  const [showTestimonials, setShowTestimonials] = useState(true);
 
   const handleLoadingComplete = () => {
     setIsLoading(false);
