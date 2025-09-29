@@ -20,37 +20,6 @@ const MottoSection = () => {
               Partnering for sustainable solutions
             </p>
           </div>
-
-          {/* Core Values Icons */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-            <div className="flex flex-col items-center group animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-              <div className="bg-primary-foreground/10 p-4 rounded-full mb-3 group-hover:bg-primary-foreground/20 transition-colors">
-                <Heart className="w-8 h-8 text-primary-foreground" />
-              </div>
-              <span className="text-primary-foreground/90 font-medium text-sm">Caring</span>
-            </div>
-            
-            <div className="flex flex-col items-center group animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-              <div className="bg-primary-foreground/10 p-4 rounded-full mb-3 group-hover:bg-primary-foreground/20 transition-colors">
-                <Users className="w-8 h-8 text-primary-foreground" />
-              </div>
-              <span className="text-primary-foreground/90 font-medium text-sm">Community</span>
-            </div>
-            
-            <div className="flex flex-col items-center group animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-              <div className="bg-primary-foreground/10 p-4 rounded-full mb-3 group-hover:bg-primary-foreground/20 transition-colors">
-                <Leaf className="w-8 h-8 text-primary-foreground" />
-              </div>
-              <span className="text-primary-foreground/90 font-medium text-sm">Sustainability</span>
-            </div>
-            
-            <div className="flex flex-col items-center group animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
-              <div className="bg-primary-foreground/10 p-4 rounded-full mb-3 group-hover:bg-primary-foreground/20 transition-colors">
-                <Globe className="w-8 h-8 text-primary-foreground" />
-              </div>
-              <span className="text-primary-foreground/90 font-medium text-sm">Partnership</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>
