@@ -107,29 +107,12 @@ const Contact = () => {
 
               <div className="card-modern shadow-elegant hover:shadow-hover transition-all duration-500 overflow-hidden border-2 border-primary/10 hover:border-primary/20">
                 {/* Form Preview with Enhanced Styling */}
-              <div className="text-center mb-8">
-                <div className="inline-flex items-center gap-3 bg-primary/10 border-2 border-primary/20 rounded-full px-6 py-3 mb-4">
-                  <FileText className="text-primary" size={20} />
-                  <span className="text-primary font-bold text-sm tracking-wide">CLIENT REGISTRATION</span>
-                </div>
-                <h3 className="text-2xl font-bold text-foreground mb-2">
-                  Start Your Service Today
-                </h3>
-                <p className="text-muted-foreground">
-                  Fill out our quick registration form to get personalized waste management solutions
-                </p>
-              </div>
-
-              <div className="card-modern shadow-elegant hover:shadow-hover transition-all duration-500 overflow-hidden border-2 border-primary/10 hover:border-primary/20">
-                {/* Form Preview with Enhanced Styling */}
                 <a 
                   href="https://forms.gle/m3yL5f68ksnn7h6Z6" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="block group relative overflow-hidden"
                 >
-                  {/* Image Container with Gradient Overlay */}
-                  <div className="relative">
                   {/* Image Container with Gradient Overlay */}
                   <div className="relative">
                     <img 
@@ -141,15 +124,10 @@ const Contact = () => {
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                     
-                    className="w-full h-auto transition-transform duration-500 group-hover:scale-110"
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent"></div>
-                  </div>
-                  
-                    
                     {/* Gradient overlay for better text readability */}
                     <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent"></div>
                   </div>
-                  {/* Enhanced hover overlay with animation */}
+                  
                   {/* Enhanced hover overlay with animation */}
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary-glow/15 to-primary/20 opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center backdrop-blur-sm">
                     <div className="bg-gradient-primary text-primary-foreground px-8 py-4 rounded-2xl font-bold shadow-glow transform translate-y-8 group-hover:translate-y-0 transition-all duration-500 hover:scale-110 flex items-center gap-3">
@@ -164,83 +142,45 @@ const Contact = () => {
                   <div className="text-center mb-6">
                     <h3 className="text-xl font-bold text-foreground mb-3 flex items-center justify-center gap-2">
                       <FileText className="text-primary" size={20} />
-                  <div className="text-center mb-6">
-                    <h3 className="text-xl font-bold text-foreground mb-3 flex items-center justify-center gap-2">
-                      <FileText className="text-primary" size={20} />
                     Client Information Form
                     </h3>
                     <p className="text-base text-muted-foreground mb-6 max-w-md mx-auto leading-relaxed">
                       Click the form above to provide your information and get started with our professional waste management services.
                     </p>
                   </div>
-                  </div>
                   
-                  {/* Enhanced action buttons */}
                   {/* Enhanced action buttons */}
                   <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                     <a 
                       href="https://forms.gle/m3yL5f68ksnn7h6Z6" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="btn-modern inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-bold hover:shadow-glow transition-all duration-300 hover:scale-105"
+                      className="btn-modern inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-bold hover:shadow-glow transition-all duration-300 hover:scale-105 min-h-[48px] w-full sm:w-auto touch-manipulation"
                     >
                       <Send size={18} />
                       Complete Registration Form
                       <ExternalLink size={16} />
-                      Complete Registration Form
-                      <ExternalLink size={16} />
                     </a>
                     
-                    {/* Contact alternatives with enhanced styling */}
-                    <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center">
-                      <div className="text-sm text-muted-foreground font-medium">Or contact us directly:</div>
-                      <div className="flex gap-4">
                     {/* Contact alternatives with enhanced styling */}
                     <div className="flex flex-col gap-4 sm:gap-6 items-center w-full sm:w-auto">
                       <div className="text-sm text-muted-foreground font-medium">Or contact us directly:</div>
                       <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
                       <a 
                         href="tel:09152870616" 
-                        className="inline-flex items-center gap-2 text-primary hover:text-primary-glow transition-colors duration-300 text-sm font-bold hover:underline"
+                        className="inline-flex items-center justify-center gap-2 text-primary hover:text-primary-glow transition-colors duration-300 text-sm font-bold hover:underline min-h-[44px] px-4 py-2 rounded-lg hover:bg-primary/10 touch-manipulation"
                       >
-                        <Phone size={14} />
                         <Phone size={14} />
                         Call Us
                       </a>
-                      <span className="text-muted-foreground/50">•</span>
+                      <span className="text-muted-foreground/50 hidden sm:inline">•</span>
                       <a 
                         href="mailto:info@aret-environmental-ng.com" 
-                        className="inline-flex items-center gap-2 text-primary hover:text-primary-glow transition-colors duration-300 text-sm font-bold hover:underline"
+                        className="inline-flex items-center justify-center gap-2 text-primary hover:text-primary-glow transition-colors duration-300 text-sm font-bold hover:underline min-h-[44px] px-4 py-2 rounded-lg hover:bg-primary/10 touch-manipulation"
                       >
-                        <Mail size={14} />
                         <Mail size={14} />
                         Email Us
                       </a>
-                      </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Additional form benefits */}
-                  <div className="mt-8 pt-6 border-t border-primary/10">
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
-                      <div className="flex flex-col items-center gap-2">
-                        <div className="bg-primary/10 p-3 rounded-full">
-                          <Clock className="text-primary" size={16} />
-                        </div>
-                        <span className="text-xs font-medium text-muted-foreground">Quick 2-min form</span>
-                      </div>
-                      <div className="flex flex-col items-center gap-2">
-                        <div className="bg-primary/10 p-3 rounded-full">
-                          <Phone className="text-primary" size={16} />
-                        </div>
-                        <span className="text-xs font-medium text-muted-foreground">Same-day response</span>
-                      </div>
-                      <div className="flex flex-col items-center gap-2">
-                        <div className="bg-primary/10 p-3 rounded-full">
-                          <FileText className="text-primary" size={16} />
-                        </div>
-                        <span className="text-xs font-medium text-muted-foreground">Free consultation</span>
                       </div>
                     </div>
                   </div>
@@ -279,5 +219,3 @@ const Contact = () => {
 };
 
 export default Contact;
-  )
-}
