@@ -1,10 +1,7 @@
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import Pricing from "@/components/Pricing";
 import WhyChooseUs from "@/components/WhyChooseUs";
-import StatsSection from "@/components/StatsSection";
 import FAQ from "@/components/FAQ";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
@@ -70,22 +67,6 @@ const Index = () => {
       
       <main id="main-content">
         <Hero />
-        
-        <AnimatedSection delay={50}>
-          <Services />
-        </AnimatedSection>
-        
-        <AnimatedSection delay={100}>
-          <Pricing />
-        </AnimatedSection>
-        
-        <AnimatedSection delay={150}>
-          <WhyChooseUs />
-        </AnimatedSection>
-        
-        <AnimatedSection delay={200}>
-          <StatsSection />
-        </AnimatedSection>
         
         <AnimatedSection delay={50}>
           <MottoSection />

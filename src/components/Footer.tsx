@@ -60,49 +60,11 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-xl mb-6">Quick Links</h4>
             <ul className="space-y-3 text-base opacity-90">
-              <li>
-                <a href="/about" className="hover:opacity-100 cursor-pointer transition-all duration-300 hover:translate-x-2 font-medium hover:text-primary-glow">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="hover:opacity-100 cursor-pointer transition-all duration-300 hover:translate-x-2 font-medium hover:text-primary-glow" onClick={(e) => {
-                  e.preventDefault();
-                  const element = document.querySelector('#services');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}>
-                  Our Services
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="hover:opacity-100 cursor-pointer transition-all duration-300 hover:translate-x-2 font-medium hover:text-primary-glow" onClick={(e) => {
-                  e.preventDefault();
-                  const element = document.querySelector('#contact');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}>
-                  Contact
-                </a>
-              </li>
-              <li>
-                <a href="#pricing" className="hover:opacity-100 cursor-pointer transition-all duration-300 hover:translate-x-2 font-medium hover:text-primary-glow" onClick={(e) => {
-                  e.preventDefault();
-                  const element = document.querySelector('#pricing');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}>
-                  Get Quote
-                </a>
-              </li>
-              <li>
-                <a href="tel:09152870616" className="hover:opacity-100 cursor-pointer transition-all duration-300 hover:translate-x-2 font-medium hover:text-primary-glow">
-                  Emergency Service
-                </a>
-              </li>
+              <li className="hover:opacity-100 cursor-pointer transition-all duration-300 hover:translate-x-2 font-medium">About Us</li>
+              <li className="hover:opacity-100 cursor-pointer transition-all duration-300 hover:translate-x-2 font-medium">Our Services</li>
+              <li className="hover:opacity-100 cursor-pointer transition-all duration-300 hover:translate-x-2 font-medium">Contact</li>
+              <li className="hover:opacity-100 cursor-pointer transition-all duration-300 hover:translate-x-2 font-medium">Get Quote</li>
+              <li className="hover:opacity-100 cursor-pointer transition-all duration-300 hover:translate-x-2 font-medium">Emergency Service</li>
               <li>
                 <a href="/privacy-policy" className="hover:opacity-100 cursor-pointer transition-all duration-300 hover:translate-x-2 font-medium hover:text-primary-glow">
                   Privacy Policy
