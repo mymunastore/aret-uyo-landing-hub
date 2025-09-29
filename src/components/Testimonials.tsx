@@ -6,28 +6,36 @@ import clientMichael from "@/assets/client-michael.jpg"; // Will represent Basse
 
 const testimonials = [
   {
+    name: "Bassey Emenyi",
+    role: "Commercial Client", 
+    location: "Uyo",
+    rating: 5,
+    text: "There have been no concerns regarding the pick-up schedule on our end. I must say your services are excellent. It is also worth noting that we received our monthly allocated garbage bags today (July/August). Great job, everyone, on the value-added service.",
+    image: clientMichael
+  },
+  {
     name: "Mr. George Abiam",
     role: "Residential Client",
     location: "Uyo",
     rating: 5,
-    text: "I commend ARET Environmental Services for their excellent waste collection services and the quality garbage bags they provide. Their commitment to keeping our community clean is truly appreciated.",
+    text: "I'm delighted with the service provided by ARET Environmental Services. They picked up and disposed of refuse from my house last week in a timely and professional manner. Everything was done neatly and without any inconvenience. Great team, reliable service—highly recommended!",
     image: clientEmeka
+  },
+  {
+    name: "Mrs. Dorathy Clement Praise",
+    role: "Residential Client",
+    location: "Uyo",
+    rating: 5,
+    text: "Thanks for your swift and efficient services.",
+    image: clientGrace
   },
   {
     name: "Mr. Enyeokpon Inyang", 
     role: "Residential Client",
     location: "Uyo",
     rating: 5,
-    text: "I am very satisfied with ARET's timely and professional service. They consistently deliver on their promises and maintain the highest standards of professionalism in waste management.",
-    image: clientGrace
-  },
-  {
-    name: "Bassey Emenyi",
-    role: "Commercial Client", 
-    location: "Uyo",
-    rating: 5,
-    text: "ARET Environmental Services provides swift and efficient waste collection services. Their team is reliable, and I appreciate their quick response to our waste management needs.",
-    image: clientMichael
+    text: "Your service is excellent.",
+    image: clientEmeka
   }
 ];
 

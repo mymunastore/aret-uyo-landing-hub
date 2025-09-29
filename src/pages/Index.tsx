@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import AretCaresSection from "@/components/AretCaresSection";
 import WhyChooseUs from "@/components/WhyChooseUs";
-import StatsSection from "@/components/StatsSection";
 import FAQ from "@/components/FAQ";
 import Testimonials from "@/components/Testimonials";
-import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import LoadingScreen from "@/components/LoadingScreen";
 import ScrollProgress from "@/components/ScrollProgress";
@@ -67,29 +66,25 @@ const Index = () => {
         <Hero />
         
         <AnimatedSection delay={50}>
-          <MottoSection />
+          <AretCaresSection />
         </AnimatedSection>
         
         <AnimatedSection delay={100}>
+          <MottoSection />
+        </AnimatedSection>
+        
+        <AnimatedSection delay={150}>
           <WhyChooseUs />
         </AnimatedSection>
         
-        <AnimatedSection delay={200}>
-          <StatsSection />
-        </AnimatedSection>
-        
         {showTestimonials && (
-          <AnimatedSection delay={100}>
+          <AnimatedSection delay={200}>
             <Testimonials />
           </AnimatedSection>
         )}
         
-        <AnimatedSection delay={200}>
+        <AnimatedSection delay={250}>
           <FAQ />
-        </AnimatedSection>
-        
-        <AnimatedSection delay={200}>
-          <Contact />
         </AnimatedSection>
       </main>
       
