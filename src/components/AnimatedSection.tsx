@@ -4,9 +4,10 @@ interface AnimatedSectionProps {
   children: ReactNode;
   className?: string;
   delay?: number;
+  threshold?: number;
 }
 
-const AnimatedSection = ({ children, className = "", delay = 0 }: AnimatedSectionProps) => {
+const AnimatedSection = ({ children, className = "", delay = 0, threshold = 0.1 }: AnimatedSectionProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -21,7 +22,7 @@ const AnimatedSection = ({ children, className = "", delay = 0 }: AnimatedSectio
         });
       },
       {
-        threshold: 0.1,
+        threshold,
         rootMargin: "0px 0px -50px 0px",
       }
     );
@@ -31,16 +32,14 @@ const AnimatedSection = ({ children, className = "", delay = 0 }: AnimatedSectio
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
+      observer.disconnect();
     };
-  }, [delay]);
+  }, [delay, threshold]);
 
   return (
     <div
       ref={ref}
-      className={`animate-on-scroll ${className}`}
+      className={`animate-on-scroll opacity-0 translate-y-8 ${className}`}
     >
       {children}
     </div>
