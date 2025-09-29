@@ -48,10 +48,11 @@ const Hero = () => {
         <img 
           src={heroImage} 
           alt="ARET Environmental Services - Professional waste management team in Uyo, Akwa Ibom State" 
-          className="w-full h-full object-cover" 
+          className="w-full h-full object-cover object-center" 
           loading="eager" 
           fetchPriority="high" 
           decoding="async"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
         />
         <div className="absolute inset-0 bg-gradient-hero opacity-30 sm:opacity-20"></div>
       </div>
@@ -114,18 +115,18 @@ const Hero = () => {
             animationDelay: '0.4s'
           }}>
             <Button 
-              size={isMobile ? "default" : "lg"}
+              size={isMobile ? "default" : isTablet ? "default" : "lg"}
               onClick={scrollToServices}
-              className="btn-modern bg-primary-glow hover:bg-primary-glow/90 text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg font-bold"
+              className="btn-modern bg-primary-glow hover:bg-primary-glow/90 text-primary-foreground px-6 sm:px-8 py-4 sm:py-5 text-base sm:text-lg font-bold min-h-[48px] w-full sm:w-auto"
             >
               Explore Services
               <ArrowRight className="ml-2" size={isMobile ? 16 : 20} />
             </Button>
             <Button 
-              size={isMobile ? "default" : "lg"}
+              size={isMobile ? "default" : isTablet ? "default" : "lg"}
               variant="default"
               onClick={scrollToContact}
-              className="btn-modern bg-background/90 text-primary hover:bg-background px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg font-bold backdrop-blur-md"
+              className="btn-modern bg-background/90 text-primary hover:bg-background px-6 sm:px-8 py-4 sm:py-5 text-base sm:text-lg font-bold backdrop-blur-md min-h-[48px] w-full sm:w-auto"
             >
               <Phone className="mr-2" size={isMobile ? 16 : 20} />
               Contact Us
@@ -133,19 +134,31 @@ const Hero = () => {
           </div>
 
           {/* Stats - Responsive Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-16 animate-fade-in-up" style={{
+          <div className="grid grid-cols-1 xs:grid-cols-2 gap-6 sm:gap-8 mt-8 sm:mt-16 animate-fade-in-up" style={{
             animationDelay: '0.6s'
           }}>
             <div className="text-center group">
               <div className={`font-black text-primary-foreground mb-2 group-hover:scale-110 transition-spring ${
-                isMobile ? 'text-2xl' : 'text-3xl'
+                isMobile ? 'text-3xl' : isTablet ? 'text-4xl' : 'text-5xl'
               }`}>
                 100+
               </div>
               <div className={`text-primary-foreground/80 ${
-                isMobile ? 'text-xs' : 'text-sm'
+                isMobile ? 'text-sm' : isTablet ? 'text-base' : 'text-lg'
               }`}>
                 Happy Clients
+              </div>
+            </div>
+            <div className="text-center group">
+              <div className={`font-black text-primary-foreground mb-2 group-hover:scale-110 transition-spring ${
+                isMobile ? 'text-3xl' : isTablet ? 'text-4xl' : 'text-5xl'
+              }`}>
+                24/7
+              </div>
+              <div className={`text-primary-foreground/80 ${
+                isMobile ? 'text-sm' : isTablet ? 'text-base' : 'text-lg'
+              }`}>
+                Support Available
               </div>
             </div>
           </div>

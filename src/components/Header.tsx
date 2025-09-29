@@ -108,7 +108,7 @@ const Header = ({ showTestimonials, onToggleTestimonials }: HeaderProps) => {
       }`}>
         <div className="container mx-auto px-4">
           <div className={`flex items-center justify-between transition-all duration-300 ${
-            isMobile ? 'h-14' : isTablet ? 'h-16' : 'h-20'
+            isMobile ? 'h-16' : isTablet ? 'h-18' : 'h-20'
           }`}>
             {/* Logo */}
             <div className="flex items-center space-x-2 sm:space-x-3">
@@ -156,7 +156,7 @@ const Header = ({ showTestimonials, onToggleTestimonials }: HeaderProps) => {
             {/* Action Buttons */}
             <div className="flex items-center space-x-2 sm:space-x-4">
               {/* Testimonials Toggle - Desktop Only */}
-              {!isMobile && (
+              {!isMobile && !isTablet && (
                 <div className="hidden md:flex items-center space-x-2 px-3 py-2 rounded-xl bg-primary/10 border border-primary/20 transition-all duration-300 hover:bg-primary/15">
                   <MessageCircle size={16} className="text-muted-foreground" />
                   <Label htmlFor="testimonials-toggle" className="text-sm font-semibold cursor-pointer whitespace-nowrap">
@@ -171,7 +171,7 @@ const Header = ({ showTestimonials, onToggleTestimonials }: HeaderProps) => {
                 </div>
               )}
               <ThemeToggle />
-              {!isMobile && (
+              {!isMobile && !isTablet && (
                 <Button 
                   size={isTablet ? "sm" : "default"}
                   onClick={() => handleNavClick('#contact')}
@@ -185,7 +185,7 @@ const Header = ({ showTestimonials, onToggleTestimonials }: HeaderProps) => {
               <Button 
                 variant="ghost" 
                 size="icon" 
-                className="md:hidden relative z-50 hover:bg-primary/10 rounded-xl" 
+                className="lg:hidden relative z-50 hover:bg-primary/10 rounded-xl min-h-[48px] min-w-[48px]" 
                 onClick={() => setIsMenuOpen(!isMenuOpen)} 
                 aria-label="Toggle menu"
               >
@@ -208,7 +208,7 @@ const Header = ({ showTestimonials, onToggleTestimonials }: HeaderProps) => {
           </div>
 
           {/* Mobile Navigation */}
-          <div className={`md:hidden transition-all duration-500 transform ${
+          <div className={`lg:hidden transition-all duration-500 transform ${
             isMenuOpen 
               ? 'opacity-100 scale-100 translate-y-0 max-h-96' 
               : 'opacity-0 scale-95 -translate-y-4 max-h-0 pointer-events-none'
@@ -242,9 +242,9 @@ const Header = ({ showTestimonials, onToggleTestimonials }: HeaderProps) => {
                     />
                   </div>
                   <Button 
-                    size="sm" 
+                    size="default" 
                     onClick={() => handleNavClick('#contact')}
-                    className="w-full btn-modern animate-scale-bounce h-12 text-base font-bold"
+                    className="w-full btn-modern animate-scale-bounce h-14 text-base font-bold"
                     style={{ animationDelay: '0.6s' }}
                   >
                     Get Quote

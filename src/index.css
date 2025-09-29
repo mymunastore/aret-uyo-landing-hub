@@ -167,6 +167,76 @@
       scroll-behavior: auto !important;
     }
   }
+
+  /* Cross-browser compatibility fixes */
+  * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  /* Ensure minimum touch target sizes for mobile */
+  button, 
+  a, 
+  input, 
+  select, 
+  textarea,
+  [role="button"],
+  [tabindex]:not([tabindex="-1"]) {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Exception for inline elements that shouldn't have min dimensions */
+  span, 
+  em, 
+  strong, 
+  code,
+  small {
+    min-height: unset;
+    min-width: unset;
+  }
+
+  /* Improve form control touch targets */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="password"],
+  textarea,
+  select {
+    min-height: 48px;
+    padding: 12px 16px;
+  }
+
+  /* Better mobile scrolling */
+  html {
+    -webkit-overflow-scrolling: touch;
+    scroll-padding-top: 120px; /* Account for fixed header */
+  }
+
+  /* Prevent horizontal scroll on mobile */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Improve tap highlighting on mobile */
+  * {
+    -webkit-tap-highlight-color: hsl(var(--primary) / 0.2);
+    -webkit-touch-callout: none;
+  }
+
+  /* Better focus management for keyboard users */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* Ensure images don't break layout */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
 }
 
 /* Enhanced Typography */

@@ -43,7 +43,11 @@ const SEOHead = ({
     updateMetaTag('keywords', keywords);
     updateMetaTag('robots', 'index, follow');
     updateMetaTag('author', 'ARET Environmental Services');
-    updateMetaTag('viewport', 'width=device-width, initial-scale=1.0');
+    updateMetaTag('viewport', 'width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover');
+    updateMetaTag('theme-color', '#10b981');
+    updateMetaTag('mobile-web-app-capable', 'yes');
+    updateMetaTag('apple-mobile-web-app-capable', 'yes');
+    updateMetaTag('apple-mobile-web-app-status-bar-style', 'default');
 
     // Open Graph meta tags
     updateMetaTag('og:title', title, true);
