@@ -5,10 +5,9 @@ const PerformanceOptimizer = () => {
     // Preload critical resources
     const preloadCriticalResources = () => {
       const criticalImages = [
-        "/src/assets/hero-waste-workers.png",
-        "/src/assets/aret-logo.png",
-        "/src/assets/about-3rs.jpg",
-        "/src/assets/service-waste-management.jpg"
+        "https://images.pexels.com/photos/2988232/pexels-photo-2988232.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "https://images.pexels.com/photos/3735218/pexels-photo-3735218.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "https://images.pexels.com/photos/2547565/pexels-photo-2547565.jpeg?auto=compress&cs=tinysrgb&w=600"
       ];
 
       criticalImages.forEach(src => {

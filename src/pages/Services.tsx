@@ -17,37 +17,37 @@ const services = [
     icon: Building,
     title: "Waste Management",
     description: "Comprehensive waste management solutions for residential, commercial, and industrial clients with sustainable practices.",
-    image: serviceWasteManagement,
+    image: "https://images.pexels.com/photos/2988232/pexels-photo-2988232.jpeg?auto=compress&cs=tinysrgb&w=600",
   },
   {
     icon: Truck,
     title: "Waste Collection",
     description: "Regular and reliable waste pickup services across Uyo and surrounding areas with scheduled routes.",
-    image: serviceResidential,
+    image: "https://images.pexels.com/photos/3735218/pexels-photo-3735218.jpeg?auto=compress&cs=tinysrgb&w=600",
   },
   {
     icon: Factory,
     title: "Waste Disposal",
     description: "Safe and environmentally compliant waste disposal following all regulatory standards and best practices.",
-    image: serviceIndustrial,
+    image: "https://images.pexels.com/photos/2547565/pexels-photo-2547565.jpeg?auto=compress&cs=tinysrgb&w=600",
   },
   {
     icon: Recycle,
     title: "Waste Recycling",
     description: "Complete recycling programs to transform waste materials into valuable resources, supporting a circular economy.",
-    image: serviceRecycling,
+    image: "https://images.pexels.com/photos/3735218/pexels-photo-3735218.jpeg?auto=compress&cs=tinysrgb&w=600",
   },
   {
     icon: Leaf,
     title: "General Environmental Services",
     description: "Comprehensive environmental solutions including consultation, monitoring, and specialized services for various sectors.",
-    image: serviceHazardous,
+    image: "https://images.pexels.com/photos/2547565/pexels-photo-2547565.jpeg?auto=compress&cs=tinysrgb&w=600",
   },
   {
     icon: ShoppingCart,
     title: "Equipment Sales",
     description: "Quality waste management equipment including bins, containers, and other essential waste handling items for residential and commercial use.",
-    image: serviceCommercial,
+    image: "https://images.pexels.com/photos/3735218/pexels-photo-3735218.jpeg?auto=compress&cs=tinysrgb&w=600",
   },
 ];
 
