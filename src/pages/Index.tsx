@@ -18,6 +18,7 @@ import MottoSection from "@/components/MottoSection";
 import VisionMissionSection from "@/components/VisionMissionSection";
 import CoreValuesSection from "@/components/CoreValuesSection";
 import CarbonFootprintCalculator from "@/components/CarbonFootprintCalculator";
+import WhyChooseUs from "@/components/WhyChooseUs";
 import StatsSection from "@/components/StatsSection";
 
 const Index = () => {
