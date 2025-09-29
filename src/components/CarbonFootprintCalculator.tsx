@@ -138,6 +138,8 @@ const CarbonFootprintCalculator = () => {
               </CardHeader>
               <CardContent>
                 {result !== null ? (
+                  )
+                  }
                   <div className="space-y-8">
                     <div className="text-center p-8 bg-gradient-to-br from-primary/10 to-primary-glow/10 rounded-2xl border-2 border-primary/20 shadow-card">
                       <div className="text-5xl font-black text-primary mb-3">
@@ -172,3 +174,5 @@ const CarbonFootprintCalculator = () => {
 };
 
 export default CarbonFootprintCalculator;
+  )
+}
