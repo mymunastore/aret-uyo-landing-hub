@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { UserPlus, ExternalLink, RefreshCw } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-import googleFormPreview from "@/assets/google-form-preview.png";
+import googleFormImage from "@/assets/google-form-image.png";
 
 const GoogleRegistrationForm = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -91,7 +91,7 @@ const GoogleRegistrationForm = () => {
               className="cursor-pointer rounded-lg overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-elegant"
             >
               <img 
-                src={googleFormPreview} 
+                src={googleFormImage} 
                 alt="ARET Environmental Services Client Information Form Preview"
                 className="w-full h-auto group-hover:scale-105 transition-transform duration-300"
               />

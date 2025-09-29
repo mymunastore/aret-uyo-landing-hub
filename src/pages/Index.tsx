@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import WhyChooseUs from "@/components/WhyChooseUs";
 import FAQ from "@/components/FAQ";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
@@ -18,6 +17,8 @@ import MottoSection from "@/components/MottoSection";
 import VisionMissionSection from "@/components/VisionMissionSection";
 import CoreValuesSection from "@/components/CoreValuesSection";
 import CarbonFootprintCalculator from "@/components/CarbonFootprintCalculator";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import StatsSection from "@/components/StatsSection";
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -94,6 +95,14 @@ const Index = () => {
         
         <AnimatedSection delay={350}>
           <Contact />
+        </AnimatedSection>
+        
+        <AnimatedSection delay={400}>
+          <WhyChooseUs />
+        </AnimatedSection>
+        
+        <AnimatedSection delay={450}>
+          <StatsSection />
         </AnimatedSection>
       </main>
       

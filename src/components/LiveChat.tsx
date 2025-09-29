@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 
-interface Message {
+export interface Message {
   id: string;
   content: string;
   sender_type: 'customer' | 'agent';
@@ -15,7 +15,7 @@ interface Message {
   sender_id: string;
 }
 
-interface Conversation {
+export interface Conversation {
   id: string;
   status: string;
   created_at: string;

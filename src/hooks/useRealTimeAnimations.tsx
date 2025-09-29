@@ -9,7 +9,7 @@ interface AnimationOptions {
 export const useRealTimeAnimations = (
   callback: (entry: IntersectionObserverEntry) => void,
   options: AnimationOptions = {}
-) => {
+): React.RefObject<HTMLElement> => {
   const elementRef = useRef<HTMLElement>(null);
   const observerRef = useRef<IntersectionObserver | null>(null);
 
@@ -38,6 +38,7 @@ export const useRealTimeAnimations = (
     return () => {
       if (observerRef.current && element) {
         observerRef.current.unobserve(element);
+        observerRef.current.disconnect();
       }
     };
   }, [callback, options]);

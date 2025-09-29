@@ -80,7 +80,7 @@ class ErrorBoundary extends Component<Props, State> {
                     Error Details (Development)
                   </summary>
                   <pre className="text-xs text-muted-foreground overflow-auto">
-                    {this.state.error.toString()}
+                    {this.state.error?.toString()}
                     {this.state.errorInfo?.componentStack}
                   </pre>
                 </details>
