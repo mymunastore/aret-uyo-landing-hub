@@ -186,28 +186,6 @@ const CarbonFootprintCalculator = () => {
           </div>
 
           {/* Call to Action */}
-          <div className="text-center mt-16 animate-fade-in-scale" style={{ animationDelay: '0.4s' }}>
-            <div className="bg-gradient-primary text-primary-foreground p-12 rounded-3xl shadow-hover">
-              <h3 className="text-3xl font-black mb-6">Ready to Reduce Your Impact?</h3>
-              <p className="mb-8 opacity-90 text-lg font-medium max-w-2xl mx-auto">
-                Join ARET Environmental Services and be part of the solution for a sustainable future.
-              </p>
-              <Button 
-                variant="secondary" 
-                size="lg"
-                className="btn-modern bg-background text-primary hover:bg-background/90 h-14 px-8 text-lg font-bold"
-                onClick={() => {
-                  const element = document.querySelector('#contact');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-              >
-                Get Started Today
-              </Button>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
