@@ -7,6 +7,7 @@ import ErrorBoundary from "@/components/ErrorBoundary";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
 import Pricing from "./pages/Pricing";
+import About from "./pages/About";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
 
@@ -31,6 +32,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/services" element={<Services />} />
             <Route path="/pricing" element={<Pricing />} />
+            <Route path="/about" element={<About />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

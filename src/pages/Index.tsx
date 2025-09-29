@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import About from "@/components/About";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import StatsSection from "@/components/StatsSection";
 import FAQ from "@/components/FAQ";
@@ -69,10 +68,6 @@ const Index = () => {
         
         <AnimatedSection delay={50}>
           <MottoSection />
-        </AnimatedSection>
-        
-        <AnimatedSection delay={100}>
-          <About />
         </AnimatedSection>
         
         <AnimatedSection delay={100}>

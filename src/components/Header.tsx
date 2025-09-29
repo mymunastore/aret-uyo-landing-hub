@@ -22,7 +22,7 @@ const Header = ({ showTestimonials, onToggleTestimonials }: HeaderProps) => {
     { href: "#home", label: "Home" },
     { href: "/services", label: "Services" },
     { href: "/pricing", label: "Pricing" },
-    { href: "#about", label: "About" },
+    { href: "/about", label: "About" },
     { href: "#contact", label: "Contact" }
   ];
 
