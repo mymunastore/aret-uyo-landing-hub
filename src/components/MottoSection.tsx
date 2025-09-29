@@ -29,13 +29,3 @@ const MottoSection = () => {
 };
 
 export default MottoSection;
-              Partnering for sustainable solutions
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default MottoSection;
