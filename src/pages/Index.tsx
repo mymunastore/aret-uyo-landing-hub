@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import WhyChooseUs from "@/components/WhyChooseUs";
 import FAQ from "@/components/FAQ";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
@@ -13,8 +14,10 @@ import PerformanceOptimizer from "@/components/PerformanceOptimizer";
 import AccessibilityEnhancer from "@/components/AccessibilityEnhancer";
 import SEOHead from "@/components/SEOHead";
 import { LiveChat } from "@/components/LiveChat";
-import Services from "@/pages/Services";
-import Pricing from "@/pages/Pricing";
+import MottoSection from "@/components/MottoSection";
+import VisionMissionSection from "@/components/VisionMissionSection";
+import CoreValuesSection from "@/components/CoreValuesSection";
+import CarbonFootprintCalculator from "@/components/CarbonFootprintCalculator";
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -66,22 +69,30 @@ const Index = () => {
         <Hero />
         
         <AnimatedSection delay={50}>
-          <Services />
+          <MottoSection />
         </AnimatedSection>
         
         <AnimatedSection delay={100}>
-          <Pricing />
+          <VisionMissionSection />
         </AnimatedSection>
         
         <AnimatedSection delay={150}>
-          <Testimonials showTestimonials={showTestimonials} />
+          <CoreValuesSection />
         </AnimatedSection>
         
         <AnimatedSection delay={200}>
-          <FAQ showFAQ={!showTestimonials} />
+          <CarbonFootprintCalculator />
         </AnimatedSection>
         
         <AnimatedSection delay={250}>
+          <Testimonials showTestimonials={showTestimonials} />
+        </AnimatedSection>
+        
+        <AnimatedSection delay={300}>
+          <FAQ showFAQ={!showTestimonials} />
+        </AnimatedSection>
+        
+        <AnimatedSection delay={350}>
           <Contact />
         </AnimatedSection>
       </main>
