@@ -21,6 +21,21 @@ export default tseslint.config(
       ...reactHooks.configs.recommended.rules,
       "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
       "@typescript-eslint/no-unused-vars": "off",
+      // Performance and code quality rules
+      "prefer-const": "error",
+      "no-var": "error",
+      "object-shorthand": "error",
+      "prefer-template": "error",
+      "prefer-destructuring": ["error", {
+        "array": true,
+        "object": true
+      }, {
+        "enforceForRenamedProperties": false
+      }],
+      // React specific performance rules
+      "react-hooks/exhaustive-deps": "warn",
+      // Import optimization
+      "no-duplicate-imports": "error",
     },
   },
 );

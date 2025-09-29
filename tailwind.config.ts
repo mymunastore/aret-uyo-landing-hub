@@ -2,17 +2,37 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}", 
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+    "./index.html"
+  ],
   prefix: "",
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
   theme: {
     container: {
       center: true,
       padding: "2rem",
       screens: {
+        "xs": "475px",
+        "sm": "640px",
+        "md": "768px",
+        "lg": "1024px",
+        "xl": "1280px",
         "2xl": "1400px",
+        "3xl": "1600px",
       },
     },
     extend: {
+      screens: {
+        "xs": "475px",
+        "3xl": "1600px",
+        "4xl": "1920px",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -23,10 +43,32 @@ export default {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
           glow: "hsl(var(--primary-glow))",
+          50: "hsl(142 85% 95%)",
+          100: "hsl(142 85% 90%)",
+          200: "hsl(142 85% 80%)",
+          300: "hsl(142 85% 70%)",
+          400: "hsl(142 85% 60%)",
+          500: "hsl(var(--primary))",
+          600: "hsl(142 85% 35%)",
+          700: "hsl(142 85% 25%)",
+          800: "hsl(142 85% 15%)",
+          900: "hsl(142 85% 10%)",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
+        },
+        success: {
+          DEFAULT: "hsl(142 85% 42%)",
+          foreground: "hsl(0 0% 100%)",
+        },
+        warning: {
+          DEFAULT: "hsl(38 92% 50%)",
+          foreground: "hsl(0 0% 100%)",
+        },
+        error: {
+          DEFAULT: "hsl(0 84% 60%)",
+          foreground: "hsl(0 0% 100%)",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -59,10 +101,76 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
       },
+      fontFamily: {
+        sans: [
+          "Inter",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Roboto",
+          "Oxygen",
+          "Ubuntu",
+          "Cantarell",
+          "sans-serif"
+        ],
+        mono: [
+          "JetBrains Mono",
+          "Monaco",
+          "Consolas",
+          "Liberation Mono",
+          "Courier New",
+          "monospace"
+        ],
+      },
+      fontSize: {
+        "2xs": ["0.625rem", { lineHeight: "0.75rem" }],
+        "xs": ["0.75rem", { lineHeight: "1rem" }],
+        "sm": ["0.875rem", { lineHeight: "1.25rem" }],
+        "base": ["1rem", { lineHeight: "1.5rem" }],
+        "lg": ["1.125rem", { lineHeight: "1.75rem" }],
+        "xl": ["1.25rem", { lineHeight: "1.75rem" }],
+        "2xl": ["1.5rem", { lineHeight: "2rem" }],
+        "3xl": ["1.875rem", { lineHeight: "2.25rem" }],
+        "4xl": ["2.25rem", { lineHeight: "2.5rem" }],
+        "5xl": ["3rem", { lineHeight: "1" }],
+        "6xl": ["3.75rem", { lineHeight: "1" }],
+        "7xl": ["4.5rem", { lineHeight: "1" }],
+        "8xl": ["6rem", { lineHeight: "1" }],
+        "9xl": ["8rem", { lineHeight: "1" }],
+      },
+      spacing: {
+        "18": "4.5rem",
+        "88": "22rem",
+        "128": "32rem",
+        "144": "36rem",
+      },
       borderRadius: {
+        "none": "0",
+        "sm": "0.125rem",
+        "DEFAULT": "0.25rem",
+        "md": "0.375rem",
         lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        "xl": "0.75rem",
+        "2xl": "1rem",
+        "3xl": "1.5rem",
+        "4xl": "2rem",
+        "full": "9999px",
+      },
+      boxShadow: {
+        "elegant": "0 20px 40px -12px hsl(var(--primary) / 0.15)",
+        "glow": "0 0 50px hsl(var(--primary-glow) / 0.4)",
+        "card": "0 4px 20px -4px hsl(var(--primary) / 0.1)",
+        "hover": "0 25px 50px -12px hsl(var(--primary) / 0.25)",
+        "inner-glow": "inset 0 2px 4px 0 hsl(var(--primary) / 0.1)",
+      },
+      backdropBlur: {
+        "xs": "2px",
+        "4xl": "72px",
+      },
+      transitionTimingFunction: {
+        "bounce-in": "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+        "smooth": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "spring": "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
       },
       keyframes: {
         "accordion-down": {
@@ -125,26 +233,55 @@ export default {
         "spin-slow": {
           "from": { transform: "rotate(0deg)" },
           "to": { transform: "rotate(360deg)" }
-        }
-      },
-        animation: {
-          "accordion-down": "accordion-down 0.2s ease-out",
-          "accordion-up": "accordion-up 0.2s ease-out",
-          "fade-in": "fade-in 0.6s ease-out",
-          "fade-in-up": "fade-in-up 0.8s ease-out",
-          "fade-in-left": "fade-in-left 0.6s ease-out",
-          "fade-in-right": "fade-in-right 0.6s ease-out",
-          "scale-in": "scale-in 0.4s ease-out",
-          "scale-bounce": "scale-bounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)",
-          "slide-in-right": "slide-in-right 0.5s ease-out",
-          "slide-in-left": "slide-in-left 0.5s ease-out",
-          "bounce-gentle": "bounce-gentle 2s ease-in-out infinite",
-          "pulse-glow": "pulse-glow 2.5s ease-in-out infinite",
-          "float": "float 3s ease-in-out infinite",
-          "wiggle": "wiggle 1s ease-in-out infinite",
-          "spin-slow": "spin-slow 3s linear infinite",
         },
+        "shimmer": {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(100%)" }
+        },
+        "gradient-shift": {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" }
+        },
+        "breathe": {
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.05)" }
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in": "fade-in 0.6s ease-out",
+        "fade-in-up": "fade-in-up 0.8s ease-out",
+        "fade-in-left": "fade-in-left 0.6s ease-out",
+        "fade-in-right": "fade-in-right 0.6s ease-out",
+        "scale-in": "scale-in 0.4s ease-out",
+        "scale-bounce": "scale-bounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)",
+        "slide-in-right": "slide-in-right 0.5s ease-out",
+        "slide-in-left": "slide-in-left 0.5s ease-out",
+        "bounce-gentle": "bounce-gentle 2s ease-in-out infinite",
+        "pulse-glow": "pulse-glow 2.5s ease-in-out infinite",
+        "float": "float 3s ease-in-out infinite",
+        "wiggle": "wiggle 1s ease-in-out infinite",
+        "spin-slow": "spin-slow 3s linear infinite",
+        "shimmer": "shimmer 2s infinite",
+        "gradient-shift": "gradient-shift 3s ease-in-out infinite",
+        "breathe": "breathe 4s ease-in-out infinite",
+      },
+      zIndex: {
+        "60": "60",
+        "70": "70",
+        "80": "80",
+        "90": "90",
+        "100": "100",
+      },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require("@tailwindcss/typography"),
+  ],
+  corePlugins: {
+    // Disable unused features for better performance
+    preflight: true,
+  },
 } satisfies Config;

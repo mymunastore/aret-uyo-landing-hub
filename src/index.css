@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import optimized fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
 /* ARET Environmental Services Design System - Modern Professional Theme */
 
 @layer base {
@@ -65,6 +69,14 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Performance optimized custom properties */
+    --content-max-width: 1400px;
+    --header-height: 80px;
+    --footer-height: 200px;
+    --animation-duration-fast: 0.15s;
+    --animation-duration-normal: 0.3s;
+    --animation-duration-slow: 0.5s;
   }
 
   .dark {
@@ -119,16 +131,63 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    font-variation-settings: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Performance optimizations */
+  img {
+    @apply max-w-full h-auto;
+    content-visibility: auto;
+  }
+
+  /* Optimize scrolling performance */
+  * {
+    scroll-behavior: smooth;
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
 /* Enhanced Typography */
 h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.025em;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Optimized focus styles */
+:focus-visible {
+  @apply outline-2 outline-primary outline-offset-2;
 }
 
 /* Custom Utility Classes */
 @layer utilities {
+  /* Performance optimized utilities */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  .content-visibility-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 500px;
+  }
+
   .bg-gradient-primary {
     background: var(--gradient-primary);
   }
@@ -179,7 +238,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   .hover-lift {
-    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-elegant;
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-elegant gpu-accelerated;
   }
   
   .text-gradient {
@@ -192,7 +251,7 @@ h1, h2, h3, h4, h5, h6 {
   
   /* Responsive Animations & Real-time Effects */
   .animate-on-scroll {
-    @apply opacity-0 translate-y-12 transition-all duration-1000 ease-out;
+    @apply opacity-0 translate-y-12 transition-all duration-1000 ease-out gpu-accelerated;
   }
   
   .animate-visible {
@@ -200,7 +259,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   .real-time-hover {
-    @apply transition-all duration-300 transform-gpu;
+    @apply transition-all duration-300 gpu-accelerated;
   }
   
   .real-time-hover:hover {
@@ -209,7 +268,7 @@ h1, h2, h3, h4, h5, h6 {
   
   /* Advanced card effects */
   .card-hover {
-    @apply transition-all duration-500 hover:scale-105 hover:shadow-hover;
+    @apply transition-all duration-500 hover:scale-105 hover:shadow-hover gpu-accelerated;
   }
   
   /* Responsive spacing */
@@ -236,11 +295,11 @@ h1, h2, h3, h4, h5, h6 {
   
   /* Interactive states with real-time feedback */
   .interactive-button {
-    @apply transition-all duration-300 transform-gpu active:scale-95 hover:scale-105 focus:ring-4 focus:ring-primary/20;
+    @apply transition-all duration-300 gpu-accelerated active:scale-95 hover:scale-105 focus:ring-4 focus:ring-primary/20;
   }
   
   .interactive-card {
-    @apply transition-all duration-500 transform-gpu hover:scale-[1.03] hover:shadow-hover hover:-translate-y-3;
+    @apply transition-all duration-500 gpu-accelerated hover:scale-[1.03] hover:shadow-hover hover:-translate-y-3;
   }
   
   /* Parallax effect */
@@ -252,7 +311,7 @@ h1, h2, h3, h4, h5, h6 {
   /* Loading shimmer with real-time effect */
   .shimmer {
     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
-    animation: shimmer 2s infinite;
+    @apply animate-shimmer;
   }
   
   /* Real-time pulse effect */
@@ -287,11 +346,6 @@ h1, h2, h3, h4, h5, h6 {
     @apply border-red-500 bg-red-50 dark:bg-red-950/30 animate-pulse shadow-card;
   }
   
-  @keyframes shimmer {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
-  }
-  
   /* Enhanced animations */
   @keyframes fadeInScale {
     0% { opacity: 0; transform: scale(0.95) translateY(20px); }
@@ -323,11 +377,52 @@ h1, h2, h3, h4, h5, h6 {
   
   /* Modern button styles */
   .btn-modern {
-    @apply relative overflow-hidden bg-gradient-primary text-primary-foreground font-semibold py-3 px-6 rounded-xl shadow-card hover:shadow-hover transition-all duration-300 transform hover:scale-105;
+    @apply relative overflow-hidden bg-gradient-primary text-primary-foreground font-semibold py-3 px-6 rounded-xl shadow-card hover:shadow-hover transition-all duration-300 gpu-accelerated hover:scale-105;
   }
   
   /* Enhanced card styles */
   .card-modern {
-    @apply bg-gradient-card border-0 shadow-card hover:shadow-hover transition-all duration-500 rounded-2xl overflow-hidden;
+    @apply bg-gradient-card border-0 shadow-card hover:shadow-hover transition-all duration-500 rounded-2xl overflow-hidden gpu-accelerated;
+  }
+
+  /* New performance utilities */
+  .optimize-text {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .optimize-images {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+
+  /* Container queries support */
+  .container-responsive {
+    container-type: inline-size;
+  }
+
+  /* Modern scrollbar */
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--primary)) hsl(var(--muted));
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary-glow));
   }
 }
