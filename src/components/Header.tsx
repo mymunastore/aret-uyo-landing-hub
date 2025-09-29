@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Menu, X, Phone, Mail, MapPin, MessageCircle } from "lucide-react";
+import { Menu, X, Phone, Mail, MapPin, MessageCircle, Recycle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
