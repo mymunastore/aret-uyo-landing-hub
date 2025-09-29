@@ -85,11 +85,11 @@ const Index = () => {
         </AnimatedSection>
         
         <AnimatedSection delay={250}>
-          <Testimonials />
+          <Testimonials showTestimonials={showTestimonials} />
         </AnimatedSection>
         
         <AnimatedSection delay={300}>
-          <FAQ />
+          <FAQ showFAQ={!showTestimonials} />
         </AnimatedSection>
         
         <AnimatedSection delay={350}>

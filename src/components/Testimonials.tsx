@@ -25,7 +25,15 @@ const testimonials = [
   },
 ];
 
-const Testimonials = () => {
+interface TestimonialsProps {
+  showTestimonials?: boolean;
+}
+
+const Testimonials = ({ showTestimonials = true }: TestimonialsProps) => {
+  if (!showTestimonials) {
+    return null;
+  }
+
   return (
     <section className="py-32 bg-background relative overflow-hidden">
       {/* Background Elements */}

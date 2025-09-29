@@ -171,7 +171,7 @@ const FAQ = ({ showFAQ = true }: FAQProps) => {
         </div>
 
         {/* FAQ Content - Conditionally Rendered */}
-        {showFAQ && (
+        {showFAQ ? (
           <div className="max-w-5xl mx-auto animate-fade-in-scale">
             {categories.map((category, categoryIndex) => (
               <div key={category} className="mb-12">
@@ -243,6 +243,34 @@ const FAQ = ({ showFAQ = true }: FAQProps) => {
                     Email Us
                   </a>
                 </div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="max-w-2xl mx-auto text-center animate-fade-in-scale">
+            <div className="bg-card border border-border rounded-xl p-12 shadow-card">
+              <HelpCircle className="mx-auto h-20 w-20 text-muted-foreground mb-6 opacity-50" />
+              <h3 className="text-2xl font-bold text-foreground mb-4">
+                FAQ Section Hidden
+              </h3>
+              <p className="text-muted-foreground mb-8 text-lg">
+                The FAQ section is currently hidden. Use the reviews toggle in the header to show customer testimonials instead, or contact us directly for immediate assistance.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a 
+                  href="tel:09152870616" 
+                  className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-semibold"
+                >
+                  <Phone className="mr-2 h-5 w-5" />
+                  Call: 09152870616
+                </a>
+                <a 
+                  href="mailto:info@aret-environmental-ng.com" 
+                  className="inline-flex items-center justify-center px-6 py-3 border-2 border-primary text-primary rounded-lg hover:bg-primary/10 transition-colors font-semibold"
+                >
+                  <Mail className="mr-2 h-5 w-5" />
+                  Email Us
+                </a>
               </div>
             </div>
           </div>
