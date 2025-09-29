@@ -1,5 +1,5 @@
 import React, { Component, ErrorInfo, ReactNode } from "react";
-import { TriangleAlert as AlertTriangle, RefreshCw } from "lucide-react";
+import { AlertTriangle, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -80,7 +80,7 @@ class ErrorBoundary extends Component<Props, State> {
                     Error Details (Development)
                   </summary>
                   <pre className="text-xs text-muted-foreground overflow-auto">
-                    {this.state.error?.toString()}
+                    {this.state.error.toString()}
                     {this.state.errorInfo?.componentStack}
                   </pre>
                 </details>

@@ -1,10 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Recycle, Trash2, Leaf, Phone, Sparkles } from "lucide-react";
 import { useResponsive } from "@/hooks/useResponsive"; 
+import { useRealTimeAnimations } from "@/hooks/useRealTimeAnimations";
 import heroImage from "@/assets/hero-waste-workers.png";
 
 const Hero = () => {
   const { isMobile, isTablet } = useResponsive();
+
+  const heroRef = useRealTimeAnimations((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate-visible');
+    }
+  });
 
   const scrollToServices = () => {
     const element = document.querySelector('#services');
@@ -32,6 +39,7 @@ const Hero = () => {
 
   return (
     <section 
+      ref={heroRef}
       id="home" 
       className="relative min-h-screen flex items-center overflow-hidden animate-on-scroll"
     >
@@ -138,18 +146,6 @@ const Hero = () => {
                 isMobile ? 'text-xs' : 'text-sm'
               }`}>
                 Happy Clients
-              </div>
-            </div>
-            <div className="text-center group">
-              <div className={`font-black text-primary-foreground mb-2 group-hover:scale-110 transition-spring ${
-                isMobile ? 'text-2xl' : 'text-3xl'
-              }`}>
-                24/7
-              </div>
-              <div className={`text-primary-foreground/80 ${
-                isMobile ? 'text-xs' : 'text-sm'
-              }`}>
-                Support Available
               </div>
             </div>
           </div>
