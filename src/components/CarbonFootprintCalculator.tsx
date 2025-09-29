@@ -138,8 +138,6 @@ const CarbonFootprintCalculator = () => {
               </CardHeader>
               <CardContent>
                 {result !== null ? (
-                  )
-                  }
                   <div className="space-y-8">
                     <div className="text-center p-8 bg-gradient-to-br from-primary/10 to-primary-glow/10 rounded-2xl border-2 border-primary/20 shadow-card">
                       <div className="text-5xl font-black text-primary mb-3">
@@ -167,6 +165,25 @@ const CarbonFootprintCalculator = () => {
                           How we help reduce your footprint:
                         </p>
                         <ul className="list-disc list-inside space-y-2 ml-6 font-medium">
+                          <li>Advanced recycling programs that divert waste from landfills</li>
+                          <li>Efficient collection routes that reduce transportation emissions</li>
+                          <li>Waste-to-energy conversion processes</li>
+                          <li>Educational programs to promote sustainable practices</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="text-center py-16">
+                    <div className="text-6xl mb-6">🌱</div>
+                    <p className="text-xl text-muted-foreground font-medium">
+                      Enter your waste details above to calculate your environmental impact
+                    </p>
+                  </div>
+                )}
+              </CardContent>
+            </div>
+          </div>
         </div>
       </div>
     </section>
