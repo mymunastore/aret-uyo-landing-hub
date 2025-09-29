@@ -18,7 +18,6 @@ import MottoSection from "@/components/MottoSection";
 import VisionMissionSection from "@/components/VisionMissionSection";
 import CoreValuesSection from "@/components/CoreValuesSection";
 import CarbonFootprintCalculator from "@/components/CarbonFootprintCalculator";
-import StatsSection from "@/components/StatsSection";
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -95,14 +94,6 @@ const Index = () => {
         
         <AnimatedSection delay={350}>
           <Contact />
-        </AnimatedSection>
-        
-        <AnimatedSection delay={400}>
-          <WhyChooseUs />
-        </AnimatedSection>
-        
-        <AnimatedSection delay={450}>
-          <StatsSection />
         </AnimatedSection>
       </main>
       

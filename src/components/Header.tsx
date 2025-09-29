@@ -142,12 +142,12 @@ const Header = ({ showTestimonials, onToggleTestimonials }: HeaderProps) => {
                   <button
                     key={item.href}
                     onClick={() => handleNavClick(item.href)}
-                    className={`text-foreground hover:text-primary transition-all duration-300 font-semibold relative group ${
+                    className={`text-foreground hover:text-primary transition-all duration-300 font-medium relative group ${
                       isTablet ? 'text-sm' : 'text-base'
-                    } hover:bg-primary/10 px-4 py-3 rounded-xl`}
+                    } hover:bg-primary/10 px-4 py-3 rounded-xl font-semibold`}
                   >
                     {item.label}
-                    <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-primary rounded-full transition-all duration-300 group-hover:w-3/4"></span>
+                    <span className="absolute -bottom-1 left-0 w-0 h-1 bg-primary rounded-full transition-all duration-300 group-hover:w-full"></span>
                   </button>
                 ))}
               </div>
@@ -218,7 +218,7 @@ const Header = ({ showTestimonials, onToggleTestimonials }: HeaderProps) => {
                   <button
                     key={item.href}
                     onClick={() => handleNavClick(item.href)}
-                    className="block w-full py-4 px-6 text-left text-foreground hover:text-primary hover:bg-primary/10 rounded-xl transition-all duration-300 animate-fade-in-left real-time-hover font-semibold text-base border border-transparent hover:border-primary/20"
+                    className="block w-full py-4 px-6 text-left text-foreground hover:text-primary hover:bg-primary/10 rounded-xl transition-all duration-300 animate-fade-in-left real-time-hover font-semibold text-lg"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     {item.label}

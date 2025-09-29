@@ -33,13 +33,13 @@ const ThemeToggle = () => {
       variant="ghost"
       size="icon"
       onClick={toggleTheme}
-      className="rounded-full hover:bg-primary/10 transition-all duration-300 w-12 h-12"
+      className="rounded-full hover:bg-primary/10 transition-all duration-300"
       aria-label="Toggle theme"
     >
       {isDark ? (
-        <Sun size={22} className="text-primary" />
+        <Sun size={20} className="text-primary" />
       ) : (
-        <Moon size={22} className="text-primary" />
+        <Moon size={20} className="text-primary" />
       )}
     </Button>
   );

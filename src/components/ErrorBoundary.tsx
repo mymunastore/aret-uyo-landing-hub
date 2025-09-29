@@ -1,5 +1,5 @@
 import React, { Component, ErrorInfo, ReactNode } from "react";
-import { TriangleAlert as AlertTriangle, RefreshCw } from "lucide-react";
+import { AlertTriangle, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -42,33 +42,33 @@ class ErrorBoundary extends Component<Props, State> {
   public render() {
     if (this.state.hasError) {
       return (
-        <div className="min-h-screen bg-gradient-subtle flex items-center justify-center p-4">
-          <Card className="w-full max-w-lg shadow-elegant border-0">
+        <div className="min-h-screen bg-background flex items-center justify-center p-4">
+          <Card className="w-full max-w-md shadow-elegant">
             <CardHeader className="text-center">
-              <div className="mx-auto w-20 h-20 bg-destructive/10 rounded-full flex items-center justify-center mb-6 animate-pulse">
-                <AlertTriangle size={40} className="text-destructive" />
+              <div className="mx-auto w-16 h-16 bg-destructive/10 rounded-full flex items-center justify-center mb-4">
+                <AlertTriangle size={32} className="text-destructive" />
               </div>
-              <CardTitle className="text-3xl font-black text-foreground">
+              <CardTitle className="text-2xl text-foreground">
                 Oops! Something went wrong
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-6">
-              <p className="text-muted-foreground text-center text-lg">
+            <CardContent className="space-y-4">
+              <p className="text-muted-foreground text-center">
                 We're sorry, but something unexpected happened. Please try refreshing the page or contact support if the problem persists.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <Button 
                   onClick={this.handleRetry}
                   variant="outline"
-                  className="flex-1 h-12"
+                  className="flex-1"
                 >
                   <RefreshCw size={16} className="mr-2" />
                   Try Again
                 </Button>
                 <Button 
                   onClick={this.handleReload}
-                  className="flex-1 h-12"
+                  className="flex-1"
                 >
                   Reload Page
                 </Button>

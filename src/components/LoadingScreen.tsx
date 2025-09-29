@@ -32,10 +32,10 @@ const LoadingScreen = ({ onLoadingComplete }: LoadingScreenProps) => {
           <img 
             src={aretLogo} 
             alt="ARET Logo" 
-            className="h-20 w-auto animate-bounce"
+            className="h-16 w-auto animate-pulse"
           />
           <Recycle 
-            size={56} 
+            size={48} 
             className="text-primary-foreground animate-spin" 
             style={{ animationDuration: '3s' }}
           />
@@ -43,23 +43,23 @@ const LoadingScreen = ({ onLoadingComplete }: LoadingScreenProps) => {
 
         {/* Loading Text */}
         <div className="space-y-2">
-          <h2 className="text-3xl font-black text-primary-foreground tracking-tight">
+          <h2 className="text-2xl font-bold text-primary-foreground">
             ARET Environmental Services
           </h2>
-          <p className="text-primary-foreground/90 text-lg font-medium">
+          <p className="text-primary-foreground/80">
             Loading sustainable solutions...
           </p>
         </div>
 
         {/* Progress Bar */}
-        <div className="w-80 mx-auto">
-          <div className="bg-primary-foreground/20 rounded-full h-3 overflow-hidden shadow-inner">
+        <div className="w-64 mx-auto">
+          <div className="bg-primary-foreground/20 rounded-full h-2 overflow-hidden">
             <div 
-              className="bg-primary-foreground h-full rounded-full transition-all duration-300 ease-out shadow-sm"
+              className="bg-primary-foreground h-full rounded-full transition-all duration-300 ease-out"
               style={{ width: `${progress}%` }}
             />
           </div>
-          <p className="text-primary-foreground/70 text-base font-medium mt-3">
+          <p className="text-primary-foreground/60 text-sm mt-2">
             {progress}%
           </p>
         </div>
