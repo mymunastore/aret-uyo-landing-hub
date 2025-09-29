@@ -186,6 +186,7 @@ const CarbonFootprintCalculator = () => {
           </div>
 
           {/* Call to Action */}
+        </div>
       </div>
     </section>
   );
