@@ -90,7 +90,7 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="animate-fade-in-scale" style={{ animationDelay: '0.2s' }}>
-            <div className="w-full max-w-2xl mx-auto shadow-elegant hover-lift">
+            <div className="w-full max-w-2xl mx-auto shadow-elegant hover:shadow-hover transition-all duration-300">
               <div className="bg-gradient-to-r from-primary to-primary/80 text-primary-foreground rounded-t-lg p-6">
                 <div className="flex items-center justify-center mb-4">
                   <img 
@@ -117,6 +117,7 @@ const Contact = () => {
                   marginWidth={0}
                   className="w-full"
                   title="ARET Environmental Services Client Information Form"
+                  loading="lazy"
                 >
                   Loading...
                 </iframe>

@@ -3,25 +3,32 @@ import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
+    name: "Bassey Emenyi",
+    role: "Residential Client",
+    location: "Uyo",
+    rating: 5,
+    text: "There have been no concerns regarding the pick-up schedule on our end. I must say your services are excellent. It is also worth noting that we received our monthly allocated garbage bags today (July/August). Great job, everyone, on the value-added service."
+  },
+  {
     name: "Mr. George Abiam",
-    role: "All Residential Clients",
+    role: "Residential Client",
     location: "Uyo",
     rating: 5,
     text: "I'm delighted with the service provided by ARET Environmental Services. They picked up and disposed of refuse from my house last week in a timely and professional manner. Everything was done neatly and without any inconvenience. Great team, reliable service—highly recommended!"
   },
   {
-    name: "Mr. Enyeokpon Inyang", 
-    role: "All Residential Clients",
+    name: "Mrs. Dorathy Clement Praise",
+    role: "Residential Client",
+    location: "Uyo",
+    rating: 5,
+    text: "Thanks for your swift and efficient services."
+  },
+  {
+    name: "Mr. Enyeokpon Inyang",
+    role: "Residential Client",
     location: "Uyo",
     rating: 5,
     text: "Your service is excellent."
-  },
-  {
-    name: "Bassey Emenyi",
-    role: "All Residential Clients", 
-    location: "Uyo",
-    rating: 5,
-    text: "There have been no concerns regarding the pick-up schedule on our end. I must say your services are excellent. It is also worth noting that we received our monthly allocated garbage bags today (July/August). Great job, everyone, on the value-added service."
   },
 ];
 
