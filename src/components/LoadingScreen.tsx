@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Recycle } from "lucide-react";
+import aretLogo from "@/assets/aret-logo.png";
 
 interface LoadingScreenProps {
   onLoadingComplete: () => void;
@@ -28,9 +29,11 @@ const LoadingScreen = ({ onLoadingComplete }: LoadingScreenProps) => {
       <div className="text-center space-y-8">
         {/* Logo */}
         <div className="flex items-center justify-center space-x-4">
-          <div className="bg-primary/20 p-4 rounded-full animate-pulse">
-            <Recycle size={48} className="text-primary" />
-          </div>
+          <img 
+            src={aretLogo} 
+            alt="ARET Logo" 
+            className="h-16 w-auto animate-pulse"
+          />
           <Recycle 
             size={48} 
             className="text-primary-foreground animate-spin" 
