@@ -1,21 +1,10 @@
+import { useTheme } from "next-themes";
 import { Toaster as Sonner, toast } from "sonner";
 
 type ToasterProps = React.ComponentProps<typeof Sonner>;
 
 const Toaster = ({ ...props }: ToasterProps) => {
-  // Use system theme detection instead of next-themes
-  const [theme, setTheme] = React.useState<"light" | "dark" | "system">("system");
-  
-  React.useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    
-    if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
-      setTheme("dark");
-    } else {
-      setTheme("light");
-    }
-  }, []);
+  const { theme = "system" } = useTheme();
 
   return (
     <Sonner
@@ -34,8 +23,5 @@ const Toaster = ({ ...props }: ToasterProps) => {
     />
   );
 };
-
-// Add React import
-import * as React from "react";
 
 export { Toaster, toast };
