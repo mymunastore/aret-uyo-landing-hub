@@ -90,49 +90,61 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="animate-fade-in-scale" style={{ animationDelay: '0.2s' }}>
-            <div className="w-full max-w-2xl mx-auto shadow-elegant hover:shadow-hover transition-all duration-300">
-              <div className="bg-gradient-to-r from-primary to-primary/80 text-primary-foreground rounded-t-lg p-6">
-                <div className="flex items-center justify-center mb-4">
+            <div className="w-full max-w-2xl mx-auto">
+              <div className="card-modern shadow-elegant hover:shadow-hover transition-all duration-300 overflow-hidden">
+                <a 
+                  href="https://forms.gle/m3yL5f68ksnn7h6Z6" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block group relative"
+                >
                   <img 
                     src="/src/assets/image copy.png" 
-                    alt="ARET Environmental Services Logo" 
-                    className="h-20 w-auto"
+                    alt="ARET Environmental Services Client Information Form - Click to fill out"
+                    className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
                   />
-                </div>
-              </div>
-              
-              <div className="bg-white rounded-b-lg overflow-hidden">
-                <iframe
-                  src="https://forms.gle/m3yL5f68ksnn7h6Z6"
-                  width="100%"
-                  height="600"
-                  frameBorder="0"
-                  marginHeight={0}
-                  marginWidth={0}
-                  className="w-full"
-                  title="ARET Environmental Services Client Information Form"
-                  loading="lazy"
-                >
-                  Loading...
-                </iframe>
+                  
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                      Click to Fill Form
+                    </div>
+                  </div>
+                </a>
                 
-                <div className="p-4 bg-gray-50 border-t text-center">
-                  <p className="text-sm text-muted-foreground mb-2">
-                    Form not loading? 
+                <div className="p-6 bg-gradient-to-r from-primary/5 to-primary-glow/5 border-t text-center">
+                  <h3 className="text-lg font-bold text-foreground mb-2">
+                    Client Information Form
+                  </h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Click the form above to fill out your information and get started with our services.
+                  </p>
+                  
+                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
                     <a 
                       href="https://forms.gle/m3yL5f68ksnn7h6Z6" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-primary hover:underline ml-1"
+                      className="btn-modern inline-flex items-center justify-center"
                     >
-                      Click here to open in a new tab
+                      Fill Out Form
                     </a>
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    Or contact us directly: 
-                    <a href="tel:09152870616" className="text-primary hover:underline ml-1">09152870616</a> | 
-                    <a href="mailto:info@aret-environmental-ng.com" className="text-primary hover:underline ml-1">info@aret-environmental-ng.com</a>
-                  </p>
+                    <div className="flex gap-2">
+                      <a 
+                        href="tel:09152870616" 
+                        className="text-primary hover:underline text-sm font-medium"
+                      >
+                        Call: 09152870616
+                      </a>
+                      <span className="text-muted-foreground">|</span>
+                      <a 
+                        href="mailto:info@aret-environmental-ng.com" 
+                        className="text-primary hover:underline text-sm font-medium"
+                      >
+                        Email Us
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
