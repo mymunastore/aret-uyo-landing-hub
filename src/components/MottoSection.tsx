@@ -11,14 +11,13 @@ const MottoSection = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center">
-          {/* Main Motto */}
+          {/* ARET Motto */}
           <div className="mb-12">
             <h2 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-4 animate-fade-in-up">
-              Partnering for <span className="text-accent">Sustainable Solutions</span>
+              ARET <span className="text-accent">MOTTO</span>
             </h2>
-            <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto animate-fade-in-up">
-              Like a nurturing mother, ARET Environmental Services cares for our community 
-              and environment with dedication, love, and unwavering commitment to sustainability.
+            <p className="text-2xl md:text-3xl text-primary-foreground/90 max-w-4xl mx-auto animate-fade-in-up font-medium">
+              Partnering for sustainable solutions
             </p>
           </div>
 

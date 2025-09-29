@@ -30,8 +30,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground mb-2 text-lg">Phone</h4>
-                  <p className="text-foreground font-medium">07032224738</p>
-                  <p className="text-foreground font-medium">09152870616</p>
+                  <p className="text-foreground font-medium">Front Desk: 09152870616</p>
+                  <p className="text-foreground font-medium">Alternative: 07032224738</p>
                 </div>
               </div>
 
@@ -69,9 +69,9 @@ const Contact = () => {
                 <div>
                   <h4 className="font-semibold text-foreground mb-2 text-lg">Business Hours</h4>
                   <div className="text-foreground font-medium space-y-1">
-                    <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-                    <p>Saturday: 9:00 AM - 4:00 PM</p>
-                    <p>Sunday: Emergency Service Only</p>
+                    <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+                    <p>Saturday: 10:00 AM - 2:30 PM</p>
+                    <p>Sunday: Emergency Services Only</p>
                   </div>
                 </div>
               </div>

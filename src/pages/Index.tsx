@@ -15,7 +15,9 @@ import AccessibilityEnhancer from "@/components/AccessibilityEnhancer";
 import SEOHead from "@/components/SEOHead";
 import { LiveChat } from "@/components/LiveChat";
 import MottoSection from "@/components/MottoSection";
-import AretCaresSection from "@/components/AretCaresSection";
+import VisionMissionSection from "@/components/VisionMissionSection";
+import CoreValuesSection from "@/components/CoreValuesSection";
+import CarbonFootprintCalculator from "@/components/CarbonFootprintCalculator";
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -71,22 +73,26 @@ const Index = () => {
         </AnimatedSection>
         
         <AnimatedSection delay={100}>
-          <AretCaresSection />
+          <VisionMissionSection />
         </AnimatedSection>
         
         <AnimatedSection delay={150}>
-          <WhyChooseUs />
+          <CoreValuesSection />
         </AnimatedSection>
         
         <AnimatedSection delay={200}>
-          <Testimonials />
+          <CarbonFootprintCalculator />
         </AnimatedSection>
         
         <AnimatedSection delay={250}>
-          <FAQ />
+          <Testimonials />
         </AnimatedSection>
         
         <AnimatedSection delay={300}>
+          <FAQ />
+        </AnimatedSection>
+        
+        <AnimatedSection delay={350}>
           <Contact />
         </AnimatedSection>
       </main>
