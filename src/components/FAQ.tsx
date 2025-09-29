@@ -276,34 +276,6 @@ const FAQ = ({ showFAQ = true }: FAQProps) => {
           </div>
         )}
 
-        {/* Alternative message when FAQ is hidden */}
-        {!showFAQ && (
-          <div className="max-w-2xl mx-auto text-center">
-            <div className="bg-card border border-border rounded-xl p-8 shadow-sm">
-              <HelpCircle className="mx-auto h-16 w-16 text-muted-foreground mb-4" />
-              <h3 className="text-xl font-semibold text-foreground mb-3">
-                Have Questions?
-              </h3>
-              <p className="text-muted-foreground mb-6">
-                Click the button above to view our comprehensive FAQ section, or contact us directly for immediate assistance.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a 
-                  href="tel:09152870617" 
-                  className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
-                >
-                  Call Us: 0915 287 0617
-                </a>
-                <a 
-                  href="mailto:info@aret-environmental-ng.com" 
-                  className="inline-flex items-center justify-center px-6 py-3 border border-primary text-primary rounded-lg hover:bg-primary/10 transition-colors"
-                >
-                  Email Us
-                </a>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     </section>
   );
