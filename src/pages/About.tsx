@@ -2,7 +2,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Recycle, RotateCcw, Minus, ArrowRight, Shield, Clock, Heart, Users, Leaf, ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import about3Rs from "@/assets/about-3rs.jpg";
 
 const principles = [
   {
@@ -127,11 +126,12 @@ const About = () => {
               {/* Hero Image */}
               <div className="relative rounded-2xl overflow-hidden mb-8">
                 <img 
-                  src={about3Rs} 
+                  src="https://images.pexels.com/photos/2547565/pexels-photo-2547565.jpeg?auto=compress&cs=tinysrgb&w=800" 
                   alt="ARET Environmental Services - Caring for Community and Environment"
                   className="w-full h-64 object-cover"
                   loading="lazy"
                   decoding="async"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
                 <div className="absolute bottom-4 left-4">

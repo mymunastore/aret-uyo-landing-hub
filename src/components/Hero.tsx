@@ -45,15 +45,25 @@ const Hero = () => {
     >
       {/* Background Image with Responsive Overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={heroImage} 
-          alt="ARET Environmental Services - Professional waste management team in Uyo, Akwa Ibom State" 
-          className="w-full h-full object-cover object-center" 
-          loading="eager" 
-          fetchPriority="high" 
-          decoding="async"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
-        />
+        <picture>
+          <source 
+            media="(max-width: 768px)" 
+            srcSet="https://images.pexels.com/photos/2988232/pexels-photo-2988232.jpeg?auto=compress&cs=tinysrgb&w=800" 
+          />
+          <source 
+            media="(max-width: 1200px)" 
+            srcSet="https://images.pexels.com/photos/2988232/pexels-photo-2988232.jpeg?auto=compress&cs=tinysrgb&w=1200" 
+          />
+          <img 
+            src="https://images.pexels.com/photos/2988232/pexels-photo-2988232.jpeg?auto=compress&cs=tinysrgb&w=1600" 
+            alt="ARET Environmental Services - Professional waste management team in Uyo, Akwa Ibom State" 
+            className="w-full h-full object-cover object-center" 
+            loading="eager" 
+            fetchPriority="high" 
+            decoding="async"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+          />
+        </picture>
         <div className="absolute inset-0 bg-gradient-hero opacity-30 sm:opacity-20"></div>
       </div>
 

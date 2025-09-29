@@ -115,14 +115,14 @@ const Contact = () => {
                 >
                   {/* Image Container with Gradient Overlay */}
                   <div className="relative">
-                  <img 
-                    src="/src/assets/image copy copy.png" 
-                    alt="ARET Environmental Services Client Information Form - Click to fill out"
-                    className="w-full h-auto transition-transform duration-500 group-hover:scale-110 object-cover object-top"
-                    loading="lazy"
-                    decoding="async"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
+                    <img 
+                      src="https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                      alt="ARET Environmental Services Client Information Form - Click to fill out"
+                      className="w-full h-auto transition-transform duration-500 group-hover:scale-110 object-cover object-top"
+                      loading="lazy"
+                      decoding="async"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
                     
                     {/* Gradient overlay for better text readability */}
                     <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent"></div>
