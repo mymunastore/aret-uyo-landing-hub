@@ -20,9 +20,9 @@ const Header = ({ showTestimonials, onToggleTestimonials }: HeaderProps) => {
 
   const navItems = [
     { href: "#home", label: "Home" },
-    { href: "/services", label: "Services" },
-    { href: "/pricing", label: "Pricing" },
-    { href: "/about", label: "About" },
+    { href: "#services", label: "Services" },
+    { href: "#pricing", label: "Pricing" },
+    { href: "#why-choose-us", label: "Why Choose Us" },
     { href: "#contact", label: "Contact" }
   ];
 
@@ -55,20 +55,15 @@ const Header = ({ showTestimonials, onToggleTestimonials }: HeaderProps) => {
   const handleNavClick = (href: string) => {
     setIsMenuOpen(false);
     
-    if (href.startsWith('/')) {
-      // Navigate to different page
-      window.location.href = href;
-    } else {
-      // Smooth scroll with offset for fixed header
-      const element = document.querySelector(href);
-      if (element) {
-        const headerHeight = 120; // Account for both bars
-        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-        window.scrollTo({
-          top: elementPosition - headerHeight,
-          behavior: 'smooth'
-        });
-      }
+    // Smooth scroll with offset for fixed header
+    const element = document.querySelector(href);
+    if (element) {
+      const headerHeight = 120; // Account for both bars
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({
+        top: elementPosition - headerHeight,
+        behavior: 'smooth'
+      });
     }
   };
 
