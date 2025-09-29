@@ -5,7 +5,6 @@ import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import ThemeToggle from "@/components/ThemeToggle";
 import { useResponsive } from "@/hooks/useResponsive";
-import aretLogo from "@/assets/aret-logo.png";
 
 interface HeaderProps {
   showTestimonials: boolean;
@@ -112,13 +111,13 @@ const Header = ({ showTestimonials, onToggleTestimonials }: HeaderProps) => {
           }`}>
             {/* Logo */}
             <div className="flex items-center space-x-2 sm:space-x-3">
-              <img 
-                src={aretLogo} 
-                alt="ARET Environmental Services Logo" 
-                className={`w-auto hover:scale-110 transition-transform duration-300 ${
-                  isMobile ? 'h-8' : isTablet ? 'h-10' : 'h-12'
-                }`} 
-              />
+              <div className={`bg-primary p-2 rounded-lg hover:scale-110 transition-transform duration-300 ${
+                isMobile ? 'h-8 w-8' : isTablet ? 'h-10 w-10' : 'h-12 w-12'
+              } flex items-center justify-center`}>
+                <Recycle className={`text-primary-foreground ${
+                  isMobile ? 'w-4 h-4' : isTablet ? 'w-5 h-5' : 'w-6 h-6'
+                }`} />
+              </div>
               <div className="hidden sm:block">
                 <span className={`font-medium text-foreground ${
                   isMobile ? 'text-xs' : isTablet ? 'text-sm' : 'text-base'

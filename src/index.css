@@ -183,8 +183,9 @@
   textarea,
   [role="button"],
   [tabindex]:not([tabindex="-1"]) {
-    min-height: 44px;
-    min-width: 44px;
+    min-height: 48px;
+    min-width: 48px;
+    padding: 12px 16px;
   }
 
   /* Exception for inline elements that shouldn't have min dimensions */
@@ -195,6 +196,7 @@
   small {
     min-height: unset;
     min-width: unset;
+    padding: unset;
   }
 
   /* Improve form control touch targets */
@@ -205,25 +207,41 @@
   input[type="password"],
   textarea,
   select {
-    min-height: 48px;
-    padding: 12px 16px;
+    min-height: 52px;
+    padding: 14px 18px;
+    font-size: 16px; /* Prevent zoom on iOS */
   }
 
   /* Better mobile scrolling */
   html {
     -webkit-overflow-scrolling: touch;
     scroll-padding-top: 120px; /* Account for fixed header */
+    scroll-behavior: smooth;
   }
 
   /* Prevent horizontal scroll on mobile */
   body {
     overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
   }
 
   /* Improve tap highlighting on mobile */
   * {
     -webkit-tap-highlight-color: hsl(var(--primary) / 0.2);
     -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Allow text selection for content */
+  p, span, div, h1, h2, h3, h4, h5, h6, li {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
   }
 
   /* Better focus management for keyboard users */
@@ -236,6 +254,8 @@
     max-width: 100%;
     height: auto;
     display: block;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
   }
 }
 
