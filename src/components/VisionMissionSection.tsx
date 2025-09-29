@@ -1,4 +1,4 @@
-import { Target, Compass, Lightbulb, CheckCircle } from "lucide-react";
+import { Target, Compass, Lightbulb, CircleCheck as CheckCircle } from "lucide-react";
 
 const VisionMissionSection = () => {
   return (
