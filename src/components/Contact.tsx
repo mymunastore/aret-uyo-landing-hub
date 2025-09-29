@@ -40,8 +40,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-foreground mb-3 text-xl">Phone</h4>
-                  <p className="text-foreground font-bold text-lg">Front Desk: 09152870616</p>
-                  <p className="text-foreground font-bold text-lg">Alternative: 07032224738</p>
+                  <a href="tel:09152870616" className="text-foreground font-bold text-lg hover:text-primary transition-colors block">Front Desk: 09152870616</a>
+                  <a href="tel:07032224738" className="text-foreground font-bold text-lg hover:text-primary transition-colors block">Alternative: 07032224738</a>
                 </div>
               </div>
 
@@ -52,8 +52,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-foreground mb-3 text-xl">Email</h4>
-                  <p className="text-foreground font-bold text-lg">info@aret-environmental-ng.com</p>
-                  <p className="text-foreground font-bold text-base mt-2">support@aret-environmental-ng.com</p>
+                  <a href="mailto:info@aret-environmental-ng.com" className="text-foreground font-bold text-lg hover:text-primary transition-colors block">info@aret-environmental-ng.com</a>
+                  <a href="mailto:support@aret-environmental-ng.com" className="text-foreground font-bold text-base mt-2 hover:text-primary transition-colors block">support@aret-environmental-ng.com</a>
                 </div>
               </div>
 

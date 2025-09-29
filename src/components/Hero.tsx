@@ -148,6 +148,18 @@ const Hero = () => {
                 Happy Clients
               </div>
             </div>
+            <div className="text-center group">
+              <div className={`font-black text-primary-foreground mb-2 group-hover:scale-110 transition-spring ${
+                isMobile ? 'text-2xl' : 'text-3xl'
+              }`}>
+                24/7
+              </div>
+              <div className={`text-primary-foreground/80 ${
+                isMobile ? 'text-xs' : 'text-sm'
+              }`}>
+                Support
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -14,10 +14,8 @@ import PerformanceOptimizer from "@/components/PerformanceOptimizer";
 import AccessibilityEnhancer from "@/components/AccessibilityEnhancer";
 import SEOHead from "@/components/SEOHead";
 import { LiveChat } from "@/components/LiveChat";
-import MottoSection from "@/components/MottoSection";
-import VisionMissionSection from "@/components/VisionMissionSection";
-import CoreValuesSection from "@/components/CoreValuesSection";
-import CarbonFootprintCalculator from "@/components/CarbonFootprintCalculator";
+import Services from "@/components/Services";
+import Pricing from "@/components/Pricing";
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -69,30 +67,26 @@ const Index = () => {
         <Hero />
         
         <AnimatedSection delay={50}>
-          <MottoSection />
+          <Services />
         </AnimatedSection>
         
         <AnimatedSection delay={100}>
-          <VisionMissionSection />
+          <Pricing />
         </AnimatedSection>
         
         <AnimatedSection delay={150}>
-          <CoreValuesSection />
+          <WhyChooseUs />
         </AnimatedSection>
         
         <AnimatedSection delay={200}>
-          <CarbonFootprintCalculator />
-        </AnimatedSection>
-        
-        <AnimatedSection delay={250}>
           <Testimonials showTestimonials={showTestimonials} />
         </AnimatedSection>
         
-        <AnimatedSection delay={300}>
+        <AnimatedSection delay={250}>
           <FAQ showFAQ={!showTestimonials} />
         </AnimatedSection>
         
-        <AnimatedSection delay={350}>
+        <AnimatedSection delay={300}>
           <Contact />
         </AnimatedSection>
       </main>
