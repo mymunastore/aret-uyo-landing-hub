@@ -1,26 +1,27 @@
-import { Target, Compass } from "lucide-react";
+import { Target, Compass, Lightbulb, CheckCircle } from "lucide-react";
 
 const VisionMissionSection = () => {
   return (
-    <section className="py-24 bg-gradient-to-br from-background via-muted/30 to-background relative overflow-hidden">
+    <section className="py-32 bg-gradient-subtle relative overflow-hidden">
       {/* Decorative Background Elements */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-10 left-10 w-64 h-64 bg-primary rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-10 right-10 w-48 h-48 bg-accent rounded-full blur-2xl animate-bounce-gentle"></div>
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 left-20 w-80 h-80 bg-primary rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 right-20 w-64 h-64 bg-primary-glow rounded-full blur-3xl animate-bounce-gentle"></div>
+        <div className="absolute top-1/3 right-1/4 w-48 h-48 bg-accent rounded-full blur-2xl animate-pulse"></div>
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-6xl mx-auto space-y-16">
+        <div className="max-w-7xl mx-auto space-y-20">
           
           {/* Vision Statement */}
-          <div className="text-center animate-fade-in-up">
-            <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-6 py-3 mb-8">
-              <Target className="text-primary" size={20} />
-              <span className="text-primary font-semibold text-sm">VISION STATEMENT</span>
+          <div className="text-center animate-fade-in-scale">
+            <div className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/30 rounded-full px-8 py-4 mb-10 shadow-card">
+              <Lightbulb className="text-primary" size={24} />
+              <span className="text-primary font-bold text-base tracking-wide">VISION STATEMENT</span>
             </div>
             
-            <div className="bg-card border border-border rounded-2xl p-8 shadow-elegant">
-              <p className="text-lg text-muted-foreground leading-relaxed">
+            <div className="card-modern p-10 shadow-hover">
+              <p className="text-xl text-foreground leading-relaxed font-medium">
                 At ARET Environmental Services, our vision is to revolutionize the waste management landscape by 
                 creating an ecosystem where efficiency, sustainability, and innovation converges. We aim to be the catalyst for change 
                 in environmental stewardship, fostering a future in which communities and industries alike benefit from a 
@@ -32,52 +33,52 @@ const VisionMissionSection = () => {
           </div>
 
           {/* Mission Statement */}
-          <div className="text-center animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-6 py-3 mb-8">
-              <Compass className="text-primary" size={20} />
-              <span className="text-primary font-semibold text-sm">MISSION STATEMENT</span>
+          <div className="text-center animate-fade-in-scale" style={{ animationDelay: '0.3s' }}>
+            <div className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/30 rounded-full px-8 py-4 mb-10 shadow-card">
+              <Target className="text-primary" size={24} />
+              <span className="text-primary font-bold text-base tracking-wide">MISSION STATEMENT</span>
             </div>
             
-            <div className="bg-card border border-border rounded-2xl p-8 shadow-elegant">
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+            <div className="card-modern p-10 shadow-hover">
+              <p className="text-xl text-foreground leading-relaxed mb-8 font-medium">
                 Our mission is to provide exceptional waste management services that balance operational efficiency with 
                 environmental responsibility. We are committed to:
               </p>
               
-              <div className="text-left space-y-4 max-w-4xl mx-auto">
-                <div className="flex items-start gap-3">
-                  <span className="text-primary font-bold text-lg">i.</span>
-                  <p className="text-muted-foreground">
+              <div className="text-left space-y-6 max-w-5xl mx-auto">
+                <div className="flex items-start gap-4 p-4 bg-primary/5 rounded-xl border-l-4 border-primary">
+                  <CheckCircle className="text-primary flex-shrink-0 mt-1" size={20} />
+                  <p className="text-foreground font-medium">
                     Delivering superior waste collection, disposal, and recycling services.
                   </p>
                 </div>
                 
-                <div className="flex items-start gap-3">
-                  <span className="text-primary font-bold text-lg">ii.</span>
-                  <p className="text-muted-foreground">
+                <div className="flex items-start gap-4 p-4 bg-primary/5 rounded-xl border-l-4 border-primary">
+                  <CheckCircle className="text-primary flex-shrink-0 mt-1" size={20} />
+                  <p className="text-foreground font-medium">
                     Promoting sustainable practices that reduce landfill waste by 20% within the first two years.
                   </p>
                 </div>
                 
-                <div className="flex items-start gap-3">
-                  <span className="text-primary font-bold text-lg">iii.</span>
-                  <p className="text-muted-foreground">
+                <div className="flex items-start gap-4 p-4 bg-primary/5 rounded-xl border-l-4 border-primary">
+                  <CheckCircle className="text-primary flex-shrink-0 mt-1" size={20} />
+                  <p className="text-foreground font-medium">
                     Exceeding customer expectations by achieving a minimum 90% satisfaction rate within the first year.
                   </p>
                 </div>
                 
-                <div className="flex items-start gap-3">
-                  <span className="text-primary font-bold text-lg">iv.</span>
-                  <p className="text-muted-foreground">
+                <div className="flex items-start gap-4 p-4 bg-primary/5 rounded-xl border-l-4 border-primary">
+                  <CheckCircle className="text-primary flex-shrink-0 mt-1" size={20} />
+                  <p className="text-foreground font-medium">
                     Empowering our workforce through continuous training, robust performance reviews, and 
                     competitive compensation packages, including salary reviews twice in the first year and annually thereafter, 
                     along with bonus and rewards packages at the company's discretion.
                   </p>
                 </div>
                 
-                <div className="flex items-start gap-3">
-                  <span className="text-primary font-bold text-lg">v.</span>
-                  <p className="text-muted-foreground">
+                <div className="flex items-start gap-4 p-4 bg-primary/5 rounded-xl border-l-4 border-primary">
+                  <CheckCircle className="text-primary flex-shrink-0 mt-1" size={20} />
+                  <p className="text-foreground font-medium">
                     Upholding transparency, accountability, and ethical business practices across all levels of our 
                     organization.
                   </p>

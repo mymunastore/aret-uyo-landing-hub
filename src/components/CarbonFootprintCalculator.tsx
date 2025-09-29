@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Calculator, Leaf, TrendingDown } from "lucide-react";
+import { Calculator, Leaf, TrendingDown, Zap, Globe } from "lucide-react";
 
 const CarbonFootprintCalculator = () => {
   const [wasteAmount, setWasteAmount] = useState("");
@@ -48,46 +48,47 @@ const CarbonFootprintCalculator = () => {
   };
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-32 bg-gradient-subtle">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-6 py-3 mb-6">
-            <Calculator className="text-primary" size={20} />
-            <span className="text-primary font-semibold text-sm">ENVIRONMENTAL IMPACT</span>
+        <div className="text-center mb-16 animate-fade-in-scale">
+          <div className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/30 rounded-full px-8 py-4 mb-10 shadow-card">
+            <Globe className="text-primary" size={24} />
+            <span className="text-primary font-bold text-base tracking-wide">ENVIRONMENTAL IMPACT</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Carbon Footprint <span className="text-primary">Calculator</span>
+          <h2 className="text-5xl md:text-6xl font-black text-foreground mb-8 tracking-tight">
+            Carbon Footprint <span className="text-gradient">Calculator</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-2xl text-muted-foreground max-w-4xl mx-auto font-medium leading-relaxed">
             Calculate your waste's environmental impact and discover how ARET's services can help reduce your carbon footprint.
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-2 gap-12">
             {/* Calculator Form */}
-            <Card className="shadow-elegant hover-lift">
+            <div className="card-modern shadow-hover hover:scale-105 transition-all duration-500 animate-fade-in-scale">
               <CardHeader>
-                <CardTitle className="text-2xl text-gradient flex items-center gap-2">
-                  <Calculator size={24} />
+                <CardTitle className="text-3xl text-gradient flex items-center gap-3 font-black">
+                  <Calculator size={28} />
                   Calculate Your Impact
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-6">
+              <CardContent className="space-y-8">
                 <div className="space-y-2">
-                  <label className="text-sm font-medium">Weekly Waste Amount (kg)</label>
+                  <label className="text-base font-bold text-foreground">Weekly Waste Amount (kg)</label>
                   <Input
                     type="number"
                     placeholder="Enter amount in kg"
                     value={wasteAmount}
                     onChange={(e) => setWasteAmount(e.target.value)}
+                    className="h-12 text-base border-2 focus:border-primary transition-all duration-300"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium">Waste Type</label>
+                  <label className="text-base font-bold text-foreground">Waste Type</label>
                   <Select value={wasteType} onValueChange={setWasteType}>
-                    <SelectTrigger>
+                    <SelectTrigger className="h-12 text-base border-2 focus:border-primary">
                       <SelectValue placeholder="Select waste type" />
                     </SelectTrigger>
                     <SelectContent>
@@ -102,9 +103,9 @@ const CarbonFootprintCalculator = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium">Collection Frequency</label>
+                  <label className="text-base font-bold text-foreground">Collection Frequency</label>
                   <Select value={frequency} onValueChange={setFrequency}>
-                    <SelectTrigger>
+                    <SelectTrigger className="h-12 text-base border-2 focus:border-primary">
                       <SelectValue placeholder="Select frequency" />
                     </SelectTrigger>
                     <SelectContent>
@@ -116,51 +117,54 @@ const CarbonFootprintCalculator = () => {
                   </Select>
                 </div>
 
-                <div className="flex gap-4">
-                  <Button onClick={calculateFootprint} className="flex-1">
+                <div className="flex gap-4 pt-4">
+                  <Button onClick={calculateFootprint} className="flex-1 btn-modern h-12 text-base font-bold">
                     Calculate Impact
                   </Button>
-                  <Button onClick={reset} variant="outline">
+                  <Button onClick={reset} variant="outline" className="h-12 px-6 border-2 hover:border-primary transition-all duration-300">
                     Reset
                   </Button>
                 </div>
               </CardContent>
-            </Card>
+            </div>
 
             {/* Results */}
-            <Card className="shadow-elegant">
+            <div className="card-modern shadow-hover animate-fade-in-scale" style={{ animationDelay: '0.2s' }}>
               <CardHeader>
-                <CardTitle className="text-2xl text-gradient flex items-center gap-2">
-                  <Leaf size={24} />
+                <CardTitle className="text-3xl text-gradient flex items-center gap-3 font-black">
+                  <Leaf size={28} />
                   Your Environmental Impact
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 {result !== null ? (
-                  <div className="space-y-6">
-                    <div className="text-center p-6 bg-primary/5 rounded-lg border border-primary/20">
-                      <div className="text-4xl font-bold text-primary mb-2">
+                  <div className="space-y-8">
+                    <div className="text-center p-8 bg-gradient-to-br from-primary/10 to-primary-glow/10 rounded-2xl border-2 border-primary/20 shadow-card">
+                      <div className="text-5xl font-black text-primary mb-3">
                         {result.toFixed(2)} kg
                       </div>
-                      <p className="text-muted-foreground">CO₂ emissions per year</p>
+                      <p className="text-lg text-muted-foreground font-medium">CO₂ emissions per year</p>
                     </div>
 
-                    <div className="space-y-4">
-                      <div className="flex items-center gap-3 p-4 bg-green-50 dark:bg-green-950/30 rounded-lg">
-                        <TrendingDown className="text-green-600" size={20} />
+                    <div className="space-y-6">
+                      <div className="flex items-center gap-4 p-6 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/30 dark:to-emerald-950/30 rounded-xl border-l-4 border-green-500 shadow-card">
+                        <TrendingDown className="text-green-600 flex-shrink-0" size={24} />
                         <div>
-                          <p className="font-medium text-green-800 dark:text-green-200">
+                          <p className="font-bold text-green-800 dark:text-green-200 text-lg">
                             Potential Reduction with ARET
                           </p>
-                          <p className="text-sm text-green-600 dark:text-green-300">
+                          <p className="text-base text-green-600 dark:text-green-300 font-medium">
                             Up to {(result * 0.3).toFixed(2)} kg CO₂ saved annually through our recycling programs
                           </p>
                         </div>
                       </div>
 
-                      <div className="text-sm text-muted-foreground space-y-2">
-                        <p><strong>How we help reduce your footprint:</strong></p>
-                        <ul className="list-disc list-inside space-y-1 ml-4">
+                      <div className="text-base text-muted-foreground space-y-4 p-6 bg-muted/30 rounded-xl">
+                        <p className="font-bold text-foreground text-lg flex items-center gap-2">
+                          <Zap className="text-primary" size={20} />
+                          How we help reduce your footprint:
+                        </p>
+                        <ul className="list-disc list-inside space-y-2 ml-6 font-medium">
                           <li>Efficient collection routes reduce transportation emissions</li>
                           <li>Advanced recycling programs divert waste from landfills</li>
                           <li>Proper waste segregation maximizes recycling potential</li>
@@ -170,27 +174,28 @@ const CarbonFootprintCalculator = () => {
                     </div>
                   </div>
                 ) : (
-                  <div className="text-center py-12">
-                    <Calculator className="mx-auto h-16 w-16 text-muted-foreground mb-4" />
-                    <p className="text-muted-foreground">
+                  <div className="text-center py-16">
+                    <Calculator className="mx-auto h-20 w-20 text-muted-foreground mb-6 opacity-50" />
+                    <p className="text-lg text-muted-foreground font-medium">
                       Fill in the form to calculate your carbon footprint
                     </p>
                   </div>
                 )}
               </CardContent>
-            </Card>
+            </div>
           </div>
 
           {/* Call to Action */}
-          <div className="text-center mt-12">
-            <Card className="bg-gradient-primary text-primary-foreground p-8">
-              <h3 className="text-2xl font-bold mb-4">Ready to Reduce Your Impact?</h3>
-              <p className="mb-6 opacity-90">
+          <div className="text-center mt-16 animate-fade-in-scale" style={{ animationDelay: '0.4s' }}>
+            <div className="bg-gradient-primary text-primary-foreground p-12 rounded-3xl shadow-hover">
+              <h3 className="text-3xl font-black mb-6">Ready to Reduce Your Impact?</h3>
+              <p className="mb-8 opacity-90 text-lg font-medium max-w-2xl mx-auto">
                 Join ARET Environmental Services and be part of the solution for a sustainable future.
               </p>
               <Button 
                 variant="secondary" 
                 size="lg"
+                className="btn-modern bg-background text-primary hover:bg-background/90 h-14 px-8 text-lg font-bold"
                 onClick={() => {
                   const element = document.querySelector('#contact');
                   if (element) {
@@ -200,7 +205,7 @@ const CarbonFootprintCalculator = () => {
               >
                 Get Started Today
               </Button>
-            </Card>
+            </div>
           </div>
         </div>
       </div>

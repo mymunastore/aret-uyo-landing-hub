@@ -3,58 +3,68 @@ import GoogleRegistrationForm from "@/components/GoogleRegistrationForm";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-24 bg-gradient-subtle">
+    <section id="contact" className="py-32 bg-background relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-20 left-20 w-96 h-96 bg-primary rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-primary-glow rounded-full blur-3xl animate-bounce-gentle"></div>
+      </div>
+      
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4">
-            Get In Touch
+        <div className="text-center mb-20 animate-fade-in-scale">
+          <div className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/30 rounded-full px-8 py-4 mb-10 shadow-card">
+            <Phone className="text-primary" size={24} />
+            <span className="text-primary font-bold text-base tracking-wide">GET IN TOUCH</span>
+          </div>
+          <h2 className="text-5xl md:text-6xl font-black text-foreground mb-8 tracking-tight">
+            <span className="text-gradient">Contact</span> Us Today
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-2xl text-muted-foreground max-w-4xl mx-auto font-medium leading-relaxed">
             Ready to start your waste management journey? Contact us today for 
             a free consultation and personalized quote.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
           {/* Contact Information */}
-          <div className="space-y-8">
-            <h3 className="text-2xl font-bold text-foreground mb-6">
+          <div className="space-y-8 animate-fade-in-scale">
+            <h3 className="text-3xl font-black text-foreground mb-8">
               Contact Information
             </h3>
 
-            <div className="space-y-6">
+            <div className="space-y-8">
               {/* Phone Numbers */}
-              <div className="flex items-start gap-4 p-6 bg-card rounded-xl hover-lift border border-border/50 shadow-sm">
-                <div className="bg-primary/20 border border-primary/30 p-4 rounded-lg shadow-sm">
-                  <Phone className="w-6 h-6 text-primary" />
+              <div className="flex items-start gap-6 p-8 card-modern shadow-hover hover:scale-105 transition-all duration-500">
+                <div className="bg-gradient-primary p-4 rounded-2xl shadow-card">
+                  <Phone className="w-7 h-7 text-primary-foreground" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground mb-2 text-lg">Phone</h4>
-                  <p className="text-foreground font-medium">Front Desk: 09152870616</p>
-                  <p className="text-foreground font-medium">Alternative: 07032224738</p>
+                  <h4 className="font-bold text-foreground mb-3 text-xl">Phone</h4>
+                  <p className="text-foreground font-bold text-lg">Front Desk: 09152870616</p>
+                  <p className="text-foreground font-bold text-lg">Alternative: 07032224738</p>
                 </div>
               </div>
 
               {/* Email */}
-              <div className="flex items-start gap-4 p-6 bg-card rounded-xl hover-lift border border-border/50 shadow-sm">
-                <div className="bg-primary/20 border border-primary/30 p-4 rounded-lg shadow-sm">
-                  <Mail className="w-6 h-6 text-primary" />
+              <div className="flex items-start gap-6 p-8 card-modern shadow-hover hover:scale-105 transition-all duration-500">
+                <div className="bg-gradient-primary p-4 rounded-2xl shadow-card">
+                  <Mail className="w-7 h-7 text-primary-foreground" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground mb-2 text-lg">Email</h4>
-                  <p className="text-foreground font-medium">info@aret-environmental-ng.com</p>
-                  <p className="text-foreground font-medium text-sm mt-1">support@aret-environmental-ng.com</p>
+                  <h4 className="font-bold text-foreground mb-3 text-xl">Email</h4>
+                  <p className="text-foreground font-bold text-lg">info@aret-environmental-ng.com</p>
+                  <p className="text-foreground font-bold text-base mt-2">support@aret-environmental-ng.com</p>
                 </div>
               </div>
 
               {/* Address */}
-              <div className="flex items-start gap-4 p-6 bg-card rounded-xl hover-lift border border-border/50 shadow-sm">
-                <div className="bg-primary/20 border border-primary/30 p-4 rounded-lg shadow-sm">
-                  <MapPin className="w-6 h-6 text-primary" />
+              <div className="flex items-start gap-6 p-8 card-modern shadow-hover hover:scale-105 transition-all duration-500">
+                <div className="bg-gradient-primary p-4 rounded-2xl shadow-card">
+                  <MapPin className="w-7 h-7 text-primary-foreground" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground mb-2 text-lg">Address</h4>
-                  <p className="text-foreground font-medium">
+                  <h4 className="font-bold text-foreground mb-3 text-xl">Address</h4>
+                  <p className="text-foreground font-bold text-lg">
                     No. 576 Oron Road, Uyo<br />
                     Akwa Ibom State, Nigeria
                   </p>
@@ -62,13 +72,13 @@ const Contact = () => {
               </div>
 
               {/* Business Hours */}
-              <div className="flex items-start gap-4 p-6 bg-card rounded-xl hover-lift border border-border/50 shadow-sm">
-                <div className="bg-primary/20 border border-primary/30 p-4 rounded-lg shadow-sm">
-                  <Clock className="w-6 h-6 text-primary" />
+              <div className="flex items-start gap-6 p-8 card-modern shadow-hover hover:scale-105 transition-all duration-500">
+                <div className="bg-gradient-primary p-4 rounded-2xl shadow-card">
+                  <Clock className="w-7 h-7 text-primary-foreground" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground mb-2 text-lg">Business Hours</h4>
-                  <div className="text-foreground font-medium space-y-1">
+                  <h4 className="font-bold text-foreground mb-3 text-xl">Business Hours</h4>
+                  <div className="text-foreground font-bold space-y-2 text-lg">
                     <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
                     <p>Saturday: 10:00 AM - 2:30 PM</p>
                     <p>Sunday: Emergency Services Only</p>
@@ -79,7 +89,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div>
+          <div className="animate-fade-in-scale" style={{ animationDelay: '0.2s' }}>
             <GoogleRegistrationForm />
           </div>
         </div>

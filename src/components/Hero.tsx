@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Play, ArrowRight, Recycle, Trash2, Leaf, Phone } from "lucide-react";
+import { ArrowRight, Recycle, Trash2, Leaf, Phone, Sparkles } from "lucide-react";
 import { useResponsive } from "@/hooks/useResponsive"; 
 import { useRealTimeAnimations } from "@/hooks/useRealTimeAnimations";
 import heroImage from "@/assets/hero-waste-workers.png";
@@ -47,7 +47,7 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         <img 
           src={heroImage} 
-          alt="ARET Environmental Services workers in high-visibility vests loading waste bins into collection truck in Uyo" 
+          alt="ARET Environmental Services - Professional waste management team in Uyo, Akwa Ibom State" 
           className="w-full h-full object-cover parallax" 
           loading="eager" 
           fetchPriority="high" 
@@ -58,15 +58,18 @@ const Hero = () => {
 
       {/* Floating Shapes - Responsive sizing */}
       <div className="absolute top-10 sm:top-20 left-4 sm:left-10 opacity-10 sm:opacity-20 parallax">
-        <Recycle size={isMobile ? 60 : isTablet ? 90 : 120} className="text-accent animate-float" />
+        <Recycle size={isMobile ? 60 : isTablet ? 90 : 120} className="text-primary-glow animate-float" />
       </div>
       <div className="absolute bottom-10 sm:bottom-20 right-4 sm:right-20 opacity-10 sm:opacity-20 parallax">
         <Leaf size={isMobile ? 40 : isTablet ? 60 : 80} className="text-primary-glow animate-bounce-gentle" />
       </div>
       <div className="absolute top-1/2 right-4 sm:right-10 opacity-5 sm:opacity-10 parallax">
-        <div className={`border-2 border-accent rounded-full animate-pulse ${
+        <div className={`border-2 border-primary-glow rounded-full animate-pulse ${
           isMobile ? 'w-16 h-16' : isTablet ? 'w-24 h-24' : 'w-32 h-32'
         }`}></div>
+      </div>
+      <div className="absolute top-1/4 left-1/3 opacity-5 sm:opacity-10 parallax">
+        <Sparkles size={isMobile ? 30 : 50} className="text-accent animate-pulse" />
       </div>
 
       {/* Content */}
@@ -78,7 +81,7 @@ const Hero = () => {
             <span className={`text-foreground font-semibold ${
               isMobile ? 'text-xs' : 'text-sm'
             }`}>
-              Welcome to ARET Environmental Services
+              Professional Waste Management Solutions
             </span>
           </div>
 
@@ -88,7 +91,7 @@ const Hero = () => {
           }`} 
           style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
             Your Partner in
-            <span className="block text-accent drop-shadow-lg" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
+            <span className="block text-primary-glow drop-shadow-lg" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
               Sustainability
             </span>
           </h1>
@@ -101,7 +104,7 @@ const Hero = () => {
             animationDelay: '0.2s',
             textShadow: '1px 1px 3px rgba(0,0,0,0.7)'
           }}>
-            Leading waste management solutions in Uyo, Akwa Ibom State. 
+            Premier waste management solutions in Uyo, Akwa Ibom State. 
             We are committed to reducing environmental impact and promoting 
             sustainability across all sectors.
           </p>
@@ -113,16 +116,16 @@ const Hero = () => {
             <Button 
               size={isMobile ? "default" : "lg"}
               onClick={scrollToServices}
-              className="interactive-button bg-accent hover:bg-accent/90 text-accent-foreground px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg font-semibold hover:shadow-glow transition-all duration-300"
+              className="btn-modern bg-primary-glow hover:bg-primary-glow/90 text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg font-bold"
             >
-              Discover More
+              Explore Services
               <ArrowRight className="ml-2" size={isMobile ? 16 : 20} />
             </Button>
             <Button 
               size={isMobile ? "default" : "lg"}
               variant="default"
               onClick={scrollToContact}
-              className="interactive-button bg-primary-foreground text-primary hover:bg-primary-foreground/90 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg font-semibold shadow-elegant hover:shadow-glow transition-all duration-300"
+              className="btn-modern bg-background/90 text-primary hover:bg-background px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg font-bold backdrop-blur-md"
             >
               <Phone className="mr-2" size={isMobile ? 16 : 20} />
               Contact Us
@@ -134,7 +137,7 @@ const Hero = () => {
             animationDelay: '0.6s'
           }}>
             <div className="text-center group">
-              <div className={`font-bold text-primary-foreground mb-2 group-hover:scale-110 transition-transform duration-300 ${
+              <div className={`font-black text-primary-foreground mb-2 group-hover:scale-110 transition-spring ${
                 isMobile ? 'text-2xl' : 'text-3xl'
               }`}>
                 100+
@@ -142,7 +145,7 @@ const Hero = () => {
               <div className={`text-primary-foreground/80 ${
                 isMobile ? 'text-xs' : 'text-sm'
               }`}>
-                Clients Served
+                Happy Clients
               </div>
             </div>
           </div>
@@ -151,7 +154,7 @@ const Hero = () => {
 
       {/* Scroll Indicator - Hidden on mobile */}
       {!isMobile && (
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce opacity-70">
           <div className="w-6 h-10 border-2 border-primary-foreground/50 rounded-full">
             <div className="w-1 h-3 bg-primary-glow rounded-full mx-auto mt-2 animate-bounce"></div>
           </div>

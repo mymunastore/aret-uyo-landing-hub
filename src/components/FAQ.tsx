@@ -10,7 +10,7 @@ interface FAQItem {
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const [showFAQ, setShowFAQ] = useState(false); // FAQ is hidden by default
+  const [showFAQ, setShowFAQ] = useState(true); // FAQ is visible by default
 
   const faqData: FAQItem[] = [
     // General Information
@@ -146,47 +146,37 @@ const FAQ = () => {
   };
 
   return (
-    <section id="faq" className="py-20 bg-muted/30">
+    <section id="faq" className="py-32 bg-gradient-subtle relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-20 right-20 w-80 h-80 bg-primary rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 left-20 w-64 h-64 bg-primary-glow rounded-full blur-2xl animate-float"></div>
+      </div>
+      
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Frequently Asked Questions
+        <div className="text-center mb-16 animate-fade-in-scale">
+          <div className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/30 rounded-full px-8 py-4 mb-10 shadow-card">
+            <HelpCircle className="text-primary" size={24} />
+            <span className="text-primary font-bold text-base tracking-wide">FREQUENTLY ASKED QUESTIONS</span>
+          </div>
+          <h2 className="text-5xl md:text-6xl font-black text-foreground mb-8 tracking-tight">
+            <span className="text-gradient">FAQ</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
+          <p className="text-2xl text-muted-foreground max-w-4xl mx-auto mb-10 font-medium leading-relaxed">
             Find answers to common questions about our waste management services and processes.
           </p>
-          
-          {/* Toggle Button */}
-          <Button
-            onClick={() => setShowFAQ(!showFAQ)}
-            variant={showFAQ ? "default" : "outline"}
-            size="lg"
-            className="group transition-all duration-300 hover:scale-105"
-          >
-            {showFAQ ? (
-              <>
-                <EyeOff className="mr-2 h-5 w-5" />
-                Hide FAQ Section
-              </>
-            ) : (
-              <>
-                <Eye className="mr-2 h-5 w-5" />
-                Show FAQ Section
-              </>
-            )}
-          </Button>
         </div>
 
         {/* FAQ Content - Conditionally Rendered */}
         {showFAQ && (
-          <div className="max-w-4xl mx-auto animate-fade-in">
+          <div className="max-w-5xl mx-auto animate-fade-in-scale">
             {categories.map((category, categoryIndex) => (
-              <div key={category} className="mb-8">
-                <h3 className="text-xl font-semibold text-foreground mb-4 pb-2 border-b border-primary/20">
+              <div key={category} className="mb-12">
+                <h3 className="text-2xl font-bold text-foreground mb-6 pb-3 border-b-2 border-primary/30 text-center">
                   {category}
                 </h3>
                 
-                <div className="space-y-4">
+                <div className="space-y-6">
                   {faqData
                     .filter(item => item.category === category)
                     .map((faq, faqIndex) => {
@@ -196,25 +186,25 @@ const FAQ = () => {
                       return (
                         <div 
                           key={globalIndex}
-                          className="bg-card border border-border rounded-lg shadow-sm hover:shadow-md transition-shadow"
+                          className="card-modern shadow-card hover:shadow-hover transition-all duration-500"
                         >
                           <button
                             onClick={() => toggleFAQ(globalIndex)}
-                            className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-muted/50 transition-colors rounded-lg"
+                            className="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-primary/5 transition-colors rounded-2xl"
                           >
-                            <span className="font-medium text-foreground pr-4">
+                            <span className="font-bold text-foreground pr-4 text-lg">
                               {faq.question}
                             </span>
                             {isOpen ? (
-                              <ChevronUp className="text-primary flex-shrink-0" size={20} />
+                              <ChevronUp className="text-primary flex-shrink-0" size={24} />
                             ) : (
-                              <ChevronDown className="text-primary flex-shrink-0" size={20} />
+                              <ChevronDown className="text-primary flex-shrink-0" size={24} />
                             )}
                           </button>
                           
                           {isOpen && (
-                            <div className="px-6 pb-4">
-                              <p className="text-muted-foreground leading-relaxed">
+                            <div className="px-8 pb-6">
+                              <p className="text-foreground leading-relaxed text-base font-medium">
                                 {faq.answer}
                               </p>
                             </div>
@@ -226,8 +216,38 @@ const FAQ = () => {
               </div>
             ))}
 
-            <div className="text-center mt-12">
-              <p className="text-muted-foreground mb-4">
+            <div className="text-center mt-16 animate-fade-in-scale" style={{ animationDelay: '0.6s' }}>
+              <div className="card-modern p-10 shadow-hover">
+                <h3 className="text-2xl font-bold text-foreground mb-4">
+                  Still Have Questions?
+                </h3>
+                <p className="text-muted-foreground mb-8 text-lg font-medium">
+                  Our team is here to help with any additional questions you may have.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                  <a 
+                    href="tel:09152870616" 
+                    className="btn-modern inline-flex items-center justify-center"
+                  >
+                    <Phone className="mr-2 h-5 w-5" />
+                    Call: 09152870616
+                  </a>
+                  <a 
+                    href="mailto:info@aret-environmental-ng.com" 
+                    className="btn-modern bg-background text-primary border-2 border-primary hover:bg-primary hover:text-primary-foreground inline-flex items-center justify-center"
+                  >
+                    <Mail className="mr-2 h-5 w-5" />
+                    Email Us
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+};
                 Still have questions? We're here to help.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

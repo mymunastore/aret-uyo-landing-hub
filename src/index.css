@@ -2,103 +2,101 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ARET Environmental Services Design System - Professional waste management theme */
+/* ARET Environmental Services Design System - Modern Professional Theme */
 
 @layer base {
   :root {
-    /* Environmental Green Theme with Auto-Mixed Colors */
+    /* Modern Environmental Green Theme */
     --background: 0 0% 100%;
-    --foreground: 142 15% 25%;
+    --foreground: 142 20% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 142 12% 30%;
+    --card-foreground: 142 15% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 142 15% 25%;
+    --popover-foreground: 142 20% 15%;
 
-    /* Primary Environmental Green */
-    --primary: 142 76% 36%;
+    /* Enhanced Primary Environmental Green */
+    --primary: 142 85% 42%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 142 85% 45%;
+    --primary-glow: 142 90% 50%;
 
-    /* Mixed Secondary with green undertones */
-    --secondary: 145 8% 94%;
-    --secondary-foreground: 142 15% 25%;
+    /* Refined Secondary Colors */
+    --secondary: 145 12% 96%;
+    --secondary-foreground: 142 20% 15%;
 
-    --muted: 145 8% 94%;
-    --muted-foreground: 142 20% 50%;
+    --muted: 145 10% 96%;
+    --muted-foreground: 142 25% 45%;
 
-    --accent: 142 60% 20%;
+    --accent: 142 70% 25%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 150 20% 88%;
-    --input: 150 20% 88%;
-    --ring: 142 76% 36%;
+    --border: 150 15% 90%;
+    --input: 150 15% 92%;
+    --ring: 142 85% 42%;
 
-    /* Environmental Gradients */
+    /* Modern Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-hero: linear-gradient(135deg, hsl(142 76% 36% / 0.95), hsl(142 85% 45% / 0.85));
-    --gradient-subtle: linear-gradient(180deg, hsl(150 5% 98%), hsl(150 5% 96%));
+    --gradient-hero: linear-gradient(135deg, hsl(142 85% 42% / 0.95), hsl(142 90% 50% / 0.85));
+    --gradient-subtle: linear-gradient(180deg, hsl(150 8% 99%), hsl(150 8% 97%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(150 10% 98%));
 
-    /* Professional Shadows */
-    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.2);
-    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
+    /* Enhanced Shadows */
+    --shadow-elegant: 0 20px 40px -12px hsl(var(--primary) / 0.15);
+    --shadow-glow: 0 0 50px hsl(var(--primary-glow) / 0.4);
+    --shadow-card: 0 4px 20px -4px hsl(var(--primary) / 0.1);
+    --shadow-hover: 0 25px 50px -12px hsl(var(--primary) / 0.25);
 
-    /* Smooth Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Advanced Transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --transition-spring: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 142 20% 8%;
-    --foreground: 142 10% 90%;
+    --background: 142 25% 6%;
+    --foreground: 142 15% 92%;
 
-    --card: 142 18% 10%;
-    --card-foreground: 142 8% 88%;
+    --card: 142 20% 8%;
+    --card-foreground: 142 12% 90%;
 
-    --popover: 142 18% 10%;
-    --popover-foreground: 142 8% 88%;
+    --popover: 142 20% 8%;
+    --popover-foreground: 142 12% 90%;
 
-    --primary: 142 85% 45%;
-    --primary-foreground: 142 20% 8%;
-    --primary-glow: 142 85% 55%;
+    --primary: 142 90% 50%;
+    --primary-foreground: 142 25% 6%;
+    --primary-glow: 142 95% 60%;
 
-    --secondary: 142 12% 18%;
-    --secondary-foreground: 142 8% 88%;
+    --secondary: 142 15% 12%;
+    --secondary-foreground: 142 12% 90%;
 
-    --muted: 142 12% 18%;
-    --muted-foreground: 142 15% 65%;
+    --muted: 142 15% 12%;
+    --muted-foreground: 142 20% 70%;
 
-    --accent: 142 70% 25%;
-    --accent-foreground: 142 8% 88%;
+    --accent: 142 80% 30%;
+    --accent-foreground: 142 12% 90%;
 
-    --destructive: 0 75% 55%;
-    --destructive-foreground: 150 5% 92%;
+    --destructive: 0 80% 60%;
+    --destructive-foreground: 150 8% 95%;
 
-    --border: 150 8% 18%;
-    --input: 150 8% 18%;
-    --ring: 142 85% 45%;
+    --border: 150 12% 15%;
+    --input: 150 12% 15%;
+    --ring: 142 90% 50%;
+    
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -107,6 +105,10 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Dark mode specific gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(142 90% 50% / 0.95), hsl(142 95% 60% / 0.85));
+    --gradient-subtle: linear-gradient(180deg, hsl(142 20% 8%), hsl(142 15% 10%));
   }
 }
 
@@ -120,6 +122,11 @@
   }
 }
 
+/* Enhanced Typography */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.025em;
+}
+
 /* Custom Utility Classes */
 @layer utilities {
   .bg-gradient-primary {
@@ -130,12 +137,24 @@
     background: var(--gradient-hero);
   }
   
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+  
   .bg-gradient-subtle {
     background: var(--gradient-subtle);
   }
   
   .shadow-elegant {
     box-shadow: var(--shadow-elegant);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-hover {
+    box-shadow: var(--shadow-hover);
   }
   
   .shadow-glow {
@@ -146,13 +165,17 @@
     transition: var(--transition-smooth);
   }
   
+  .transition-spring {
+    transition: var(--transition-spring);
+  }
+  
   .transition-bounce {
     transition: var(--transition-bounce);
   }
 
   /* Advanced Interactive Elements */
   .glass-effect {
-    @apply backdrop-blur-md bg-white/10 border border-white/20;
+    @apply backdrop-blur-xl bg-white/10 border border-white/20 shadow-card;
   }
   
   .hover-lift {
@@ -160,7 +183,7 @@
   }
   
   .text-gradient {
-    background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--primary-glow)));
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -169,7 +192,7 @@
   
   /* Responsive Animations & Real-time Effects */
   .animate-on-scroll {
-    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+    @apply opacity-0 translate-y-12 transition-all duration-1000 ease-out;
   }
   
   .animate-visible {
@@ -177,16 +200,16 @@
   }
   
   .real-time-hover {
-    @apply transition-all duration-200 transform-gpu;
+    @apply transition-all duration-300 transform-gpu;
   }
   
   .real-time-hover:hover {
-    @apply scale-105 shadow-2xl shadow-primary/25 -translate-y-1;
+    @apply scale-105 shadow-hover -translate-y-2;
   }
   
   /* Advanced card effects */
   .card-hover {
-    @apply transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20;
+    @apply transition-all duration-500 hover:scale-105 hover:shadow-hover;
   }
   
   /* Responsive spacing */
@@ -208,7 +231,7 @@
   }
   
   .responsive-body {
-    @apply text-sm sm:text-base md:text-lg;
+    @apply text-base sm:text-lg md:text-xl;
   }
   
   /* Interactive states with real-time feedback */
@@ -217,7 +240,7 @@
   }
   
   .interactive-card {
-    @apply transition-all duration-500 transform-gpu hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2;
+    @apply transition-all duration-500 transform-gpu hover:scale-[1.03] hover:shadow-hover hover:-translate-y-3;
   }
   
   /* Parallax effect */
@@ -228,7 +251,7 @@
   
   /* Loading shimmer with real-time effect */
   .shimmer {
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
     animation: shimmer 2s infinite;
   }
   
@@ -239,7 +262,7 @@
   
   /* Advanced responsive grid */
   .responsive-grid {
-    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8;
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-10;
   }
   
   .responsive-flex {
@@ -248,7 +271,7 @@
   
   /* Smooth transitions for all interactive elements */
   .smooth-transition {
-    @apply transition-all duration-300 ease-in-out;
+    @apply transition-all duration-400 ease-in-out;
   }
   
   /* Real-time form feedback */
@@ -257,16 +280,26 @@
   }
   
   .form-success {
-    @apply border-green-500 bg-green-50 dark:bg-green-950/30;
+    @apply border-green-500 bg-green-50 dark:bg-green-950/30 shadow-card;
   }
   
   .form-error {
-    @apply border-red-500 bg-red-50 dark:bg-red-950/30 animate-pulse;
+    @apply border-red-500 bg-red-50 dark:bg-red-950/30 animate-pulse shadow-card;
   }
   
   @keyframes shimmer {
     0% { transform: translateX(-100%); }
     100% { transform: translateX(100%); }
+  }
+  
+  /* Enhanced animations */
+  @keyframes fadeInScale {
+    0% { opacity: 0; transform: scale(0.95) translateY(20px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+  }
+  
+  .animate-fade-in-scale {
+    animation: fadeInScale 0.6s ease-out;
   }
   
   /* Mobile-first responsive breakpoints */
@@ -286,5 +319,15 @@
     .hover-lift {
       @apply hover:-translate-y-6;
     }
+  }
+  
+  /* Modern button styles */
+  .btn-modern {
+    @apply relative overflow-hidden bg-gradient-primary text-primary-foreground font-semibold py-3 px-6 rounded-xl shadow-card hover:shadow-hover transition-all duration-300 transform hover:scale-105;
+  }
+  
+  /* Enhanced card styles */
+  .card-modern {
+    @apply bg-gradient-card border-0 shadow-card hover:shadow-hover transition-all duration-500 rounded-2xl overflow-hidden;
   }
 }
