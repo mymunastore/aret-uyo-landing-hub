@@ -14,7 +14,7 @@ const MottoSection = () => {
           {/* ARET Motto */}
           <div className="mb-12">
             <h2 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-4 animate-fade-in-up">
-              ARET <span className="text-accent">MOTTO</span>
+              <span className="text-accent">Motto</span>
             </h2>
             <p className="text-2xl md:text-3xl text-primary-foreground/90 max-w-4xl mx-auto animate-fade-in-up font-medium">
               Partnering for sustainable solutions
