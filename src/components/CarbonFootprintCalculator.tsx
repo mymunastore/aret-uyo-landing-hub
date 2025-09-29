@@ -165,27 +165,6 @@ const CarbonFootprintCalculator = () => {
                           How we help reduce your footprint:
                         </p>
                         <ul className="list-disc list-inside space-y-2 ml-6 font-medium">
-                          <li>Efficient collection routes reduce transportation emissions</li>
-                          <li>Advanced recycling programs divert waste from landfills</li>
-                          <li>Proper waste segregation maximizes recycling potential</li>
-                          <li>Composting programs for organic waste</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="text-center py-16">
-                    <Calculator className="mx-auto h-20 w-20 text-muted-foreground mb-6 opacity-50" />
-                    <p className="text-lg text-muted-foreground font-medium">
-                      Fill in the form to calculate your carbon footprint
-                    </p>
-                  </div>
-                )}
-              </CardContent>
-            </div>
-          </div>
-
-          {/* Call to Action */}
         </div>
       </div>
     </section>
