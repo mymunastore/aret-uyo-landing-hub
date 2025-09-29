@@ -94,7 +94,7 @@ const Contact = () => {
               <div className="bg-gradient-to-r from-primary to-primary/80 text-primary-foreground rounded-t-lg p-6">
                 <div className="flex items-center justify-center mb-4">
                   <img 
-                    src="/src/assets/image.png" 
+                    src="/src/assets/image copy.png" 
                     alt="ARET Environmental Services Logo" 
                     className="h-20 w-auto"
                   />
