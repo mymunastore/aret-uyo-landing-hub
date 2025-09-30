@@ -87,7 +87,7 @@ const Testimonials = ({ showTestimonials = true }: TestimonialsProps) => {
                 </div>
 
                 {/* Testimonial Text */}
-                <p className="text-foreground leading-relaxed mb-8 italic text-lg font-medium">
+                <p className="text-foreground leading-relaxed mb-8 italic text-base font-medium">
                   "{testimonial.text}"
                 </p>
 
@@ -106,29 +106,6 @@ const Testimonials = ({ showTestimonials = true }: TestimonialsProps) => {
               </div>
             </div>
           ))}
-        </div>
-        
-        {/* Call to Action */}
-        <div className="text-center mt-20 animate-fade-in-scale" style={{ animationDelay: '0.8s' }}>
-          <div className="card-modern p-10 max-w-2xl mx-auto shadow-hover">
-            <h3 className="text-3xl font-black text-foreground mb-6">
-              Join Our Happy Clients
-            </h3>
-            <p className="text-muted-foreground mb-8 text-lg font-medium">
-              Experience the same exceptional service that our clients rave about.
-            </p>
-            <button 
-              onClick={() => {
-                const element = document.querySelector('#contact');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-              className="btn-modern"
-            >
-              Get Your Quote Today
-            </button>
-          </div>
         </div>
       </div>
     </section>
