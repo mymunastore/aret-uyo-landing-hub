@@ -13,5 +13,15 @@ export const supabase = createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABL
     storage: localStorage,
     persistSession: true,
     autoRefreshToken: true,
+  },
+  global: {
+    fetch: (input: RequestInfo | URL, init?: RequestInit) => {
+      const headers = new Headers(init?.headers);
+      const sessionId = localStorage.getItem('chat_session_id');
+      if (sessionId) {
+        headers.set('x-session-id', sessionId);
+      }
+      return fetch(input, { ...init, headers });
+    }
   }
 });
